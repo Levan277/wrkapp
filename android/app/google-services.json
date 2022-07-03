@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "153617040200",
+    "project_id": "unitedchurchapp",
+    "storage_bucket": "unitedchurchapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153617040200:android:932151b40c3e998f75a97d",
+        "android_client_info": {
+          "package_name": "com.example.wrkapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153617040200-g8ab5vecsruqncq8vjq2tglk9dk6eaq2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOz9nN5plOC_6hxO8kSmjComqbVJzZUeo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153617040200-g8ab5vecsruqncq8vjq2tglk9dk6eaq2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
