@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
+import 'package:wrkapp/main.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/utils/utils.dart';
 class SignupScreen extends StatefulWidget {
@@ -31,7 +32,7 @@ _isLoading = true;
     setState((){
       _isLoading = false;
     });
-
+  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MyApp()), (route) => false);
     if(res!="success"){
       showSnackBar(res, context);
     }else{

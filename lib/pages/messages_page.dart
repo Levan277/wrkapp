@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:wrkapp/models/demos/models.dart';
 import 'package:wrkapp/screens/chatScreens/screens.dart';
 import 'package:wrkapp/constants/theme.dart';
@@ -169,7 +170,7 @@ class _Stories extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(left: 16.0, top: 8, bottom: 16),
               child: Text(
-                'Storis',
+                'Stories',
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize: 15,

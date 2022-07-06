@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wrkapp/connectionsFirebase/storage_methods.dart';
+import 'package:wrkapp/main.dart';
 class Authentications {
 
   String email = "";
@@ -14,11 +15,11 @@ class Authentications {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 
+
   Future<String> signUp(
       {required String email, required String password, required String username, required Uint8List file}) async {
     String res = "some error occured";
-
-
+;
     try{
       if(email.isNotEmpty || password.isNotEmpty||username.isNotEmpty || file!=null ){
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
@@ -33,6 +34,7 @@ class Authentications {
           'uid': cred.user!.uid,
          'photoUrl': photoUrl,
         });
+
        res = "success";
       }
 

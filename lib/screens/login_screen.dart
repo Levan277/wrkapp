@@ -4,6 +4,8 @@ import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/utils/utils.dart';
 
+import '../main.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -33,7 +35,8 @@ class _LoginScreenState extends State<LoginScreen> {
       _isLoading = false;
     });
     if(res=="success"){
-      Navigator.pushNamed(context, route.homePage);
+      // Navigator.pushNamed(context, route.homePage);
+     Navigator.pushNamed(context, route.homePage);
 
     }
     else{

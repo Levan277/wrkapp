@@ -50,6 +50,7 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
 
   void onSearch() async{
     setState((){
+      searchResult = [];
       isLoading = true;
     });
     await FirebaseFirestore.instance.collection('users').where('username',isEqualTo: searchController.text).get().then((value){
@@ -58,6 +59,7 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
         setState((){
           isLoading = false;
         });
+        
         return;
       }
 
@@ -65,6 +67,9 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
       value.docs.forEach((user) {
         searchResult.add(user.data());
       });
+    });
+    setState((){
+      isLoading = false;
     });
   }
   void _onNavigationItemSelected(index) {
@@ -85,46 +90,63 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: Theme.of(context).iconTheme,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: ValueListenableBuilder(
-          valueListenable: title,
-          builder: (BuildContext context, String value, _) {
-            return Text(
-              value,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            );
-          },
-        ),
-
-
-        actions: [
-          AnimSearchBar(
-            width: 300,
-            textController: searchController,
-
-            onSuffixTap: () {
-             
-              setState(() {
-                searchController.clear();
-              });
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(200),
+        child: AppBar(
+           
+          iconTheme: Theme.of(context).iconTheme,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: ValueListenableBuilder(
+            valueListenable: title,
+            builder: (BuildContext context, String value, _) {
+              return Text(
+                value,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              );
             },
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 24.0),
-            child: FutureBuilder(
-              future: getPhotoUrl(),
-              builder: (context, snapshot){
-              return CircleAvatar(backgroundImage: NetworkImage(photoUrl),radius: 24.0,);
 
-            },)
-          ),
-        ],
+
+          actions: [
+
+            AnimSearchBar(
+              width: 300,
+              textController: searchController,
+
+              onSuffixTap: () {
+
+                setState(() {
+                  searchController.clear();
+                });
+              },
+            ),
+
+            IconButton(onPressed:onSearch
+                , icon: Icon(Icons.search)),
+
+            if(searchResult.length > 0)
+
+              Expanded(child: ListView.builder(
+                  itemCount: searchResult.length,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index){
+                    return ListTile(
+                      leading: CircleAvatar(
+                        child: Image.network(searchResult[index]['photoUrl']),
+                      ),
+                      title: Text(searchResult[index]['username']),
+                      subtitle: Text(searchResult[index]['email']),
+                      trailing: IconButton(
+                        onPressed: (){},
+                        icon: Icon(Icons.message),
+                      ),
+                    );
+                  }))],
+        ),
       ),
       body: ValueListenableBuilder(
         valueListenable: pageIndex,
@@ -135,6 +157,7 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
       bottomNavigationBar: _BottomNavigationBar(
         onItemSelected: _onNavigationItemSelected,
       ),
+
     );
   }
 }
@@ -178,15 +201,15 @@ class __BottomNavigationBarState extends State<_BottomNavigationBar> {
             children: [
               _NavigationBarItem(
                 index: 0,
-                lable: 'Messages',
-                icon: CupertinoIcons.bubble_left_bubble_right_fill,
+                lable: '',
+                
                 isSelected: (selectedIndex == 0),
                 onTap: handleItemSelected,
               ),
               _NavigationBarItem(
                 index: 1,
-                lable: 'Notifications',
-                icon: CupertinoIcons.bell_solid,
+                lable: '',
+
                 isSelected: (selectedIndex == 1),
                 onTap: handleItemSelected,
               ),
@@ -196,21 +219,21 @@ class __BottomNavigationBarState extends State<_BottomNavigationBar> {
                   color: AppColors.secondary,
                   icon: CupertinoIcons.add,
                   onPressed: () {
-                    print('TODO on new message');
+                   Navigator.pushNamed(context,route.searchContactPage);
                   },
                 ),
               ),
               _NavigationBarItem(
                 index: 2,
-                lable: 'Calls',
-                icon: CupertinoIcons.phone_fill,
+                lable: '',
+
                 isSelected: (selectedIndex == 2),
                 onTap: handleItemSelected,
               ),
               _NavigationBarItem(
                 index: 3,
-                lable: 'Contacts',
-                icon: CupertinoIcons.person_2_fill,
+                lable: '',
+
                 isSelected: (selectedIndex == 3),
                 onTap: handleItemSelected,
               ),
@@ -227,14 +250,14 @@ class _NavigationBarItem extends StatelessWidget {
     Key? key,
     required this.index,
     required this.lable,
-    required this.icon,
+    this.icon,
     this.isSelected = false,
     required this.onTap,
   }) : super(key: key);
 
   final int index;
   final String lable;
-  final IconData icon;
+  final IconData? icon;
   final bool isSelected;
   final ValueChanged<int> onTap;
 

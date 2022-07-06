@@ -1,14 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wrkapp/constants/color.dart';
 import 'package:wrkapp/constants/size.dart';
+import 'package:wrkapp/main.dart';
 import 'package:wrkapp/models/category.dart';
 import 'package:wrkapp/widgets/circle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import '../widgets/search_testfield.dart';
+import 'package:wrkapp/models/user.dart';
 
 class FeaturedScreen extends StatefulWidget {
-  const FeaturedScreen({Key? key}) : super(key: key);
+FeaturedScreen( {Key? key}) : super(key: key);
 
   @override
   _FeaturedScreenState createState() => _FeaturedScreenState();
@@ -20,9 +23,11 @@ class _FeaturedScreenState extends State<FeaturedScreen> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
+
         body: Column(
           children: const [
-            AppBar(),
+            AppBar(
+            ),
             Body(),
           ],
         ),
@@ -43,6 +48,12 @@ class Body extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              IconButton(onPressed:() async{
+                await FirebaseAuth.instance.signOut();
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MyApp()), (route) => false);
+              },
+                icon: Icon(Icons.search),
+              ),
               Text(
                 "Explore Categories",
                 style: Theme.of(context).textTheme.bodyLarge,
@@ -154,8 +165,10 @@ class AppBar extends StatelessWidget {
           end: Alignment.bottomRight,
           stops: [0.1, 0.5],
           colors: [
-            Color(0xff886ff2),
-            Color(0xff6849ef),
+            Color(0xffA8010F),
+            Color(0xffFF4433),
+            // Color(0xff886ff2),
+            // Color(0xff6849ef),
           ],
         ),
       ),
