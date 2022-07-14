@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:wrkapp/screens/HomePageR.dart';
 import 'package:wrkapp/screens/chatScreens/chat_home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wrkapp/screens/featured_screen.dart';
@@ -8,6 +9,8 @@ import 'package:wrkapp/screens/home_screen.dart';
 import 'package:wrkapp/screens/signup_screen.dart';
 import 'package:wrkapp/models/user.dart';
 import 'route/route.dart' as route;
+
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,8 +38,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: route.controller,
-      initialRoute: route.loginPage,
+      home: HomeR(),
+      // onGenerateRoute: route.controller,
+      // initialRoute: route.splashScreen,
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wrkapp/screens/chatScreens/main_chat_screen.dart';
+import 'package:wrkapp/screens/forumScreens/forum_home.dart';
 import 'package:wrkapp/widgets/chatWidgets/widgets.dart';
 import 'package:wrkapp/route/route.dart' as route;
 
@@ -21,10 +22,17 @@ class _MainChatHomeState extends State<MainChatHome> {
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
       appBar: AppBar(
-        title: Text('Chats'),
+        title: const Text('Chats'),
         centerTitle: true,
         backgroundColor: Colors.red,
         actions: [
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> ForumHome()));
+          }, icon: const Icon(Icons.add)),
+          IconButton(onPressed: (){
+
+         Navigator.pushNamed(context, route.liveSupportScreen);
+          }, icon: const Icon(Icons.support_agent_rounded))
           //TODO: SIGNOUT
         ],
       ),
@@ -34,7 +42,7 @@ class _MainChatHomeState extends State<MainChatHome> {
         builder: (context, AsyncSnapshot snapshot){
            if(snapshot.hasData){
              if(snapshot.data.docs.length < 1){
-               return Center(
+               return const Center(
                  child: Text("No Chats Available"),
                );
              }
@@ -68,16 +76,16 @@ class _MainChatHomeState extends State<MainChatHome> {
                              },
                            );
                          }
-                         return LinearProgressIndicator();
+                         return const LinearProgressIndicator();
                        });
                  });
            }
-           return Center(
+           return const Center(
              child: CircularProgressIndicator(),
            );
         },
       ),
-      bottomNavigationBar:BottomNavBar(),
+      bottomNavigationBar:const BottomNavBar(),
     ),
     );
   }
@@ -105,14 +113,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _NavigationBarItem(
+            const  _NavigationBarItem(
                 index: 0,
                 lable: '',
-
-
-
               ),
-              _NavigationBarItem(
+          const    _NavigationBarItem(
                 index: 1,
                 lable: '',
 
@@ -128,14 +133,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   },
                 ),
               ),
-              _NavigationBarItem(
+            const  _NavigationBarItem(
                 index: 2,
                 lable: '',
 
 
 
               ),
-              _NavigationBarItem(
+           const   _NavigationBarItem(
                 index: 3,
                 lable: '',
 
