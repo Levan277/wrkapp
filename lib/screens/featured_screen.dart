@@ -1,15 +1,23 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/constants/color.dart';
 import 'package:wrkapp/constants/size.dart';
 import 'package:wrkapp/main.dart';
 import 'package:wrkapp/models/category.dart';
+import 'package:wrkapp/screens/tweetScreen.dart';
+import 'package:wrkapp/screens/tweetScreens/add_tweet.dart';
+import 'package:wrkapp/screens/unitScreens/unit1/unit1.dart';
+import 'package:wrkapp/screens/unitScreens/unit2.dart';
+import 'package:wrkapp/screens/unitScreens/unit3.dart';
+import 'package:wrkapp/screens/unitScreens/unit4.dart';
 import 'package:wrkapp/widgets/circle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import '../widgets/search_testfield.dart';
 import 'package:wrkapp/models/user.dart';
-
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 class FeaturedScreen extends StatefulWidget {
 FeaturedScreen( {Key? key}) : super(key: key);
 
@@ -17,13 +25,38 @@ FeaturedScreen( {Key? key}) : super(key: key);
   _FeaturedScreenState createState() => _FeaturedScreenState();
 }
 
+
 class _FeaturedScreenState extends State<FeaturedScreen> {
+  int index = 2;
+  final List<Widget> items = [
+    Icon(Icons.message,size: 30,),
+    Icon(Icons.home,size: 30,),
+    Icon(Icons.person,size: 30,),
+  ];
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
-
+        backgroundColor: Colors.black,
+bottomNavigationBar: CurvedNavigationBar(
+  backgroundColor: Colors.black,
+  color: Colors.yellow,
+        height: 60.0,
+        index: index,
+        items: items,
+        onTap: (index){
+          setState((){
+            this.index = index;
+          });
+          // if(index == 0){
+          //  Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+          // }
+          // else if(index == 1){
+          //   Navigator.pushNamed(context, route.homePage);
+          // }
+        },
+      ),
         body: Column(
           children: const [
             AppBar(
@@ -46,28 +79,30 @@ class Body extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(onPressed:() async{
-                await FirebaseAuth.instance.signOut();
-                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MyApp()), (route) => false);
-              },
-                icon: Icon(Icons.search),
-              ),
-              Text(
-                "Explore Categories",
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              TextButton(
-                onPressed: () {},
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "See All",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(color: kPrimaryColor),
+                  "Explore Categories",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
                 ),
-              )
+              ),
+
+              // TextButton(
+              //   onPressed: () {},
+              //   child: Text(
+              //     "See All",
+              //     style: Theme.of(context)
+              //         .textTheme
+              //         .bodyMedium
+              //         ?.copyWith(color: kPrimaryColor),
+              //   ),
+              // ),
             ],
           ),
         ),
@@ -105,7 +140,23 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: (){
+  if(categoryList[0].noOfCourses == 'Unit 1'){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit1()));
+  }
+  // if(categoryList[1].noOfCourses == 'Unit 2'){
+  //   Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2()));
+  // }
+  // if(categoryList[2].noOfCourses == 'Unit 3'){
+  //   Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit3()));
+  // }
+  // if(categoryList[3].noOfCourses == 'Unit 4'){
+  //   Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4()));
+  // }
+
+
+
+      },
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -132,7 +183,7 @@ class CategoryCard extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Text(category.name),
+            Text(category.name,style: GoogleFonts.lato(fontSize: 13,fontWeight: FontWeight.bold),),
             Text(
               category.noOfCourses,
               style: Theme.of(context).textTheme.bodySmall,
@@ -165,8 +216,9 @@ class AppBar extends StatelessWidget {
           end: Alignment.bottomRight,
           stops: [0.1, 0.5],
           colors: [
-            Color(0xffA8010F),
-            Color(0xffFF4433),
+            Color(0xffFFEF00),
+            Color(0xff000000),
+
             // Color(0xff886ff2),
             // Color(0xff6849ef),
           ],
@@ -178,24 +230,46 @@ class AppBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Hello,\nGood Morning",
-                style: Theme.of(context).textTheme.titleLarge,
+
+             // InkWell(
+             //   onTap: (){
+             //     Navigator.pushNamed(context, route.chatScreen1);
+             //   },
+             //   child: Icon(
+             //     Icons.message,
+             //   ),
+             // ),
+
+
+              IconButton(onPressed:() async{
+                await FirebaseAuth.instance.signOut();
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MyApp()), (route) => false);
+              },
+                icon: Icon(Icons.logout,size: 32,),
               ),
-             InkWell(
-               onTap: (){
-                 Navigator.pushNamed(context, route.chatScreen1);
-               },
-               child: Icon(
-                 Icons.message,
-               ),
-             )
+
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeForum()));
+                },
+                child: Icon(Icons.add),
+              )
             ],
           ),
           const SizedBox(
             height: 20,
           ),
-          const SearchTextField()
+          Text(
+            "Ready To Learn?",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+            )
+          ),
+          SizedBox(height: 10,),
+          Text("Choose Your Topic",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color: Colors.white),)
         ],
       ),
     );

@@ -6,15 +6,13 @@ class UserModel{
   String username;
   String email;
   String uid;
-  String photoUrl;
 
-  UserModel({required this.username, required this.email, required this.uid, required this.photoUrl});
+  UserModel({required this.username, required this.email, required this.uid});
 
   factory UserModel.fromJson(DocumentSnapshot snapshot){
     return UserModel(
       email: snapshot['email'],
       username: snapshot['username'],
-      photoUrl: snapshot['photoUrl'],
       uid: snapshot['uid'],
     );
   }

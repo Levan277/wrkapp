@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
     if(res=="success"){
       // Navigator.pushNamed(context, route.homePage);
-     Navigator.pushNamed(context, route.homePage);
+     Navigator.pushNamed(context, route.finalHome);
 
     }
     else{
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         minWidth: double.infinity,
                         height: 60,
                         onPressed: loginUser,
-                        color: Color(0xff0095FF),
+                        color: Colors.red,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
