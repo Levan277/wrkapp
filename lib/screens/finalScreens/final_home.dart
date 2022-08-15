@@ -1,7 +1,10 @@
 
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:wrkapp/route/route.dart' as route;
+import 'package:wrkapp/screens/unitScreens/unit1/unit1.dart';
+import 'package:wrkapp/screens/unitScreens/unit1/unit1_final_home.dart';
 import '../tweetScreen.dart';
 
 class FinalHome extends StatefulWidget {
@@ -20,6 +23,9 @@ class _FinalHomeState extends State<FinalHome> {
       actions: [
         IconButton(onPressed: (){  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeForum()));}, icon: Icon(Icons.messenger_rounded)),
         IconButton(onPressed: (){}, icon: Icon(Icons.home),),
+        IconButton(onPressed: (){
+         Navigator.pushNamed(context, route.liveSupportScreen);
+        }, icon: Icon(Icons.support_agent_rounded),),
       ],
     ),
       body: SingleChildScrollView(
@@ -62,7 +68,16 @@ class _FinalHomeState extends State<FinalHome> {
 
                                 ),
                                 child: Container(
-                                  color: Colors.black,
+                                  decoration: BoxDecoration(
+                                    // image: DecorationImage(
+                                    //   image: AssetImage('assets/images/endracism2.jpeg'),
+                                    //   fit: BoxFit.fill,
+                                    //   scale: 50,
+                                    // ),
+                                    borderRadius: BorderRadius.circular(40),
+                                    color: Colors.black,
+                                  ),
+
                                   width: 200,
                                   height: 250,
                                   child: Column(
@@ -81,10 +96,14 @@ class _FinalHomeState extends State<FinalHome> {
                                         color: Colors.white,
                                         child: Text('Unit 1',style: TextStyle(color: Colors.black),),),
                                       Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
+                                        ),
                                           width: double.infinity,
                                           height: 60,
-                                          color: Colors.white,
-                                          child: Flexible(child: Text('Familiarizing Yourself With Racism',style: TextStyle(color: Colors.black),))),
+
+                                          child: Flexible(child: Padding(padding: EdgeInsets.all(8), child: Text('Familiarizing Yourself With Racism',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,)))),
                                     ],
                                   ),
                                 ),
@@ -92,7 +111,7 @@ class _FinalHomeState extends State<FinalHome> {
                             ),
                           ),
                           onTap: (){
-                            Navigator.pushNamed(context, route.unit1);
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit1Home()));
                           },
                         ),
 
@@ -111,7 +130,11 @@ class _FinalHomeState extends State<FinalHome> {
                                 ),
                               ),
                               child: Container(
-                                color: Colors.black,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.black,
+                                ),
+
                                 width: 200,
                                 height: 250,
                                 child: Column(
@@ -119,16 +142,23 @@ class _FinalHomeState extends State<FinalHome> {
                                   children: [
                                     // Image.asset('assets/images/power.jpeg',fit: BoxFit.contain,),
                                     Container(
+
                                       alignment: Alignment.bottomCenter,
                                       width: double.infinity,
                                       height: 30,
                                       color: Colors.white,
                                       child: Text('Unit 2',style: TextStyle(color: Colors.black),),),
                                     Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
+                                        ),
                                         width: double.infinity,
                                         height: 60,
-                                        color: Colors.white,
-                                        child: Flexible(child: Text('Power & Oppression',style: TextStyle(color: Colors.black),))),
+                                        child: Flexible(child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text('Power & Oppression',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
+                                        ))),
 
                                   ],
                                 ),
@@ -153,7 +183,11 @@ class _FinalHomeState extends State<FinalHome> {
                                 ),
                               ),
                               child: Container(
-                                color: Colors.black,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.black,
+                                ),
+
                                 width: 200,
                                 height: 250,
                                 child: Column(
@@ -168,10 +202,16 @@ class _FinalHomeState extends State<FinalHome> {
                                       color: Colors.white,
                                       child: Text('Unit 3',style: TextStyle(color: Colors.black),),),
                                     Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
+                                        ),
                                         width: double.infinity,
                                         height: 60,
-                                        color: Colors.white,
-                                        child: Flexible(child: Text('Racism in Canada, The past & The Present',style: TextStyle(color: Colors.black),))),
+                                        child: Flexible(child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text('Racism in Canada, The past & The Present',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
+                                        ))),
 
 
                                   ],
@@ -196,7 +236,10 @@ class _FinalHomeState extends State<FinalHome> {
                                 ),
                               ),
                               child: Container(
-                                color: Colors.black,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  color: Colors.black,
+                                ),
                                 width: 200,
                                 height: 250,
                                 child: Column(
@@ -212,10 +255,16 @@ class _FinalHomeState extends State<FinalHome> {
                                       color: Colors.white,
                                       child: Text('Unit 4',style: TextStyle(color: Colors.black),),),
                                     Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
+                                        ),
                                         width: double.infinity,
                                         height: 60,
-                                        color: Colors.white,
-                                        child: Flexible(child: Text('White Privilege',style: TextStyle(color: Colors.black),))
+                                        child: Flexible(child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text('White Privilege',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
+                                        ))
                                     ),
 
                                   ],
@@ -348,7 +397,6 @@ class _FinalHomeState extends State<FinalHome> {
                     CircleAvatar(
                       backgroundColor: Colors.black,
                       radius: 40,
-
                     ),
                     SizedBox(width: 10,),
                     Flexible(
@@ -362,11 +410,20 @@ class _FinalHomeState extends State<FinalHome> {
              
               ],
             ),
-          )
+          ),
           ],
-
         ),
-      )
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        // backgroundColor: Color(0xffF7C8D3),
+        backgroundColor: Colors.lightBlueAccent,
+        color: Colors.yellow.shade800,
+        items: [
+          Icon(Icons.home),
+          Icon(Icons.message),
+          Icon(Icons.support_agent_rounded),
+        ],
+      ),
     );
   }
 }

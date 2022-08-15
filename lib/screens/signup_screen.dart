@@ -134,46 +134,48 @@ _isLoading = true;
                   // inputFile(label: "Confirm Password ", obscureText: true),
                 ],
               ),
-              Container(
-                padding: EdgeInsets.only(top: 3, left: 3),
-                decoration:
-                BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border(
-                      bottom: BorderSide(color: Colors.black),
-                      top: BorderSide(color: Colors.black),
-                      left: BorderSide(color: Colors.black),
-                      right: BorderSide(color: Colors.black),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.only(top: 3, left: 3),
+                  decoration:
+                  BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      border: Border(
+                        bottom: BorderSide(color: Colors.black),
+                        top: BorderSide(color: Colors.black),
+                        left: BorderSide(color: Colors.black),
+                        right: BorderSide(color: Colors.black),
 
 
 
-                    )
+                      )
+
+                  ),
+                  child: MaterialButton(
+                    minWidth: double.infinity,
+                    height: 60,
+                    onPressed: signUpUser,
+                    color: Colors.red,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+
+                    ),
+                    child: _isLoading?const Center(child: CircularProgressIndicator(color: Colors.white,)
+                      ,):const Text(
+                      "Sign up", style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      color: Colors.white,
+
+                    ),
+                    ),
+
+                  ),
+
+
 
                 ),
-                child: MaterialButton(
-                  minWidth: double.infinity,
-                  height: 60,
-                  onPressed: signUpUser,
-                  color: Colors.red,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-
-                  ),
-                  child: _isLoading?const Center(child: CircularProgressIndicator(color: Colors.white,)
-                    ,):const Text(
-                    "Sign up", style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
-                    color: Colors.white,
-
-                  ),
-                  ),
-
-                ),
-
-
-
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

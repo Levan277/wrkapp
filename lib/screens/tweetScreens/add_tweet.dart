@@ -15,12 +15,12 @@ class _AddState extends State<Add> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Tweet'),
+        title: Text('Add Post'),
         actions: [
           ElevatedButton(onPressed: () async{
             await _postService.savePost(text);
             Navigator.pop(context);
-          }, child: Text('Tweet'),)
+          }, child: Text('Post'),)
         ],
       ),
       body: Container(

@@ -46,8 +46,7 @@ class _EditState extends State<Edit> {
             children: [
                 TextButton(onPressed: ()=>getImage(0), child: _profileImage == null ? Icon(Icons.person) : Image.file(_profileImage!, height: 100,),
                 ),
-              TextButton(onPressed: ()=>getImage(1), child: _bannerImage == null ? Icon(Icons.person) : Image.file(_bannerImage!, height: 100,),
-                ),
+
               TextFormField(
                 onChanged: (val) => setState((){
                   username = val;

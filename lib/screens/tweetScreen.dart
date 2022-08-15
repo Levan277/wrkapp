@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:wrkapp/screens/tweetScreens/add_tweet.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/screens/tweetScreens/profile_tweet_screen.dart';
-
+import 'package:lottie/lottie.dart';
 import '../widgets/tweetWidget/feed.dart';
 import '../widgets/tweetWidget/search.dart';
 
@@ -28,6 +28,7 @@ class _HomeForumState extends State<HomeForum> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.pink,
         title: Text('Home'),
 
       ),
@@ -39,24 +40,25 @@ class _HomeForumState extends State<HomeForum> {
 
       ),
       drawer: Drawer(
+
         child: ListView(
           children: [
-            DrawerHeader(child: Text('drawer header'),
+            DrawerHeader(child:Lottie.network('https://assets6.lottiefiles.com/packages/lf20_Vym9qn.json'),
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.pink,
 
             ),
             ),
-            ListTile(title: Text('Profile'),
+            ListTile(title: Card(child: Text('Profile')),
             onTap: (){
              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Profile(uid: FirebaseAuth.instance.currentUser!.uid)));
             }) ,
-            ListTile(title: Text('Edit'),
+            ListTile(title: Card(child: Text('Edit')),
               onTap: (){
                 Navigator.of(context).pushNamed( route.editProfile);
               },),
 
-            ListTile(title: Text('Logout'),
+            ListTile(title: Card(child: Text('Logout'),),
             onTap: (){
              //TODO LOGOUT
             },)
@@ -64,6 +66,7 @@ class _HomeForumState extends State<HomeForum> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.yellow,
         onTap: onTabPressed,
         currentIndex: _currentIndex,
         showSelectedLabels: false,

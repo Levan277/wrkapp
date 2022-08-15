@@ -24,11 +24,16 @@ class _RepliesState extends State<Replies> {
 
         child: Container(
           child: Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.pink,
+            ),
+            backgroundColor: Colors.black,
             body: Container(
               child: Column(
                 children: [
                   Expanded(child: ListPost(post: widget.post,)),
                   Container(
+                    color: Colors.white,
                     padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -45,6 +50,7 @@ class _RepliesState extends State<Replies> {
                           height: 10,
                         ),
                         TextButton(
+
                           style: TextButton.styleFrom(primary: Colors.white, backgroundColor: Colors.blue),
                           onPressed: () async{
                             await _postService.reply(widget.post, text);

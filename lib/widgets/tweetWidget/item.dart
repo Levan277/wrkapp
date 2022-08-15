@@ -1,8 +1,12 @@
 
 
 
+
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:wrkapp/app.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/services/replies.dart';
 import '../../models/post.dart';
@@ -36,7 +40,7 @@ class _ItemPostState extends State<ItemPost> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              Text("Retweet"),
+              Text("Post",style: TextStyle(color: Colors.white),),
               SizedBox(height: 20,),
               Row(
                 children: [
@@ -45,7 +49,7 @@ class _ItemPostState extends State<ItemPost> {
                       backgroundImage: NetworkImage(widget.snapshotUser.data!.profileImageUrl)
                   ): Icon(Icons.person, size: 40,),
                   SizedBox(width: 10,),
-                  Text(widget.snapshotUser.data!.username)
+                  Text(widget.snapshotUser.data!.username,style: TextStyle(color: Colors.white),)
                 ],
               ),
             ],
@@ -59,9 +63,9 @@ class _ItemPostState extends State<ItemPost> {
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            Text(widget.post.text),
+            Text(widget.post.text,style: TextStyle(color: Colors.white),),
         SizedBox(height: 20,),
-        Text(widget.post.timestamp!.toDate().toString()),
+        Text(widget.post.timestamp!.toDate().toString(),style: TextStyle(color: Colors.white),),
         SizedBox(height: 20,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -82,7 +86,7 @@ class _ItemPostState extends State<ItemPost> {
         ),
         ),
         // onPressed: () => _postService.retweet(widget.post, false)),
-    Text('0'),
+
     ],
     ),
     Row(
@@ -98,9 +102,24 @@ class _ItemPostState extends State<ItemPost> {
     onPressed: (){
      _postService.likePost(widget.post, widget.snapshotLike.data!);
     }),
-    Text(widget.post.likesCount.toString())
+    Text(widget.post.likesCount.toString(),style: TextStyle(color: Colors.white),)
     ],
     ),
+
+            Row(
+              children: [
+                IconButton(
+                  color: Colors.blue,
+                    icon: Icon(
+                           Icons.delete),
+
+                    onPressed: () {
+                              final docPost = FirebaseFirestore.instance.collection('posts').doc(widget.snapshotUser.data!.uid);
+                              docPost.delete();
+                    }),
+              
+              ],
+            ),
 
     ],),
 

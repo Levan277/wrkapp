@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
+import 'package:wrkapp/connectionsFirebase/forgot_password.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/utils/utils.dart';
 
@@ -138,7 +139,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
 
-
+                GestureDetector(
+                  child:Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgotPasswordPage()));
+                  },
+                ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children:  <Widget>[
@@ -156,15 +169,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
 
-                  Container(
-                    padding: EdgeInsets.only(top: 100),
-                    height: 200,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/login_pic.jpg"),
-                          fit: BoxFit.fitHeight
-                      ),
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.only(top: 100),
+                      height: 200,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/login_pic.jpg"),
+                            fit: BoxFit.fitHeight
+                        ),
 
+                      ),
                     ),
                   )
 

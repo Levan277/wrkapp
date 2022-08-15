@@ -40,17 +40,14 @@ class _ProfileState extends State<Profile> {
       ],
 
         child: Scaffold(
+appBar: AppBar(
+  backgroundColor: Colors.pink,
+),
+          backgroundColor: Colors.black,
       body: DefaultTabController(length: 2,
       child: NestedScrollView(headerSliverBuilder: (context, _){
         return [
-          SliverAppBar(
-            floating: false,
-              pinned: true,
-            expandedHeight: 130,
-            flexibleSpace: FlexibleSpaceBar(
-              background:null,
-            ),
-          ),
+
           SliverList(delegate:SliverChildListDelegate(
             [
               Container(
@@ -69,12 +66,12 @@ class _ProfileState extends State<Profile> {
                              if(FirebaseAuth.instance.currentUser!.uid == widget.uid)
                         TextButton(onPressed: (){
                           Navigator.pushNamed(context, route.profile);
-                        }, child: Text("Edit profile"))
+                        }, child: Text("Edit profile",style: TextStyle(color: Colors.white),))
                         else if(FirebaseAuth.instance.currentUser!.uid != widget.uid && !Provider.of<bool>(context))
         TextButton(onPressed: (){
           //write follow action
 _userService.followUser(widget.uid);
-        }, child: Text("Follow"))
+        }, child: Text("Follow"),)
 
                              else if(FirebaseAuth.instance.currentUser!.uid != widget.uid && Provider.of<bool>(context))
                                  TextButton(onPressed: (){
@@ -88,7 +85,7 @@ _userService.followUser(widget.uid);
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Text(Provider.of<UserModel1>(context).username ?? '',
-                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0,color: Colors.white),
                         ),
                       ),
                     )

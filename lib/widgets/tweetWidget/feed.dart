@@ -15,7 +15,7 @@ class _FeedState extends State<Feed> {
   @override
   Widget build(BuildContext context) {
     return FutureProvider.value(value: _postService.getFeed(), initialData: null,
-    child: Scaffold(body: ListPost(post: null,),),
+    child: Scaffold(backgroundColor:Colors.black, body: ListPost(post: null,),),
     );
   }
 }
