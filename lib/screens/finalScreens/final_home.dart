@@ -2,9 +2,15 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:wrkapp/Audio/TopicAudios/OprresionT/personalAT.dart';
 import 'package:wrkapp/route/route.dart' as route;
+import 'package:wrkapp/screens/TopicScreens/oprression_topic_page.dart';
+import 'package:wrkapp/screens/TopicScreens/white_privilege_topic_page.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_final_home.dart';
+import 'package:wrkapp/screens/unitScreens/unit2/unit2_HOME.dart';
+import 'package:wrkapp/screens/unitScreens/unit4/unit4Main.dart';
 import '../tweetScreen.dart';
 
 class FinalHome extends StatefulWidget {
@@ -15,6 +21,7 @@ class FinalHome extends StatefulWidget {
 }
 
 class _FinalHomeState extends State<FinalHome> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,50 +124,53 @@ class _FinalHomeState extends State<FinalHome> {
 
                         //card 2
 
-                        Container(
-                          height: 300,
-                          child: SizedBox(
-                            height: 350,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40), // if you need this
-                                side: BorderSide(
-                                  color: Colors.grey.withOpacity(0.2),
-                                  width: 1,
+                        InkWell(
+                          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Home()));},
+                          child: Container(
+                            height: 300,
+                            child: SizedBox(
+                              height: 350,
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40), // if you need this
+                                  side: BorderSide(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    width: 1,
+                                  ),
                                 ),
-                              ),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40),
-                                  color: Colors.black,
-                                ),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(40),
+                                    color: Colors.black,
+                                  ),
 
-                                width: 200,
-                                height: 250,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    // Image.asset('assets/images/power.jpeg',fit: BoxFit.contain,),
-                                    Container(
+                                  width: 200,
+                                  height: 250,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      // Image.asset('assets/images/power.jpeg',fit: BoxFit.contain,),
+                                      Container(
 
-                                      alignment: Alignment.bottomCenter,
-                                      width: double.infinity,
-                                      height: 30,
-                                      color: Colors.white,
-                                      child: Text('Unit 2',style: TextStyle(color: Colors.black),),),
-                                    Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
-                                        ),
+                                        alignment: Alignment.bottomCenter,
                                         width: double.infinity,
-                                        height: 60,
-                                        child: Flexible(child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text('Power & Oppression',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
-                                        ))),
+                                        height: 30,
+                                        color: Colors.white,
+                                        child: Text('Unit 2',style: TextStyle(color: Colors.black),),),
+                                      Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
+                                          ),
+                                          width: double.infinity,
+                                          height: 60,
+                                          child: Flexible(child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text('Power & Oppression',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
+                                          ))),
 
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -223,51 +233,56 @@ class _FinalHomeState extends State<FinalHome> {
 
                         //card 4
 
-                        Container(
-                          height: 300,
-                          child: SizedBox(
-                            height: 350,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40), // if you need this
-                                side: BorderSide(
-                                  color: Colors.grey.withOpacity(0.2),
-                                  width: 1,
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4Main()));
+                          },
+                          child: Container(
+                            height: 300,
+                            child: SizedBox(
+                              height: 350,
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40), // if you need this
+                                  side: BorderSide(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    width: 1,
+                                  ),
                                 ),
-                              ),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40),
-                                  color: Colors.black,
-                                ),
-                                width: 200,
-                                height: 250,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    // Image.asset('assets/images/privilege.jpeg',fit: BoxFit.contain,),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(40),
+                                    color: Colors.black,
+                                  ),
+                                  width: 200,
+                                  height: 250,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      // Image.asset('assets/images/privilege.jpeg',fit: BoxFit.contain,),
 
-                                    Container(
-                                      alignment: Alignment.bottomCenter,
-                                      width: double.infinity,
-                                      height: 30,
-                                      color: Colors.white,
-                                      child: Text('Unit 4',style: TextStyle(color: Colors.black),),),
-                                    Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
-                                        ),
+                                      Container(
+                                        alignment: Alignment.bottomCenter,
                                         width: double.infinity,
-                                        height: 60,
-                                        child: Flexible(child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text('White Privilege',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
-                                        ))
-                                    ),
+                                        height: 30,
+                                        color: Colors.white,
+                                        child: Text('Unit 4',style: TextStyle(color: Colors.black),),),
+                                      Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
+                                          ),
+                                          width: double.infinity,
+                                          height: 60,
+                                          child: Flexible(child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text('White Privilege',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
+                                          ))
+                                      ),
 
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -321,26 +336,36 @@ class _FinalHomeState extends State<FinalHome> {
                         ),
 
 
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.black,
-                            // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                            radius: 60,
-                            foregroundColor: Colors.orange,
-                            child: Text("Policy"),
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>WhitePrivilegeTopic()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("White Privilege"),
+                            ),
                           ),
                         ),
 
 
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.black,
-                            // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                            radius: 60,
-                            foregroundColor: Colors.orange,
-                            child: Text("Anti-Racism"),
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const OppresionTopicPage()));
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("Oppression"),
+                            ),
                           ),
                         ),
 
@@ -414,16 +439,42 @@ class _FinalHomeState extends State<FinalHome> {
           ],
         ),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        // backgroundColor: Color(0xffF7C8D3),
-        backgroundColor: Colors.lightBlueAccent,
-        color: Colors.yellow.shade800,
+      bottomNavigationBar:  SalomonBottomBar(
+        currentIndex: _currentIndex,
+        onTap: (i) => setState(() => _currentIndex = i),
         items: [
-          Icon(Icons.home),
-          Icon(Icons.message),
-          Icon(Icons.support_agent_rounded),
+          /// Home
+          SalomonBottomBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Home"),
+            selectedColor: Colors.purple,
+          ),
+
+          /// Forum
+          SalomonBottomBarItem(
+            icon: Icon(Icons.message),
+            title: Text("Forum"),
+            selectedColor: Colors.orange,
+          ),
+
+          /// Support
+          SalomonBottomBarItem(
+            icon: Icon(Icons.support_agent_rounded),
+            title: Text("Support"),
+            selectedColor: Colors.teal,
+          ),
         ],
       ),
+      // bottomNavigationBar: CurvedNavigationBar(
+      //   // backgroundColor: Color(0xffF7C8D3),
+      //   backgroundColor: Colors.lightBlueAccent,
+      //   color: Colors.yellow.shade800,
+      //   items: [
+      //     Icon(Icons.home),
+      //     Icon(Icons.message),
+      //     Icon(Icons.support_agent_rounded),
+      //   ],
+      // ),
     );
   }
 }

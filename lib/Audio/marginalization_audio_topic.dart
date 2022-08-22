@@ -6,14 +6,14 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'neu_box_widget.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-class PowerAudioT extends StatefulWidget {
-  const PowerAudioT({Key? key}) : super(key: key);
+class MarginalizationAudioT extends StatefulWidget {
+  const MarginalizationAudioT({Key? key}) : super(key: key);
 
   @override
-  State<PowerAudioT> createState() => _PowerAudioTState();
+  State<MarginalizationAudioT> createState() => _MarginalizationAudioTState();
 }
 
-class _PowerAudioTState extends State<PowerAudioT> {
+class _MarginalizationAudioTState extends State<MarginalizationAudioT> {
   final audioPlayer  = AudioPlayer();
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
@@ -104,7 +104,7 @@ class _PowerAudioTState extends State<PowerAudioT> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset('assets/images/harry.jpg'),
+                      child: Image.asset(''),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),

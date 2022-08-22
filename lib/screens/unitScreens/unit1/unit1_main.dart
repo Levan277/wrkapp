@@ -1,13 +1,64 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/materiaL.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:wrkapp/screens/finalScreens/final_home.dart';
+import 'package:wrkapp/screens/support_screens/support_home_screen.dart';
+import 'package:wrkapp/screens/tweetScreen.dart';
 
 
-class UnitsPage extends StatelessWidget {
+class UnitsPage extends StatefulWidget {
   const UnitsPage({Key? key}) : super(key: key);
 
   @override
+  State<UnitsPage> createState() => _UnitsPageState();
+}
+
+class _UnitsPageState extends State<UnitsPage> {
+  var _currentIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
+      bottomNavigationBar:  SalomonBottomBar(
+        currentIndex: _currentIndex,
+        onTap: (i){
+          setState((){
+            _currentIndex = i;
+          });
+          if(_currentIndex == 0){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+          }
+          else if(_currentIndex == 1){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+          }
+          else if(_currentIndex == 2){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+          }
+        },
+        // onTap: (i) => setState(() => _currentIndex = i),
+
+        items: [
+          /// Home
+          SalomonBottomBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Home"),
+            selectedColor: Colors.purple,
+          ),
+
+          /// Forum
+          SalomonBottomBarItem(
+            icon: Icon(Icons.message),
+            title: Text("Forum"),
+            selectedColor: Colors.orange,
+          ),
+
+          /// Support
+          SalomonBottomBarItem(
+            icon: Icon(Icons.support_agent_rounded),
+            title: Text("Support"),
+            selectedColor: Colors.teal,
+          ),
+        ],
+      ),
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,

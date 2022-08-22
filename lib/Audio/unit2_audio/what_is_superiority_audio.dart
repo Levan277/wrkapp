@@ -1,19 +1,20 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import 'neu_box_widget.dart';
+
 import 'package:audioplayers/audioplayers.dart';
 
-class PowerAudioT extends StatefulWidget {
-  const PowerAudioT({Key? key}) : super(key: key);
+import '../neu_box_widget.dart';
+
+class WISuperiorityAudio extends StatefulWidget {
+  const WISuperiorityAudio({Key? key}) : super(key: key);
 
   @override
-  State<PowerAudioT> createState() => _PowerAudioTState();
+  State<WISuperiorityAudio> createState() => _WISuperiorityAudioState();
 }
 
-class _PowerAudioTState extends State<PowerAudioT> {
+class _WISuperiorityAudioState extends State<WISuperiorityAudio> {
   final audioPlayer  = AudioPlayer();
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
@@ -21,7 +22,7 @@ class _PowerAudioTState extends State<PowerAudioT> {
 
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
 
     //load audio from the setAudio function
@@ -63,7 +64,7 @@ class _PowerAudioTState extends State<PowerAudioT> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
+
     super.dispose();
     audioPlayer.dispose();
   }
@@ -80,19 +81,20 @@ class _PowerAudioTState extends State<PowerAudioT> {
 
               // back button and menu button
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
+
                 children: const [
-                  SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: NeuBox(child: Icon(Icons.arrow_back)),
-                  ),
-                  Text('P O W E R'),
-                  SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: NeuBox(child: Icon(Icons.menu)),
-                  ),
+                  // SizedBox(
+                  //   height: 60,
+                  //   width: 60,
+                  //   child: NeuBox(child: Icon(Icons.arrow_back)),
+                  // ),
+                  Text('What is Superiority?',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                  // SizedBox(
+                  //   height: 60,
+                  //   width: 60,
+                  //   child: NeuBox(child: Icon(Icons.menu)),
+                  // ),
                 ],
               ),
 
@@ -104,7 +106,7 @@ class _PowerAudioTState extends State<PowerAudioT> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset('assets/images/harry.jpg'),
+                      child: Image.asset(''),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),

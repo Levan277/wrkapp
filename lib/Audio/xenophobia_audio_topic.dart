@@ -6,14 +6,14 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'neu_box_widget.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-class PowerAudioT extends StatefulWidget {
-  const PowerAudioT({Key? key}) : super(key: key);
+class XenophobiaAudioT extends StatefulWidget {
+  const XenophobiaAudioT({Key? key}) : super(key: key);
 
   @override
-  State<PowerAudioT> createState() => _PowerAudioTState();
+  State<XenophobiaAudioT> createState() => _XenophobiaAudioTState();
 }
 
-class _PowerAudioTState extends State<PowerAudioT> {
+class _XenophobiaAudioTState extends State<XenophobiaAudioT> {
   final audioPlayer  = AudioPlayer();
   Duration duration = Duration.zero;
   Duration position = Duration.zero;

@@ -1,20 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:video_player/video_player.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_main.dart';
+import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
+import 'package:wrkapp/screens/unitScreens/unit4/unit4Main.dart';
 import 'package:wrkapp/widgets/clipPaths/custom_clip_0.dart';
 import 'package:wrkapp/widgets/videoWidgets/asset_video_player.dart';
 import 'package:wrkapp/widgets/videoWidgets/chewie_list_widget.dart';
 
-class Unit1Home extends StatefulWidget {
-  @override
-  State<Unit1Home> createState() => _Unit1HomeState();
-}
-
-class _Unit1HomeState extends State<Unit1Home> {
-  var _currentIndex = 0;
+class Unit2Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -47,12 +42,12 @@ class _Unit1HomeState extends State<Unit1Home> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text("Unit 1:",style: TextStyle(color: Colors.pink,fontSize: 62),),
+                            child: Text("Unit 4:",style: TextStyle(color: Colors.pink,fontSize: 62),),
                           ),
                           Baseline(
-                            baseline: 20,
+                              baseline: 20,
                               baselineType: TextBaseline.alphabetic,
-                              child: Text("Familiarizing\n Yourself With\n Racism",style: TextStyle(color: Colors.white, fontSize: 24),textAlign: TextAlign.center,))
+                              child: Text("White Privilege",style: TextStyle(color: Colors.white, fontSize: 24),textAlign: TextAlign.center,))
                         ],
                       ),
 
@@ -72,15 +67,15 @@ class _Unit1HomeState extends State<Unit1Home> {
               ),
 
               // second column of bezel
- Container(
-   height: 600,
-   width: double.infinity,
-   child: ChewieListItem(videoPlayerController:
-   VideoPlayerController.asset('assets/videos/cake.mp4'),
-   looping: true,
-   ),
-   // child:Expanded(child: AssetPlayerWidget()),
- ),
+              Container(
+                height: 600,
+                width: double.infinity,
+                child: ChewieListItem(videoPlayerController:
+                VideoPlayerController.asset('assets/videos/cake.mp4'),
+                  looping: true,
+                ),
+                // child:Expanded(child: AssetPlayerWidget()),
+              ),
 
               Container(
                 child: ElevatedButton(
@@ -88,7 +83,7 @@ class _Unit1HomeState extends State<Unit1Home> {
                     backgroundColor:MaterialStateProperty.all(Colors.black),
                   ),
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>UnitsPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4Main()));
                   },
                   child: Text("Click",style: TextStyle(color: Colors.white),),
                 ),
@@ -98,32 +93,6 @@ class _Unit1HomeState extends State<Unit1Home> {
             ],
 
           ),
-        ),
-        bottomNavigationBar:  SalomonBottomBar(
-          currentIndex: _currentIndex,
-          onTap: (i) => setState(() => _currentIndex = i),
-          items: [
-            /// Home
-            SalomonBottomBarItem(
-              icon: Icon(Icons.home),
-              title: Text("Home"),
-              selectedColor: Colors.purple,
-            ),
-
-            /// Forum
-            SalomonBottomBarItem(
-              icon: Icon(Icons.message),
-              title: Text("Forum"),
-              selectedColor: Colors.orange,
-            ),
-
-            /// Support
-            SalomonBottomBarItem(
-              icon: Icon(Icons.support_agent_rounded),
-              title: Text("Support"),
-              selectedColor: Colors.teal,
-            ),
-          ],
         ),
       ),
     );
@@ -174,43 +143,3 @@ class DrawClip2 extends CustomClipper<Path> {
     return true;
   }
 }
-//
-// class Unit1Home extends StatelessWidget {
-//   const Unit1Home({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     double height = MediaQuery.of(context).size.height;
-//     return Scaffold(
-//       body: Column(
-//         children: [
-//           //whole container
-//    Stack(children: [
-//         ClipPath(
-//           clipper: CustomClipPath(),
-//           child: Container(
-//             color: Colors.green,
-//             height: height*0.5,
-//           ),
-//         )
-//    ],),
-//
-//
-//           ClipPath(
-//             clipper: CustomClipPath(),
-//             child: Container(
-//               color: Colors.pink,
-//               width: double.infinity,
-//               height: height * 0.5,
-//               child: AssetPlayerWidget(),
-//             ),
-//           ),
-//
-//
-//         ],
-//       ),
-//     );
-//   }
-//
-// }
-//
