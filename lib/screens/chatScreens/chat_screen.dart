@@ -11,6 +11,7 @@ import 'package:jiffy/jiffy.dart';
 import 'package:stream_chat_flutter_core/stream_chat_flutter_core.dart';
 import 'package:wrkapp/app.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/models/demos/models.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -162,7 +163,7 @@ class _MessageTile extends StatelessWidget {
               padding: const EdgeInsets.only(top: 8.0),
               child: Text(
                 messageDate,
-                style: const TextStyle(
+                style: GoogleFonts.montserrat(
                   color: AppColors.textFaded,
                   fontSize: 10,
                   fontWeight: FontWeight.bold,
@@ -211,7 +212,7 @@ class _MessageOwnTile extends StatelessWidget {
                 padding:
                 const EdgeInsets.symmetric(horizontal: 12.0, vertical: 20),
                 child: Text(message,
-                    style: const TextStyle(
+                    style: GoogleFonts.montserrat(
                       color: AppColors.textLigth,
                     )),
               ),
@@ -220,7 +221,7 @@ class _MessageOwnTile extends StatelessWidget {
               padding: const EdgeInsets.only(top: 8.0),
               child: Text(
                 messageDate,
-                style: const TextStyle(
+                style:  GoogleFonts.montserrat(
                   color: AppColors.textFaded,
                   fontSize: 10,
                   fontWeight: FontWeight.bold,
@@ -256,7 +257,7 @@ class _DateLable extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 12),
             child: Text(
               lable,
-              style: const TextStyle(
+              style:  GoogleFonts.montserrat(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textFaded,
@@ -295,7 +296,7 @@ class _AppBarTitle extends StatelessWidget {
               Text(
                 messageData.senderName,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontSize: 14),
+                style: GoogleFonts.montserrat(fontSize: 14),
               ),
               const SizedBox(height: 2),
               const Text(

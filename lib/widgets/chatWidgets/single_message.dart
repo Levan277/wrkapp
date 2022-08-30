@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class SingleMessage extends StatelessWidget {
@@ -21,7 +22,7 @@ class SingleMessage extends StatelessWidget {
             ),
           ),
           child: Text(message,
-          style: TextStyle(
+          style: GoogleFonts.montserrat(
             color: Colors.white
           ),),
         ),

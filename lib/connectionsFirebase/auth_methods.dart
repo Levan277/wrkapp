@@ -42,7 +42,7 @@ class Authentications {
 
     } on FirebaseAuthException catch(err){
       if(err.code == "invalid-email"){
-        res = "the email is invalid or fomratted incorrectly";
+        res = "the email is invalid or formatted incorrectly";
       } else if(err.code == "weak-password"){
         res = "Password must be at least 6 characters";
       }
@@ -72,11 +72,6 @@ class Authentications {
     }
     return res;
   }
-
-
-
-
-
 }
 
 

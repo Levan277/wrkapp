@@ -3,7 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
-import 'package:wrkapp/Audio/colonization_audio_topic.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_institutional_pwr_audio.dart';
 import 'package:wrkapp/Audio/unit2_audio/what_is_superiority_audio.dart';
@@ -21,8 +22,10 @@ class Unit2Main extends StatelessWidget {
     double width = MediaQuery. of(context). size. width ;
     double height = MediaQuery. of(context). size. height;
     return SafeArea(child: Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
+        title: Text('Unit 2: Power & Oppresion'),
         centerTitle: true,
         actions: [Icon(Icons.support_agent_rounded)],
       ),
@@ -33,12 +36,11 @@ class Unit2Main extends StatelessWidget {
 
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 100,
                 color: Colors.pinkAccent,
                 child: Column(
                   children: [
-                    Text("Unit 2: Power ",style: TextStyle(fontSize: 40,color: Colors.white),),
-                    SizedBox(height: 20,),
+
                   Expanded(
                     child: ListView(
                       scrollDirection: Axis.horizontal,
@@ -49,19 +51,19 @@ class Unit2Main extends StatelessWidget {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               ElevatedButton(
-                                child: Text('Section 1: Types of Power',style: TextStyle(fontSize: 15),),
+                                child: Text('Section 1: Types of Power',style: GoogleFonts.montserrat(fontSize: 15),),
                                 onPressed: () {
                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Main()));
                                 },
                               ),
                               ElevatedButton(
-                                child: Text('Section 2: Oprresion',style: TextStyle(fontSize: 15)),
+                                child: Text('Section 2: Oprresion',style: GoogleFonts.montserrat(fontSize: 15)),
                                 onPressed: () {
                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Section2Oppresion()));
                                 },
                               ),
                               ElevatedButton(
-                                child: Text('Section 3: Who Can Be Racist?',style: TextStyle(fontSize: 15)),
+                                child: Text('Section 3: Who Can Be Racist?',style: GoogleFonts.montserrat(fontSize: 15)),
                                 onPressed: () {
                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Section3WCBR()));
                                 },
@@ -87,7 +89,7 @@ class Unit2Main extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              SizedBox(height:600, width:double.infinity,child: ColonizationAudioT()),
+              SizedBox(height:600, width:double.infinity,child: SummaryOfUnits()),
 
               Row(
 
@@ -123,7 +125,7 @@ class Unit2Main extends StatelessWidget {
 
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("Two Types of Power",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
+                child: Text("Two Types of Power",style: GoogleFonts.montserrat(fontSize: 32,fontWeight: FontWeight.bold),),
               ),
 SizedBox(height: 20,),
               Padding(
@@ -138,7 +140,7 @@ SizedBox(height: 20,),
                   //definition 1
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Individual Power",style: TextStyle(color: Colors.white,fontSize: 20),),
+                    child: Text("Individual Power",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),),
                   ),),
                 ),
               ),
@@ -148,7 +150,7 @@ SizedBox(height: 20,),
                   child: RichText(
                     text:  TextSpan(
                         children: [
-                          TextSpan(text: 'The power one person has over another. ', style: TextStyle(color: Colors.black,fontSize: 16)),
+                          TextSpan(text: 'The power one person has over another. ', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16)),
 
 
      ],
@@ -162,13 +164,13 @@ SizedBox(height: 20,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                 ],
               ),
@@ -187,7 +189,7 @@ SizedBox(height: 20,),
                   ),
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Institutional power",style: TextStyle(color: Colors.white,fontSize: 20),),
+                    child: Text("Institutional power",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),),
                   ),),
                 ),
               ),
@@ -209,13 +211,13 @@ SizedBox(height: 20,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                 ],
               ),
@@ -234,7 +236,7 @@ SizedBox(height: 20,),
     //superiority audio
               SizedBox(height: 10,),
 
-              SizedBox(height:height * 0.6, width:double.infinity,child: WISuperiorityAudio()),
+              SizedBox(height: 700, width:double.infinity,child: WISuperiorityAudio()),
 
               Center(
                 child: Padding(padding:
@@ -242,7 +244,7 @@ SizedBox(height: 20,),
                 child:   Text('Activity #1',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,),) ,
                 ),
               ),
-              SizedBox(height:height * 0.6, width:double.infinity,child: EOIndividualpwrAud()),
+              SizedBox(height:700, width:double.infinity,child: EOIndividualpwrAud()),
               SizedBox(height: 15,),
               Center(
                 child: Padding(padding:
@@ -299,7 +301,7 @@ SizedBox(height: 10,),
 
 
 
-              SizedBox(height:height * 0.6, width:double.infinity,child: EOInstitutionalpwrAudio()),
+              SizedBox(height:700, width:double.infinity,child: EOInstitutionalpwrAudio()),
               SizedBox(height: 15,),
               Center(
                 child: Padding(padding:

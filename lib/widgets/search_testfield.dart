@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/constants/color.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class SearchTextField extends StatelessWidget {
         // helperText: "Search your topic",
         floatingLabelBehavior: FloatingLabelBehavior.never,
         labelText: "Search your topic",
-        labelStyle: const TextStyle(color: Colors.grey),
+        labelStyle: GoogleFonts.montserrat(color: Colors.grey),
         filled: true,
         fillColor: Colors.white,
         border: OutlineInputBorder(

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/utils/utils.dart';
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
@@ -57,7 +58,7 @@ showDialog(context: context,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Recieve an email\nto reset your password",textAlign: TextAlign.center,style: TextStyle(fontSize: 24),),
+              Text("Recieve an email\nto reset your password",textAlign: TextAlign.center,style: GoogleFonts.montserrat(fontSize: 24),),
               SizedBox(height: 20,),
               TextFormField(
                 controller: emailController,
@@ -74,7 +75,7 @@ showDialog(context: context,
                   minimumSize: Size.fromHeight(50),
                 ),
                 icon: Icon(Icons.email_outlined),
-                label: Text("Reset Password",style: TextStyle(fontSize: 24),),
+                label: Text("Reset Password",style: GoogleFonts.montserrat(fontSize: 24),),
                 onPressed: resetPassword,
 
               ),

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 class TopicHome extends StatelessWidget {
@@ -12,7 +13,7 @@ class TopicHome extends StatelessWidget {
     return SafeArea(child: Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Explore Topics",style: TextStyle(fontSize: 32),),
+        title: Text("Explore Topics",style: GoogleFonts.montserrat(fontSize: 32),),
 
         backgroundColor: Colors.yellow.shade800,
 
@@ -43,7 +44,7 @@ class TopicHome extends StatelessWidget {
                              borderRadius: BorderRadius.circular(20))),
                      child:  Text(
                        'Race',
-                       style: TextStyle(fontSize: 15),
+                       style: GoogleFonts.montserrat(fontSize: 15),
                      ),
                      onPressed: () {},
                    ),
@@ -62,7 +63,7 @@ class TopicHome extends StatelessWidget {
                              borderRadius: BorderRadius.circular(20))),
                      child:  Text(
                        'Ethnicity',
-                       style: TextStyle(fontSize: 15),
+                       style: GoogleFonts.montserrat(fontSize: 15),
                      ),
                      onPressed: () {},
                    ),
@@ -80,7 +81,7 @@ class TopicHome extends StatelessWidget {
                              borderRadius: BorderRadius.circular(20))),
                      child:  Text(
                        'White Privilege',
-                       style: TextStyle(fontSize: 15),
+                       style: GoogleFonts.montserrat(fontSize: 15),
                      ),
                      onPressed: () {},
                    ),
@@ -98,7 +99,7 @@ class TopicHome extends StatelessWidget {
                              borderRadius: BorderRadius.circular(20))),
                      child:  Text(
                        'Power',
-                       style: TextStyle(fontSize: 15),
+                       style: GoogleFonts.montserrat(fontSize: 15),
                      ),
                      onPressed: () {},
                    ),
@@ -116,7 +117,7 @@ class TopicHome extends StatelessWidget {
                              borderRadius: BorderRadius.circular(20))),
                      child:  Text(
                        'Xenophobia',
-                       style: TextStyle(fontSize: 15),
+                       style: GoogleFonts.montserrat(fontSize: 15),
                      ),
                      onPressed: () {},
                    ),
@@ -134,7 +135,7 @@ class TopicHome extends StatelessWidget {
                              borderRadius: BorderRadius.circular(20))),
                      child:  Text(
                        'Colonization',
-                       style: TextStyle(fontSize: 15),
+                       style: GoogleFonts.montserrat(fontSize: 15),
                      ),
                      onPressed: () {},
                    ),
@@ -152,7 +153,7 @@ class TopicHome extends StatelessWidget {
                              borderRadius: BorderRadius.circular(20))),
                      child:  Text(
                        'Marginalization',
-                       style: TextStyle(fontSize: 15),
+                       style: GoogleFonts.montserrat(fontSize: 15),
                      ),
                      onPressed: () {},
                    ),
@@ -170,7 +171,7 @@ class TopicHome extends StatelessWidget {
                              borderRadius: BorderRadius.circular(20))),
                      child:  Text(
                        'Ethnicity',
-                       style: TextStyle(fontSize: 15),
+                       style: GoogleFonts.montserrat(fontSize: 15),
                      ),
                      onPressed: () {},
                    ),
@@ -189,7 +190,7 @@ class TopicHome extends StatelessWidget {
                              borderRadius: BorderRadius.circular(20))),
                      child:  Text(
                        'Ethnicity',
-                       style: TextStyle(fontSize: 15),
+                       style: GoogleFonts.montserrat(fontSize: 15),
                      ),
                      onPressed: () {},
                    ),

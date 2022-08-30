@@ -2,13 +2,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
-import 'package:wrkapp/Audio/colonization_audio_topic.dart';
+import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_institutional_pwr_audio.dart';
 import 'package:wrkapp/Audio/unit2_audio/oppression_audio.dart';
+import 'package:wrkapp/Audio/unit2_audio/reflection_activity.dart';
 import 'package:wrkapp/Audio/unit2_audio/what_is_superiority_audio.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:wrkapp/Audio/unit2_audio/who_Can_be_racist_p2.dart';
+import 'package:wrkapp/Audio/unit2_audio/who_can_be_Racist_audio.dart';
+import 'package:wrkapp/Audio/unit2_audio/whocanberacist3.dart';
+import 'package:wrkapp/Audio/unit2_audio/whocanberacist4.dart';
+import 'package:wrkapp/Audio/unit2_audio/whocanberacist5.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
@@ -23,8 +30,10 @@ class Section3WCBR extends StatelessWidget {
     double width = MediaQuery. of(context). size. width ;
     double height = MediaQuery. of(context). size. height;
     return SafeArea(child: Scaffold(
+
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent,
+        title:  Text('Unit 2: Power & Oppresion'),
+        backgroundColor: Colors.pink,
         centerTitle: true,
         actions: [Icon(Icons.support_agent_rounded)],
       ),
@@ -35,12 +44,10 @@ class Section3WCBR extends StatelessWidget {
 
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 100,
                 color: Colors.pinkAccent,
                 child: Column(
                   children: [
-                    Text("Unit 2: Power ",style: TextStyle(fontSize: 40,color: Colors.white),),
-                    SizedBox(height: 20,),
                     Expanded(
                       child: ListView(
                         scrollDirection: Axis.horizontal,
@@ -51,19 +58,19 @@ class Section3WCBR extends StatelessWidget {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 ElevatedButton(
-                                  child: Text('Section 1: Types of Power',style: TextStyle(fontSize: 15),),
+                                  child: Text('Section 1: Types of Power',style: GoogleFonts.montserrat(fontSize: 15),),
                                   onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Main()));
 
                                   },
                                 ),
                                 ElevatedButton(
-                                  child: Text('Section 2: Oprresion',style: TextStyle(fontSize: 15)),
+                                  child: Text('Section 2: Oprresion',style:GoogleFonts.montserrat(fontSize: 15)),
                                   onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Section3WCBR()));
                                   },
                                 ),
                                 ElevatedButton(
-                                  child: Text('Section 3: Who Can Be Racist?',style: TextStyle(fontSize: 15)),
+                                  child: Text('Section 3: Who Can Be Racist?',style: GoogleFonts.montserrat(fontSize: 15)),
                                   onPressed: () {},
                                 ),
                               ],
@@ -92,16 +99,17 @@ class Section3WCBR extends StatelessWidget {
 
                  child: Center(child: Text("Who Can Be Racist?",textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 32),))),
            ),
-              Container(
-                height: 400,
-                width: double.infinity,
-                child: ChewieListItem(videoPlayerController:
-                VideoPlayerController.asset('assets/videos/cake.mp4'),
-                  looping: true,
-                ),
-                // child:Expanded(child: AssetPlayerWidget()),
-              ),
+              SizedBox(height:700, width:double.infinity,child: WhoCanBeRacistA()),
+              SizedBox(height: 25,),
+              SizedBox(height:700, width:double.infinity,child: WhoCanBeRacist2A()),
+              SizedBox(height: 25,),
+              SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist3A()),
+              SizedBox(height: 25,),
+              SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist4A()),
+              SizedBox(height: 25,),
+              SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist5A()),
 
+              SizedBox(height: 20,),
               Row(
 
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -154,6 +162,7 @@ class Section3WCBR extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                 child: Text("Reflection",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
               ),
+              SizedBox(height:600, width:double.infinity,child: ReflectionScenarioU2()),
               SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),

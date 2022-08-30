@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -57,7 +58,7 @@ class _EOIndividualpwrAudState extends State<EOIndividualpwrAud> {
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('LateNight.mp3');
+    final url = await player.load('u2_Sec1_individualpower.mp3');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -88,7 +89,7 @@ class _EOIndividualpwrAudState extends State<EOIndividualpwrAud> {
                   //   width: 60,
                   //   child: NeuBox(child: Icon(Icons.arrow_back)),
                   // ),
-                  Text('Example of Individial Power',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                  Text('Example of Individual Power',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
                   // SizedBox(
                   //   height: 60,
                   //   width: 60,
@@ -105,7 +106,7 @@ class _EOIndividualpwrAudState extends State<EOIndividualpwrAud> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child: Image.asset('assets/images/audiopic.jpg',height: 180,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -116,8 +117,8 @@ class _EOIndividualpwrAudState extends State<EOIndividualpwrAud> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Late Night',
-                                style: TextStyle(
+                                '',
+                                style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                                   color: Colors.grey.shade700,
@@ -125,7 +126,7 @@ class _EOIndividualpwrAudState extends State<EOIndividualpwrAud> {
                               ),
                               const SizedBox(height: 6),
                               const Text(
-                                'Harry Styles',
+                                '',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 22,
@@ -185,13 +186,7 @@ class _EOIndividualpwrAudState extends State<EOIndividualpwrAud> {
                 height: 80,
                 child: Row(
                   children:  [
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_previous,
-                            size: 32,
-                          )),
-                    ),
+
                     Expanded(
                       flex: 2,
                       child: Padding(
@@ -212,13 +207,7 @@ class _EOIndividualpwrAudState extends State<EOIndividualpwrAud> {
                             )),
                       ),
                     ),
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_next,
-                            size: 32,
-                          )),
-                    ),
+
                   ],
                 ),
               )

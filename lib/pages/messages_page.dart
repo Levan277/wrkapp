@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/models/demos/models.dart';
 import 'package:wrkapp/screens/chatScreens/screens.dart';
 import 'package:wrkapp/constants/theme.dart';
@@ -85,7 +86,7 @@ class _MessageTitle extends StatelessWidget {
                       child: Text(
                         messageData.senderName,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
+                        style:  GoogleFonts.montserrat(
                           letterSpacing: 0.2,
                           wordSpacing: 1.5,
                           fontWeight: FontWeight.w900,
@@ -97,7 +98,7 @@ class _MessageTitle extends StatelessWidget {
                       child: Text(
                         messageData.message,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
+                        style:  GoogleFonts.montserrat(
                           fontSize: 12,
                           color: AppColors.textFaded,
                         ),
@@ -107,7 +108,7 @@ class _MessageTitle extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 20.0),
+                padding:  EdgeInsets.only(right: 20.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -117,7 +118,7 @@ class _MessageTitle extends StatelessWidget {
                     ),
                     Text(
                       messageData.dateMessage.toUpperCase(),
-                      style: const TextStyle(
+                      style:  GoogleFonts.montserrat(
                         fontSize: 11,
                         letterSpacing: -0.2,
                         fontWeight: FontWeight.w600,
@@ -134,10 +135,10 @@ class _MessageTitle extends StatelessWidget {
                         color: AppColors.secondary,
                         shape: BoxShape.circle,
                       ),
-                      child: const Center(
+                      child:  Center(
                         child: Text(
                           '1',
-                          style: TextStyle(
+                          style: GoogleFonts.montserrat(
                             fontSize: 10,
                             color: AppColors.textLigth,
                           ),
@@ -167,11 +168,11 @@ class _Stories extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
+             Padding(
               padding: EdgeInsets.only(left: 16.0, top: 8, bottom: 16),
               child: Text(
                 'Stories',
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   fontWeight: FontWeight.w900,
                   fontSize: 15,
                   color: AppColors.textFaded,
@@ -226,7 +227,7 @@ class _StoryCard extends StatelessWidget {
             child: Text(
               storyData.name,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
+              style:  GoogleFonts.montserrat(
                 fontSize: 11,
                 letterSpacing: 0.3,
                 fontWeight: FontWeight.bold,

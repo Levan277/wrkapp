@@ -58,7 +58,7 @@ class _EOInstitutionalpwrAudioState extends State<EOInstitutionalpwrAudio> {
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('LateNight.mp3');
+    final url = await player.load('u2_sec1_instpwr.mp3');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -106,7 +106,7 @@ class _EOInstitutionalpwrAudioState extends State<EOInstitutionalpwrAudio> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child: Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -117,7 +117,7 @@ class _EOInstitutionalpwrAudioState extends State<EOInstitutionalpwrAudio> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Late Night',
+                                '',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
@@ -126,7 +126,7 @@ class _EOInstitutionalpwrAudioState extends State<EOInstitutionalpwrAudio> {
                               ),
                               const SizedBox(height: 6),
                               const Text(
-                                'Harry Styles',
+                                '',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 22,
@@ -186,13 +186,7 @@ class _EOInstitutionalpwrAudioState extends State<EOInstitutionalpwrAudio> {
                 height: 80,
                 child: Row(
                   children:  [
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_previous,
-                            size: 32,
-                          )),
-                    ),
+
                     Expanded(
                       flex: 2,
                       child: Padding(
@@ -213,13 +207,7 @@ class _EOInstitutionalpwrAudioState extends State<EOInstitutionalpwrAudio> {
                             )),
                       ),
                     ),
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_next,
-                            size: 32,
-                          )),
-                    ),
+
                   ],
                 ),
               )

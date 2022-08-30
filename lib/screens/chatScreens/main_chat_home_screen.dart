@@ -6,7 +6,7 @@ import 'package:wrkapp/screens/chatScreens/main_chat_screen.dart';
 import 'package:wrkapp/screens/forumScreens/forum_home.dart';
 import 'package:wrkapp/widgets/chatWidgets/widgets.dart';
 import 'package:wrkapp/route/route.dart' as route;
-
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../constants/theme.dart';
 
@@ -63,7 +63,7 @@ class _MainChatHomeState extends State<MainChatHome> {
                              ),
                              title: Text(friend['username']),
                              subtitle: Container(
-                               child: Text("$lastMsg", style: TextStyle(color: Colors.grey), overflow: TextOverflow.ellipsis,),
+                               child: Text("$lastMsg", style: GoogleFonts.montserrat(color: Colors.grey), overflow: TextOverflow.ellipsis,),
                              ),
                              onTap: (){
                                Navigator.push(context, MaterialPageRoute(builder: (context) => MainChatScreen(
@@ -192,12 +192,12 @@ class _NavigationBarItem extends StatelessWidget {
             Text(
               lable,
               style: isSelected
-                  ? const TextStyle(
+                  ?  GoogleFonts.montserrat(
                 fontSize: 11,
                 fontWeight: FontWeight.bold,
                 color: AppColors.secondary,
               )
-                  : const TextStyle(fontSize: 11),
+                  :  GoogleFonts.montserrat(fontSize: 11),
             ),
           ],
         ),

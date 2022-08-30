@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:video_player/video_player.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_main.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
@@ -8,12 +9,19 @@ import 'package:wrkapp/widgets/clipPaths/custom_clip_0.dart';
 import 'package:wrkapp/widgets/videoWidgets/asset_video_player.dart';
 import 'package:wrkapp/widgets/videoWidgets/chewie_list_widget.dart';
 
-class Unit2Home extends StatelessWidget {
+class Unit2Home extends StatefulWidget {
+  @override
+  State<Unit2Home> createState() => _Unit2HomeState();
+}
+
+class _Unit2HomeState extends State<Unit2Home> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(backgroundColor: Colors.black,),
         backgroundColor: Colors.pink,
         body: SingleChildScrollView(
           child: Column(
@@ -84,13 +92,42 @@ class Unit2Home extends StatelessWidget {
                   onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Main()));
                   },
-                  child: Text("Click",style: TextStyle(color: Colors.white),),
+                  child: Text("Explore",style: TextStyle(color: Colors.white),),
                 ),
               )
 
 
             ],
 
+          ),
+        ),
+        bottomNavigationBar:  Container(
+          color: Colors.white,
+          child: SalomonBottomBar(
+            currentIndex: _currentIndex,
+            onTap: (i) => setState(() => _currentIndex = i),
+            items: [
+              /// Home
+              SalomonBottomBarItem(
+                icon: Icon(Icons.home),
+                title: Text("Home"),
+                selectedColor: Colors.purple,
+              ),
+
+              /// Forum
+              SalomonBottomBarItem(
+                icon: Icon(Icons.message),
+                title: Text("Forum"),
+                selectedColor: Colors.orange,
+              ),
+
+              /// Support
+              SalomonBottomBarItem(
+                icon: Icon(Icons.support_agent_rounded),
+                title: Text("Support"),
+                selectedColor: Colors.teal,
+              ),
+            ],
           ),
         ),
       ),

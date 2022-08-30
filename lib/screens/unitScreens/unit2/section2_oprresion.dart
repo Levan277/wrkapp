@@ -2,7 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
-import 'package:wrkapp/Audio/colonization_audio_topic.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_institutional_pwr_audio.dart';
 import 'package:wrkapp/Audio/unit2_audio/oppression_audio.dart';
@@ -21,7 +22,9 @@ class Section2Oppresion extends StatelessWidget {
     double width = MediaQuery. of(context). size. width ;
     double height = MediaQuery. of(context). size. height;
     return SafeArea(child: Scaffold(
+      backgroundColor: Color(0xffF7FFA7),
       appBar: AppBar(
+        title:  Text('Unit 2: Power & Oppresion'),
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
         actions: [Icon(Icons.support_agent_rounded)],
@@ -33,12 +36,10 @@ class Section2Oppresion extends StatelessWidget {
 
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 100,
                 color: Colors.pinkAccent,
                 child: Column(
                   children: [
-                    Text("Unit 3: Power ",style: TextStyle(fontSize: 40,color: Colors.white),),
-                    SizedBox(height: 20,),
                     Expanded(
                       child: ListView(
                         scrollDirection: Axis.horizontal,
@@ -49,17 +50,17 @@ class Section2Oppresion extends StatelessWidget {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 ElevatedButton(
-                                  child: Text('Section 1: Types of Power',style: TextStyle(fontSize: 15),),
+                                  child: Text('Section 1: Types of Power',style: GoogleFonts.montserrat(fontSize: 15),),
                                   onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Main()));
 
                                     },
                                 ),
                                 ElevatedButton(
-                                  child: Text('Section 2: Oprresion',style: TextStyle(fontSize: 15)),
+                                  child: Text('Section 2: Oprresion',style: GoogleFonts.montserrat(fontSize: 15)),
                                   onPressed: () {},
                                 ),
                                 ElevatedButton(
-                                  child: Text('Section 3: Who Can Be Racist?',style: TextStyle(fontSize: 15)),
+                                  child: Text('Section 3: Who Can Be Racist?',style: GoogleFonts.montserrat(fontSize: 15)),
                                   onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Section3WCBR()));
                                   },
@@ -85,7 +86,7 @@ class Section2Oppresion extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              SizedBox(height:600, width:double.infinity,child: OppresionAudio()),
+              SizedBox(height:700, width:double.infinity,child: OppresionAudio()),
 
               Row(
 
@@ -121,7 +122,7 @@ class Section2Oppresion extends StatelessWidget {
 
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("The 4 Levels of Oppresion",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
+                child: Text("The 4 Levels of Oppresion",style: GoogleFonts.montserrat(fontSize: 32,fontWeight: FontWeight.bold),),
               ),
               SizedBox(height: 20,),
               Padding(
@@ -136,7 +137,7 @@ class Section2Oppresion extends StatelessWidget {
                   //definition 1
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Personal",style: TextStyle(color: Colors.white,fontSize: 20),),
+                    child: Text("Personal",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),),
                   ),),
                 ),
               ),
@@ -146,8 +147,8 @@ class Section2Oppresion extends StatelessWidget {
                   child: RichText(
                     text:  TextSpan(
                       children: [
-                        TextSpan(text: 'Is “associated with our values, beliefs and feelings about individuals different from us” (Pizaña) \n', style: TextStyle(color: Colors.black,fontSize: 16)),
-                        TextSpan(text: '   Example - Racism: believing that one racial group is smarter than another.', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
+                        TextSpan(text: 'Is “associated with our values, beliefs and feelings about individuals different from us” (Pizaña) \n', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16)),
+                        TextSpan(text: '   Example - Racism: believing that one racial group is smarter than another.', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ),
@@ -159,13 +160,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                 ],
               ),
@@ -184,7 +185,7 @@ class Section2Oppresion extends StatelessWidget {
                   ),
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Interpersonal",style: TextStyle(color: Colors.white,fontSize: 20),),
+                    child: Text("Interpersonal",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),),
                   ),),
                 ),
               ),
@@ -194,7 +195,7 @@ class Section2Oppresion extends StatelessWidget {
                   child: RichText(
                     text:  TextSpan(
                         children: [
-                          TextSpan(text: 'Interpersonal means “relating to relationships or communication between people” (Oxford Dictionaries). \n', style: TextStyle(color: Colors.black,fontSize: 16)),
+                          TextSpan(text: 'Interpersonal means “relating to relationships or communication between people” (Oxford Dictionaries). \n', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16)),
                           TextSpan(text: '“So, interpersonal oppression focuses on “our actions, behaviour and language as we interact with individuals different from us” \n', style: TextStyle(color: Colors.black,fontSize: 16)),
                           TextSpan(text: '   Example -  Racism: racist jokes, use of racial slurs, harassment, stereotyping ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
                         ]
@@ -208,13 +209,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                 ],
               ),
@@ -256,13 +257,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                 ],
               ),
@@ -305,13 +306,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                 ],
               ),
@@ -330,16 +331,16 @@ class Section2Oppresion extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                 child: Container(
-                  width: 180,
+                  width: 200,
                   height: 70,
                   decoration: BoxDecoration(
                     color: Colors.pink,
                     borderRadius: BorderRadius.circular(40),
                   ),
-                  child: Center(child: Padding(
+                  child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Agents of oppression ",style: TextStyle(color: Colors.white,fontSize: 20),),
-                  ),),
+                    child: Center(child: Text("Agents of oppression ",style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,)),
+                  ),
                 ),
               ),
               Container(
@@ -363,13 +364,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                 ],
               ),
@@ -389,7 +390,7 @@ SizedBox(height: 10,),
                   ),
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Targets of oppression ",style: TextStyle(color: Colors.white,fontSize: 20),),
+                    child: Text("Targets of oppression ",style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
                   ),),
                 ),
               ),
@@ -414,13 +415,13 @@ SizedBox(height: 10,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                 ],
               ),
@@ -438,7 +439,7 @@ SizedBox(height: 10,),
                   ),
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Internalized Oppression ",style: TextStyle(color: Colors.white,fontSize: 20),),
+                    child: Text("Internalized Oppression ",style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
                   ),),
                 ),
               ),
@@ -463,13 +464,13 @@ SizedBox(height: 10,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: null,
+                    backgroundImage: NetworkImage('https://picsum.photos/200'),
                   ),
                 ],
               ),

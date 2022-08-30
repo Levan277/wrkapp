@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/pages/pages.dart';
 import 'package:wrkapp/screens/chatScreens/screens.dart';
 import 'package:wrkapp/constants/theme.dart';
@@ -102,7 +103,7 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
             builder: (BuildContext context, String value, _) {
               return Text(
                 value,
-                style: const TextStyle(
+                style:  GoogleFonts.montserrat(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),

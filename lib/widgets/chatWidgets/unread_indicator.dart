@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stream_chat_flutter_core/stream_chat_flutter_core.dart';
 
 import 'package:wrkapp/constants/theme.dart';

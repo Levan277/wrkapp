@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
 import 'package:wrkapp/main.dart';
@@ -111,14 +112,14 @@ _isLoading = true;
                     ),
                   ),
                   Text("Sign up",
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
 
                     ),),
                   SizedBox(height: 20,),
                   Text("Create an account, It's free ",
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                         fontSize: 15,
                         color:Colors.grey[700]),)
 
@@ -185,7 +186,7 @@ _isLoading = true;
                     onTap: (){
                       Navigator.pushNamed(context, route.loginPage);
                     },
-                    child: Text(" Login", style:TextStyle(
+                    child: Text(" Login", style:GoogleFonts.montserrat(
                         fontWeight: FontWeight.w600,
                         fontSize: 18
                     ),
@@ -219,7 +220,7 @@ Widget inputFile({label, obscureText = false, textEditingController})
     children: <Widget>[
       Text(
         label,
-        style: TextStyle(
+        style: GoogleFonts.montserrat(
             fontSize: 15,
             fontWeight: FontWeight.w400,
             color:Colors.black87

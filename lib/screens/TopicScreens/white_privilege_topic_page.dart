@@ -6,7 +6,7 @@ import 'package:wrkapp/Audio/TopicAudios/OprresionT/culturalAT.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/interpersonalAT.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/personalAT.dart';
 import 'package:wrkapp/Audio/TopicAudios/whitePrivilegeT/power_benefit_doubt.dart';
-import 'package:wrkapp/Audio/colonization_audio_topic.dart';
+import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_institutional_pwr_audio.dart';
 import 'package:wrkapp/Audio/unit2_audio/oppression_audio.dart';

@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:wrkapp/Audio/TopicAudios/whitePrivilegeT/power_accumulated.dart';
-import 'package:wrkapp/Audio/colonization_audio_topic.dart';
+import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_institutional_pwr_audio.dart';
 import 'package:wrkapp/Audio/unit2_audio/what_is_superiority_audio.dart';
@@ -23,67 +23,16 @@ class Unit4Main extends StatelessWidget {
     double width = MediaQuery. of(context). size. width ;
     double height = MediaQuery. of(context). size. height;
     return SafeArea(child: Scaffold(
+
+      backgroundColor: Color(0xffF7FFA7),
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
+        title: Text("Unit 4: White Privilege"),
         centerTitle: true,
         actions: [Icon(Icons.support_agent_rounded)],
       ),
       body: ListView(
         children: [
-          Column(
-            children: [
-
-              Container(
-                width: double.infinity,
-                height: 200,
-                color: Colors.pinkAccent,
-                child: Column(
-                  children: [
-                    Text("Unit 4: White Privilege ",style: TextStyle(fontSize: 40,color: Colors.white),),
-                    SizedBox(height: 20,),
-                    Expanded(
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          ElevatedButtonTheme(
-                            data: ElevatedButtonThemeData(style: ElevatedButton.styleFrom(minimumSize: Size(120,60),primary: Colors.black),) ,
-                            child: ButtonBar(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                ElevatedButton(
-                                  child: Text('Section 1: Types of Power',style: TextStyle(fontSize: 15),),
-                                  onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4Main()));
-                                  },
-                                ),
-                                ElevatedButton(
-                                  child: Text('Section 2: Oprresion',style: TextStyle(fontSize: 15)),
-                                  onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Section2Oppresion()));
-                                  },
-                                ),
-                                ElevatedButton(
-                                  child: Text('Section 3: Who Can Be Racist?',style: TextStyle(fontSize: 15)),
-                                  onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Section3WCBR()));
-                                  },
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                  ],
-                ),
-
-              ),
-
-            ],
-
-
-          ),
           //column 2
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -288,7 +237,7 @@ SizedBox(height: 10,),
 
 
               SizedBox(height: 20,),
-              SizedBox(height:600, width:double.infinity,child: PowerOfAccum()),
+              SizedBox(height:700, width:double.infinity,child: PowerOfAccum()),
 
               // Center(
               //   child: Container(

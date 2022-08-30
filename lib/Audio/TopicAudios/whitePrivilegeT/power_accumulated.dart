@@ -45,8 +45,6 @@ class _PowerOfAccumState extends State<PowerOfAccum> {
         position =newPosition;
       });
     });
-
-
   }
 
   Future setAudio() async{
@@ -55,7 +53,7 @@ class _PowerOfAccumState extends State<PowerOfAccum> {
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('LateNight.mp3');
+    final url = await player.load('u4_sec2_power_of_accumulated_power.mp3');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -103,7 +101,7 @@ class _PowerOfAccumState extends State<PowerOfAccum> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child: Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -113,22 +111,9 @@ class _PowerOfAccumState extends State<PowerOfAccum> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Late Night',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.grey.shade700,
-                                ),
-                              ),
+
                               const SizedBox(height: 6),
-                              const Text(
-                                'Harry Styles',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22,
-                                ),
-                              ),
+
                             ],
                           ),
                           const Icon(
@@ -183,13 +168,7 @@ class _PowerOfAccumState extends State<PowerOfAccum> {
                 height: 80,
                 child: Row(
                   children:  [
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_previous,
-                            size: 32,
-                          )),
-                    ),
+
                     Expanded(
                       flex: 2,
                       child: Padding(
@@ -209,13 +188,6 @@ class _PowerOfAccumState extends State<PowerOfAccum> {
 
                             )),
                       ),
-                    ),
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_next,
-                            size: 32,
-                          )),
                     ),
                   ],
                 ),

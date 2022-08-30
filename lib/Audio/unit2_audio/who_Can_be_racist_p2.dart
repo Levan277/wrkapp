@@ -1,19 +1,21 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import 'neu_box_widget.dart';
+import '../neu_box_widget.dart';
+
 import 'package:audioplayers/audioplayers.dart';
 
-class ColonizationAudioT extends StatefulWidget {
-  const ColonizationAudioT({Key? key}) : super(key: key);
+class WhoCanBeRacist2A extends StatefulWidget {
+  const WhoCanBeRacist2A({Key? key}) : super(key: key);
 
   @override
-  State<ColonizationAudioT> createState() => _ColonizationAudioTState();
+  State<WhoCanBeRacist2A> createState() => _WhoCanBeRacist2AState();
 }
 
-class _ColonizationAudioTState extends State<ColonizationAudioT> {
+class _WhoCanBeRacist2AState extends State<WhoCanBeRacist2A> {
   final audioPlayer  = AudioPlayer();
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
@@ -57,7 +59,7 @@ class _ColonizationAudioTState extends State<ColonizationAudioT> {
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('LateNight.mp3');
+    final url = await player.load('u2_sec3_whocanberacist2.mp3');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -66,6 +68,7 @@ class _ColonizationAudioTState extends State<ColonizationAudioT> {
 
     super.dispose();
     audioPlayer.dispose();
+
   }
 
   @override
@@ -89,7 +92,7 @@ class _ColonizationAudioTState extends State<ColonizationAudioT> {
                   //   width: 60,
                   //   child: NeuBox(child: Icon(Icons.arrow_back)),
                   // ),
-                  Text('Summary of Units',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                  Text('Who can be Racist? PT:2',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
                   // SizedBox(
                   //   height: 60,
                   //   width: 60,
@@ -106,7 +109,11 @@ class _ColonizationAudioTState extends State<ColonizationAudioT> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child:Container(
+                        child:   Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180, ),
+                      ) ,
+
+
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -116,22 +123,9 @@ class _ColonizationAudioTState extends State<ColonizationAudioT> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Late Night',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.grey.shade700,
-                                ),
-                              ),
+
                               const SizedBox(height: 6),
-                              const Text(
-                                'Harry Styles',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22,
-                                ),
-                              ),
+
                             ],
                           ),
                           const Icon(
@@ -186,13 +180,7 @@ class _ColonizationAudioTState extends State<ColonizationAudioT> {
                 height: 80,
                 child: Row(
                   children:  [
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_previous,
-                            size: 32,
-                          )),
-                    ),
+
                     Expanded(
                       flex: 2,
                       child: Padding(
@@ -202,6 +190,8 @@ class _ColonizationAudioTState extends State<ColonizationAudioT> {
                               icon: Icon(Icons.play_arrow),
                               iconSize: 32,
                               onPressed: () async{
+
+
                                 if(isPlaying){
                                   await audioPlayer.pause();
                                 }
@@ -213,13 +203,7 @@ class _ColonizationAudioTState extends State<ColonizationAudioT> {
                             )),
                       ),
                     ),
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_next,
-                            size: 32,
-                          )),
-                    ),
+
                   ],
                 ),
               )

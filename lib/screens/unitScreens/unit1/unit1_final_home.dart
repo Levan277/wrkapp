@@ -47,12 +47,12 @@ class _Unit1HomeState extends State<Unit1Home> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text("Unit 1:",style: TextStyle(color: Colors.pink,fontSize: 62),),
+                            child: Text("Unit 1:",style: GoogleFonts.montserrat(color: Colors.pink,fontSize: 62),),
                           ),
                           Baseline(
                             baseline: 20,
                               baselineType: TextBaseline.alphabetic,
-                              child: Text("Familiarizing\n Yourself With\n Racism",style: TextStyle(color: Colors.white, fontSize: 24),textAlign: TextAlign.center,))
+                              child: Text("Familiarizing\n Yourself With\n Racism",style: GoogleFonts.montserrat(color: Colors.white, fontSize: 24),textAlign: TextAlign.center,))
                         ],
                       ),
 
@@ -73,7 +73,7 @@ class _Unit1HomeState extends State<Unit1Home> {
 
               // second column of bezel
  Container(
-   height: 600,
+   height: 400,
    width: double.infinity,
    child: ChewieListItem(videoPlayerController:
    VideoPlayerController.asset('assets/videos/cake.mp4'),
@@ -90,7 +90,7 @@ class _Unit1HomeState extends State<Unit1Home> {
                   onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>UnitsPage()));
                   },
-                  child: Text("Click",style: TextStyle(color: Colors.white),),
+                  child: Text("Explore",style: GoogleFonts.montserrat(color: Colors.white),),
                 ),
               )
 
@@ -99,31 +99,34 @@ class _Unit1HomeState extends State<Unit1Home> {
 
           ),
         ),
-        bottomNavigationBar:  SalomonBottomBar(
-          currentIndex: _currentIndex,
-          onTap: (i) => setState(() => _currentIndex = i),
-          items: [
-            /// Home
-            SalomonBottomBarItem(
-              icon: Icon(Icons.home),
-              title: Text("Home"),
-              selectedColor: Colors.purple,
-            ),
+        bottomNavigationBar:  Container(
+          color: Colors.white,
+          child: SalomonBottomBar(
+            currentIndex: _currentIndex,
+            onTap: (i) => setState(() => _currentIndex = i),
+            items: [
+              /// Home
+              SalomonBottomBarItem(
+                icon: Icon(Icons.home),
+                title: Text("Home"),
+                selectedColor: Colors.purple,
+              ),
 
-            /// Forum
-            SalomonBottomBarItem(
-              icon: Icon(Icons.message),
-              title: Text("Forum"),
-              selectedColor: Colors.orange,
-            ),
+              /// Forum
+              SalomonBottomBarItem(
+                icon: Icon(Icons.message),
+                title: Text("Forum"),
+                selectedColor: Colors.orange,
+              ),
 
-            /// Support
-            SalomonBottomBarItem(
-              icon: Icon(Icons.support_agent_rounded),
-              title: Text("Support"),
-              selectedColor: Colors.teal,
-            ),
-          ],
+              /// Support
+              SalomonBottomBarItem(
+                icon: Icon(Icons.support_agent_rounded),
+                title: Text("Support"),
+                selectedColor: Colors.teal,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -174,43 +177,3 @@ class DrawClip2 extends CustomClipper<Path> {
     return true;
   }
 }
-//
-// class Unit1Home extends StatelessWidget {
-//   const Unit1Home({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     double height = MediaQuery.of(context).size.height;
-//     return Scaffold(
-//       body: Column(
-//         children: [
-//           //whole container
-//    Stack(children: [
-//         ClipPath(
-//           clipper: CustomClipPath(),
-//           child: Container(
-//             color: Colors.green,
-//             height: height*0.5,
-//           ),
-//         )
-//    ],),
-//
-//
-//           ClipPath(
-//             clipper: CustomClipPath(),
-//             child: Container(
-//               color: Colors.pink,
-//               width: double.infinity,
-//               height: height * 0.5,
-//               child: AssetPlayerWidget(),
-//             ),
-//           ),
-//
-//
-//         ],
-//       ),
-//     );
-//   }
-//
-// }
-//

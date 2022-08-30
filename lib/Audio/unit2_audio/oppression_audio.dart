@@ -57,7 +57,7 @@ class _OppresionAudioState extends State<OppresionAudio> {
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('LateNight.mp3');
+    final url = await player.load('');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -105,7 +105,7 @@ class _OppresionAudioState extends State<OppresionAudio> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child: Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -116,7 +116,7 @@ class _OppresionAudioState extends State<OppresionAudio> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Late Night',
+                                '',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
@@ -125,7 +125,7 @@ class _OppresionAudioState extends State<OppresionAudio> {
                               ),
                               const SizedBox(height: 6),
                               const Text(
-                                'Harry Styles',
+                                '',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 22,

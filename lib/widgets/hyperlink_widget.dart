@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
@@ -11,9 +12,9 @@ class HyperLinkText extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(text: TextSpan(
       text: text,
-      style: TextStyle(
+      style: GoogleFonts.montserrat(
         decoration: TextDecoration.underline,color: Colors.blue,
-        fontSize: 24,
+        fontSize: 18,
 
        ),
       recognizer: TapGestureRecognizer()

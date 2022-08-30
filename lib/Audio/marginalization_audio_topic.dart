@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'neu_box_widget.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -116,7 +116,7 @@ class _MarginalizationAudioTState extends State<MarginalizationAudioT> {
                             children: [
                               Text(
                                 'Late Night',
-                                style: TextStyle(
+                                style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                                   color: Colors.grey.shade700,

@@ -1,11 +1,12 @@
 
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
+import '../neu_box_widget.dart';
 
 import 'package:audioplayers/audioplayers.dart';
-
-import '../neu_box_widget.dart';
 
 class WISuperiorityAudio extends StatefulWidget {
   const WISuperiorityAudio({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _WISuperiorityAudioState extends State<WISuperiorityAudio> {
 
   @override
   void initState() {
-
+    // TODO: implement initState
     super.initState();
 
     //load audio from the setAudio function
@@ -58,7 +59,7 @@ class _WISuperiorityAudioState extends State<WISuperiorityAudio> {
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('LateNight.mp3');
+    final url = await player.load('u2_sec1_superiority.mp3');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -67,7 +68,9 @@ class _WISuperiorityAudioState extends State<WISuperiorityAudio> {
 
     super.dispose();
     audioPlayer.dispose();
+
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +109,11 @@ class _WISuperiorityAudioState extends State<WISuperiorityAudio> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child:Container(
+                        child:   Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180, ),
+                      ) ,
+
+
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -116,22 +123,9 @@ class _WISuperiorityAudioState extends State<WISuperiorityAudio> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Late Night',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.grey.shade700,
-                                ),
-                              ),
+
                               const SizedBox(height: 6),
-                              const Text(
-                                'Harry Styles',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22,
-                                ),
-                              ),
+
                             ],
                           ),
                           const Icon(
@@ -186,13 +180,7 @@ class _WISuperiorityAudioState extends State<WISuperiorityAudio> {
                 height: 80,
                 child: Row(
                   children:  [
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_previous,
-                            size: 32,
-                          )),
-                    ),
+
                     Expanded(
                       flex: 2,
                       child: Padding(
@@ -202,6 +190,8 @@ class _WISuperiorityAudioState extends State<WISuperiorityAudio> {
                               icon: Icon(Icons.play_arrow),
                               iconSize: 32,
                               onPressed: () async{
+
+
                                 if(isPlaying){
                                   await audioPlayer.pause();
                                 }
@@ -213,13 +203,7 @@ class _WISuperiorityAudioState extends State<WISuperiorityAudio> {
                             )),
                       ),
                     ),
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_next,
-                            size: 32,
-                          )),
-                    ),
+
                   ],
                 ),
               )

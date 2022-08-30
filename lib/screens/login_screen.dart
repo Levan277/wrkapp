@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
 import 'package:wrkapp/connectionsFirebase/forgot_password.dart';
 import 'package:wrkapp/route/route.dart' as route;
@@ -79,10 +80,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   Column(
                     children: <Widget>[
                       Text("Login",
-                        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+                        style: GoogleFonts.montserrat(fontSize: 30, fontWeight: FontWeight.bold),),
                       SizedBox(height: 20,),
                       Text("Login to your account",
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                             fontSize: 15,
                             color:Colors.grey[700]),)
                     ],
@@ -127,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: _isLoading ? const Center(child:
                         CircularProgressIndicator(color: Colors.white,),):
                         Text(
-                          "Login", style: TextStyle(
+                          "Login", style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.w600,
                           fontSize: 18,
                           color: Colors.white,
@@ -142,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 GestureDetector(
                   child:Text(
                     'Forgot Password?',
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       decoration: TextDecoration.underline,
                       color: Colors.black,
                       fontSize: 20,

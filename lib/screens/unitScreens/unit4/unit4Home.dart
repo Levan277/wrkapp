@@ -9,12 +9,13 @@ import 'package:wrkapp/widgets/clipPaths/custom_clip_0.dart';
 import 'package:wrkapp/widgets/videoWidgets/asset_video_player.dart';
 import 'package:wrkapp/widgets/videoWidgets/chewie_list_widget.dart';
 
-class Unit2Home extends StatelessWidget {
+class Unit4Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(backgroundColor: Colors.black,),
         backgroundColor: Colors.pink,
         body: SingleChildScrollView(
           child: Column(
@@ -85,7 +86,7 @@ class Unit2Home extends StatelessWidget {
                   onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4Main()));
                   },
-                  child: Text("Click",style: TextStyle(color: Colors.white),),
+                  child: Text("Explore",style: TextStyle(color: Colors.white),),
                 ),
               )
 

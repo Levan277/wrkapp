@@ -10,7 +10,12 @@ import 'package:wrkapp/screens/TopicScreens/white_privilege_topic_page.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_final_home.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/unit2_HOME.dart';
+import 'package:wrkapp/screens/unitScreens/unit3/unit3Main.dart';
+import 'package:wrkapp/screens/unitScreens/unit3/unit3home.dart';
+import 'package:wrkapp/screens/unitScreens/unit4/unit4Home.dart';
 import 'package:wrkapp/screens/unitScreens/unit4/unit4Main.dart';
+import 'package:wrkapp/screens/unitScreens/unit5/unit5_home.dart';
+import '../TopicScreens/indigenous peoples_topic_page.dart';
 import '../tweetScreen.dart';
 
 class FinalHome extends StatefulWidget {
@@ -67,6 +72,7 @@ class _FinalHomeState extends State<FinalHome> {
                           child: Container(
 
                             height: 300,
+
                             child: SizedBox(
                               height: 350,
                               child: Card(
@@ -82,7 +88,7 @@ class _FinalHomeState extends State<FinalHome> {
                                     //   scale: 50,
                                     // ),
                                     borderRadius: BorderRadius.circular(40),
-                                    color: Colors.black,
+                                    color: Colors.white,
                                   ),
 
                                   width: 200,
@@ -91,10 +97,9 @@ class _FinalHomeState extends State<FinalHome> {
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      // Image.asset('assets/images/endracism2.jpeg',fit: BoxFit.contain,
-                                      //   height: 200,
-                                      //   width: 200,
-                                      // ),
+                                      Image.asset('assets/images/endracism2.jpeg',fit: BoxFit.fitHeight,
+
+                                      ),
 
                                       Container(
                                         alignment: Alignment.bottomCenter,
@@ -140,8 +145,9 @@ class _FinalHomeState extends State<FinalHome> {
                                 ),
                                 child: Container(
                                   decoration: BoxDecoration(
+                                    image: DecorationImage(image: AssetImage('assets/images/power.jpeg'),fit: BoxFit.contain,),
                                     borderRadius: BorderRadius.circular(40),
-                                    color: Colors.black,
+                                    color: Colors.white,
                                   ),
 
                                   width: 200,
@@ -149,7 +155,7 @@ class _FinalHomeState extends State<FinalHome> {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      // Image.asset('assets/images/power.jpeg',fit: BoxFit.contain,),
+                                      // Image.asset('assets/images/power.jpeg',fit: BoxFit.contain),
                                       Container(
 
                                         alignment: Alignment.bottomCenter,
@@ -180,51 +186,59 @@ class _FinalHomeState extends State<FinalHome> {
                         //card 3
 
 
-                        Container(
-                          height: 300,
-                          child: SizedBox(
-                            height: 350,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40), // if you need this
-                                side: BorderSide(
-                                  color: Colors.grey.withOpacity(0.2),
-                                  width: 1,
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit3Home()));
+                          },
+                          child: Container(
+                            height: 300,
+                            child: SizedBox(
+                              height: 350,
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40), // if you need this
+                                  side: BorderSide(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    width: 1,
+                                  ),
                                 ),
-                              ),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40),
-                                  color: Colors.black,
-                                ),
-
-                                width: 200,
-                                height: 250,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    // Image.asset('assets/images/canada_flag.jpeg',fit: BoxFit.contain,),
-
-                                    Container(
-                                      alignment: Alignment.bottomCenter,
-                                      width: double.infinity,
-                                      height: 30,
+                                child: Center(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(40),
+                                      image: DecorationImage(image: AssetImage('assets/images/canada_flag.jpeg'),fit: BoxFit.contain),
                                       color: Colors.white,
-                                      child: Text('Unit 3',style: TextStyle(color: Colors.black),),),
-                                    Container(
-                                        decoration: BoxDecoration(
+                                    ),
+
+                                    width: 200,
+                                    height: 250,
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        // Image.asset('assets/images/canada_flag.jpeg',fit: BoxFit.contain,),
+
+                                        Container(
+                                          alignment: Alignment.bottomCenter,
+                                          width: double.infinity,
+                                          height: 30,
                                           color: Colors.white,
-                                          borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
-                                        ),
-                                        width: double.infinity,
-                                        height: 60,
-                                        child: Flexible(child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text('Racism in Canada, The past & The Present',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
-                                        ))),
+                                          child: Text('Unit 3',style: TextStyle(color: Colors.black),),),
+                                        Container(
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
+                                            ),
+                                            width: double.infinity,
+                                            height: 60,
+                                            child: Flexible(child: Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Text('Racism in Canada, The past & The Present',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
+                                            ))),
 
 
-                                  ],
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -235,7 +249,7 @@ class _FinalHomeState extends State<FinalHome> {
 
                         InkWell(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4Main()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4Home()));
                           },
                           child: Container(
                             height: 300,
@@ -252,7 +266,7 @@ class _FinalHomeState extends State<FinalHome> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(40),
-                                    color: Colors.black,
+                                    color: Colors.white,
                                   ),
                                   width: 200,
                                   height: 250,
@@ -260,7 +274,7 @@ class _FinalHomeState extends State<FinalHome> {
                                     crossAxisAlignment: CrossAxisAlignment.stretch,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      // Image.asset('assets/images/privilege.jpeg',fit: BoxFit.contain,),
+                                      Image.asset('assets/images/privilege.jpeg',fit: BoxFit.contain,),
 
                                       Container(
                                         alignment: Alignment.bottomCenter,
@@ -289,6 +303,60 @@ class _FinalHomeState extends State<FinalHome> {
                           ),
                         ),
 
+//card 5
+                        InkWell(
+                          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit5Home()));},
+                          child: Container(
+                            height: 300,
+                            child: SizedBox(
+                              height: 350,
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40), // if you need this
+                                  side: BorderSide(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    width: 1,
+                                  ),
+                                ),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(image: AssetImage('assets/images/action.jpg'),fit: BoxFit.contain,),
+                                    borderRadius: BorderRadius.circular(40),
+                                    color: Colors.white,
+                                  ),
+
+                                  width: 200,
+                                  height: 250,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      // Image.asset('assets/images/power.jpeg',fit: BoxFit.contain),
+                                      Container(
+
+                                        alignment: Alignment.bottomCenter,
+                                        width: double.infinity,
+                                        height: 30,
+                                        color: Colors.white,
+                                        child: Text('Unit 5',style: TextStyle(color: Colors.black),),),
+                                      Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(bottomRight: Radius.circular(40), bottomLeft: Radius.circular(40)),
+                                          ),
+                                          width: double.infinity,
+                                          height: 60,
+                                          child: Flexible(child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text('Take Action',style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
+                                          ))),
+
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
 
 
                       ],
@@ -378,6 +446,22 @@ class _FinalHomeState extends State<FinalHome> {
                             radius: 60,
                             foregroundColor: Colors.orange,
                             child: Text("Racism"),
+                          ),
+                        ),
+
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>IndegenousPeoplesTopic()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("Indigenous Peoples",textAlign: TextAlign.center,),
+                            ),
                           ),
                         ),
                       ],

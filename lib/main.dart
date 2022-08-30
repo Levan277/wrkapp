@@ -16,6 +16,11 @@ import 'package:wrkapp/models/user.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_final_home.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_main.dart';
+import 'package:wrkapp/screens/unitScreens/unit3/contemp_racism.dart';
+import 'package:wrkapp/screens/unitScreens/unit3/timelines/south_asian_people_timeline.dart';
+import 'package:wrkapp/screens/unitScreens/unit3/timelines/blackpeople_racism_timeline.dart';
+import 'package:wrkapp/screens/unitScreens/unit3/timelines/indigenous_racism_timeline.dart';
+import 'package:wrkapp/screens/unitScreens/unit3/unit3Main.dart';
 import 'route/route.dart' as route;
 import 'package:stream_feed_flutter_core/stream_feed_flutter_core.dart';
 
@@ -57,7 +62,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-   // home: OppresionTopicPage(),
+   // home:ContempRacism(),
       onGenerateRoute: route.controller,
       initialRoute: route.loginPage,
       //

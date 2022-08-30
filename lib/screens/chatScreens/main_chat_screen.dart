@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wrkapp/models/user.dart';
 import 'package:wrkapp/widgets/chatWidgets/message_textfield.dart';
 import 'package:wrkapp/widgets/chatWidgets/single_message.dart';
+import 'package:google_fonts/google_fonts.dart';
 class MainChatScreen extends StatelessWidget {
 
 final currentUser;
@@ -28,7 +29,7 @@ final String friendImage;
               child: Image.network(friendImage, height: 35,),
             ),
             SizedBox(width: 5,),
-            Text(friendUserName, style: TextStyle(fontSize: 20.0),),
+            Text(friendUserName, style: GoogleFonts.montserrat(fontSize: 20.0),),
           ],
         ),
       ),

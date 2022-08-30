@@ -55,7 +55,7 @@ class _BenefitOfDoubtState extends State<BenefitOfDoubt> {
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('LateNight.mp3');
+    final url = await player.load('u4_sec2_power_benefit_of_doubt.mp3');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -113,22 +113,9 @@ class _BenefitOfDoubtState extends State<BenefitOfDoubt> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Late Night',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.grey.shade700,
-                                ),
-                              ),
+
                               const SizedBox(height: 6),
-                              const Text(
-                                'Harry Styles',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22,
-                                ),
-                              ),
+
                             ],
                           ),
                           const Icon(
@@ -183,13 +170,7 @@ class _BenefitOfDoubtState extends State<BenefitOfDoubt> {
                 height: 80,
                 child: Row(
                   children:  [
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_previous,
-                            size: 32,
-                          )),
-                    ),
+
                     Expanded(
                       flex: 2,
                       child: Padding(
@@ -210,13 +191,7 @@ class _BenefitOfDoubtState extends State<BenefitOfDoubt> {
                             )),
                       ),
                     ),
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_next,
-                            size: 32,
-                          )),
-                    ),
+
                   ],
                 ),
               )

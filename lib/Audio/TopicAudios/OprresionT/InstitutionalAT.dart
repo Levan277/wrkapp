@@ -55,7 +55,7 @@ class _InstitutionalATState extends State<InstitutionalAT> {
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('LateNight.mp3');
+    final url = await player.load('u2_sec2institutionaloppr.mp3');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -103,7 +103,7 @@ class _InstitutionalATState extends State<InstitutionalAT> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child: Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -114,7 +114,7 @@ class _InstitutionalATState extends State<InstitutionalAT> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Late Night',
+                                '',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
@@ -123,7 +123,7 @@ class _InstitutionalATState extends State<InstitutionalAT> {
                               ),
                               const SizedBox(height: 6),
                               const Text(
-                                'Harry Styles',
+                                '',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 22,
@@ -183,13 +183,7 @@ class _InstitutionalATState extends State<InstitutionalAT> {
                 height: 80,
                 child: Row(
                   children:  [
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_previous,
-                            size: 32,
-                          )),
-                    ),
+
                     Expanded(
                       flex: 2,
                       child: Padding(
@@ -210,13 +204,7 @@ class _InstitutionalATState extends State<InstitutionalAT> {
                             )),
                       ),
                     ),
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_next,
-                            size: 32,
-                          )),
-                    ),
+
                   ],
                 ),
               )

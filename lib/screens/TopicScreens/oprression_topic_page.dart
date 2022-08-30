@@ -2,10 +2,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/culturalAT.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/interpersonalAT.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/personalAT.dart';
-import 'package:wrkapp/Audio/colonization_audio_topic.dart';
+import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_institutional_pwr_audio.dart';
 import 'package:wrkapp/Audio/unit2_audio/oppression_audio.dart';
@@ -50,27 +51,27 @@ class OppresionTopicPage extends StatelessWidget {
               SizedBox(height:600, width:double.infinity,child: PersonalAT()),
                 Center(child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text('What are some beliefs you have developed over the years that would be considered as personal oppression?',style: TextStyle(fontSize: 24),),
+                  child: Text('What are some beliefs you have developed over the years that would be considered as personal oppression?',style: GoogleFonts.montserrat(fontSize: 24),),
                 )),
              SizedBox(height: 10,),
               SizedBox(height:600, width:double.infinity,child:InterpersonalAT()),
               Center(child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('Brainstorm some situations where either you or someone else has taken their personal beliefs and used them against others? ',style: TextStyle(fontSize: 24),),
+                child: Text('Brainstorm some situations where either you or someone else has taken their personal beliefs and used them against others? ',style: GoogleFonts.montserrat(fontSize: 24),),
               )),
               SizedBox(height: 10,),
 
               SizedBox(height:600, width:double.infinity,child:InstitutionalAT()),
               Center(child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('Can you think of an example of institutional oppression? Possibly in the education system or policing system, for example? ',style: TextStyle(fontSize: 24),),
+                child: Text('Can you think of an example of institutional oppression? Possibly in the education system or policing system, for example? ',style: GoogleFonts.montserrat(fontSize: 24),),
               )),
               SizedBox(height: 10,),
 
               SizedBox(height:600, width:double.infinity,child:CulturalAT()),
               Center(child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('What examples of oppression at the cultural level can you think of? Possibly things you have personally experienced. ',style: TextStyle(fontSize: 24),),
+                child: Text('What examples of oppression at the cultural level can you think of? Possibly things you have personally experienced. ',style: GoogleFonts.montserrat(fontSize: 24),),
               )),
 
             ],

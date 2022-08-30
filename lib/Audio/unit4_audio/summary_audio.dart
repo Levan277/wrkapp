@@ -107,7 +107,7 @@ class _SummaryU4State extends State<SummaryU4> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child: Image.asset('assets/images/photography.jpg',width: double.infinity,height: 180,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
