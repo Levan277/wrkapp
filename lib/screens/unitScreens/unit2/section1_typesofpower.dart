@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_institutional_pwr_audio.dart';
@@ -13,16 +14,70 @@ import 'package:wrkapp/screens/unitScreens/unit2/section2_oprresion.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
+import '../../finalScreens/final_home.dart';
+import '../../support_screens/support_home_screen.dart';
+import '../../tweetScreen.dart';
 
-class Unit2Main extends StatelessWidget {
+
+class Unit2Main extends StatefulWidget {
   const Unit2Main({Key? key}) : super(key: key);
 
   @override
+  State<Unit2Main> createState() => _Unit2MainState();
+}
+
+class _Unit2MainState extends State<Unit2Main> {
+  var _currentIndex = 0;
+  @override
   Widget build(BuildContext context) {
+
     double width = MediaQuery. of(context). size. width ;
     double height = MediaQuery. of(context). size. height;
     return SafeArea(child: Scaffold(
+bottomNavigationBar:  Container(
+  color: Colors.white,
+  child: SalomonBottomBar(
+    currentIndex: _currentIndex,
+    onTap: (i){
+      setState((){
+        _currentIndex = i;
+      });
+      if(_currentIndex == 0){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+      }
+      else if(_currentIndex == 1){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+      }
+      else if(_currentIndex == 2){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+      }
+    },
+    // onTap: (i) => setState(() => _currentIndex = i),
 
+    items: [
+      /// Home
+      SalomonBottomBarItem(
+        icon: Icon(Icons.home),
+        title: Text("Home"),
+        selectedColor: Colors.purple,
+      ),
+
+      /// Forum
+      SalomonBottomBarItem(
+        icon: Icon(Icons.message),
+        title: Text("Forum"),
+        selectedColor: Colors.orange,
+      ),
+
+      /// Support
+      SalomonBottomBarItem(
+        icon: Icon(Icons.support_agent_rounded),
+        title: Text("Support"),
+        selectedColor: Colors.teal,
+      ),
+    ],
+  ),
+),
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         title: Text('Unit 2: Power & Oppresion'),
@@ -89,38 +144,13 @@ class Unit2Main extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              SizedBox(height:600, width:double.infinity,child: SummaryOfUnits()),
 
               Row(
 
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                 //image 1
-                Container(
-                  height: 120.0,
-                  width: 120.0,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          'assets/images/laptop.jpg'),
-                      fit: BoxFit.fill,
-                    ),
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                //image 2
-                Container(
-                  height: 120.0,
-                  width: 120.0,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          'assets/images/endracism2.jpeg'),
-                      fit: BoxFit.fill,
-                    ),
-                    shape: BoxShape.circle,
-                  ),
-                ),
+
               ],),
 
               Padding(
@@ -164,13 +194,13 @@ SizedBox(height: 20,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/power.jpg'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/power2-transformed.jpeg'),
                   ),
                 ],
               ),
@@ -181,15 +211,16 @@ SizedBox(height: 20,),
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                 child: Container(
-                  width: 200,
-                  height: 50,
+                  width: 215,
+                  height: 65,
                   decoration: BoxDecoration(
                     color: Colors.pink,
                     borderRadius: BorderRadius.circular(40),
                   ),
+                  //definition 1
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Institutional power",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),),
+                    child: Text("Institutional Power",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
                   ),),
                 ),
               ),
@@ -211,13 +242,13 @@ SizedBox(height: 20,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/instit.jpg'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage:AssetImage('assets/images/unit2images/instit2.jpg'),
                   ),
                 ],
               ),
@@ -284,7 +315,7 @@ SizedBox(height: 10,),
     text: TextSpan(
     children: [
     TextSpan(text: '1. Pay attention to Amy and Christian’s attitudes and physicality (expressions, gestures, body posture) in the situation. How do they differ? \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-    
+
     TextSpan(text: '2. Why do you think Amy reacted the way that she did?  \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
     TextSpan(text: '3. What was Christian’s goal in the situation? What was Amy’s?  \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
     TextSpan(text: '4. Who had more power in the altercation? How did each of them use their power? What type of power was demonstrated in this situation? \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
@@ -327,6 +358,8 @@ SizedBox(height: 10,),
                 ),
 
               ),
+
+              SizedBox(height:700, width:double.infinity,child: SectionSummary()),
             ],
           ),
         ],

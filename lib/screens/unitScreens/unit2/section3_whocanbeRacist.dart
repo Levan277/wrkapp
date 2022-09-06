@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:video_player/video_player.dart';
 import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
@@ -17,14 +18,24 @@ import 'package:wrkapp/Audio/unit2_audio/whocanberacist3.dart';
 import 'package:wrkapp/Audio/unit2_audio/whocanberacist4.dart';
 import 'package:wrkapp/Audio/unit2_audio/whocanberacist5.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
+import 'package:wrkapp/screens/unitScreens/unit2/section2_oprresion.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
 import '../../../widgets/videoWidgets/chewie_list_widget.dart';
+import '../../finalScreens/final_home.dart';
+import '../../support_screens/support_home_screen.dart';
+import '../../tweetScreen.dart';
 
 
-class Section3WCBR extends StatelessWidget {
+class Section3WCBR extends StatefulWidget {
   const Section3WCBR({Key? key}) : super(key: key);
 
+  @override
+  State<Section3WCBR> createState() => _Section3WCBRState();
+}
+
+class _Section3WCBRState extends State<Section3WCBR> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery. of(context). size. width ;
@@ -66,7 +77,7 @@ class Section3WCBR extends StatelessWidget {
                                 ElevatedButton(
                                   child: Text('Section 2: Oprresion',style:GoogleFonts.montserrat(fontSize: 15)),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Section3WCBR()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Section2Oppresion()));
                                   },
                                 ),
                                 ElevatedButton(
@@ -99,6 +110,7 @@ class Section3WCBR extends StatelessWidget {
 
                  child: Center(child: Text("Who Can Be Racist?",textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 32),))),
            ),
+              SizedBox(height: 15,),
               SizedBox(height:700, width:double.infinity,child: WhoCanBeRacistA()),
               SizedBox(height: 25,),
               SizedBox(height:700, width:double.infinity,child: WhoCanBeRacist2A()),
@@ -114,32 +126,7 @@ class Section3WCBR extends StatelessWidget {
 
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  //image 1
-                  Container(
-                    height: 120.0,
-                    width: 120.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            'assets/images/laptop.jpg'),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                  //image 2
-                  Container(
-                    height: 120.0,
-                    width: 120.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            'assets/images/endracism2.jpeg'),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
+
                 ],),
 
               Padding(
@@ -219,6 +206,50 @@ class Section3WCBR extends StatelessWidget {
           ),
         ],
 
+      ),
+      bottomNavigationBar:  Container(
+        color: Colors.white,
+        child: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i){
+            setState((){
+              _currentIndex = i;
+            });
+            if(_currentIndex == 0){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+            }
+            else if(_currentIndex == 1){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+            }
+            else if(_currentIndex == 2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+            }
+          },
+          // onTap: (i) => setState(() => _currentIndex = i),
+
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Forum
+            SalomonBottomBarItem(
+              icon: Icon(Icons.message),
+              title: Text("Forum"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Support
+            SalomonBottomBarItem(
+              icon: Icon(Icons.support_agent_rounded),
+              title: Text("Support"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
       ),
     ),
     );

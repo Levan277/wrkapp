@@ -51,7 +51,7 @@ class _BenefitOfDoubtState extends State<BenefitOfDoubt> {
 
   Future setAudio() async{
     //WHEN COMPLETED REPEAT AUDIO
-    audioPlayer.setReleaseMode(ReleaseMode.loop);
+    audioPlayer.setReleaseMode(ReleaseMode.stop);
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
@@ -103,7 +103,7 @@ class _BenefitOfDoubtState extends State<BenefitOfDoubt> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child: Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:wrkapp/Audio/u1_sec1_summary_audio.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/support_screens/support_home_screen.dart';
 import 'package:wrkapp/screens/tweetScreen.dart';
@@ -21,7 +22,6 @@ class _UnitsPageState extends State<UnitsPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-
 
       bottomNavigationBar:  Container(
         color: Colors.white,
@@ -945,7 +945,7 @@ class _UnitsPageState extends State<UnitsPage> {
                 ],
               ),
 
-
+              SizedBox(height:700, width:double.infinity,child: Unit1SummarySec1()),
             ],
           )
         ],

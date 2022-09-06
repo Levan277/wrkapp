@@ -17,21 +17,23 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return StreamProvider.value(value: _userService.queryByName(search), initialData: null,
-    child: Column(
-        children: [
-          Padding(padding: EdgeInsets.all(10),
-    child: TextField(
-    onChanged: (text){
-      setState((){
-        search = text;
-    });
-    },
-    decoration: InputDecoration(hintText: 'Search...'),
-    ),
-    ),
-     ListUsers(),
+    child: ListView(
+      children: [
+        Padding(padding: EdgeInsets.all(10),
+          child: TextField(
+            onChanged: (text){
+              setState((){
+                search = text;
+              });
+            },
+            decoration: InputDecoration(hintText: 'Search...'),
+          ),
+        ),
+        ListUsers(),
       ],
-    ),
+    )
+
+
     );
   }
 }

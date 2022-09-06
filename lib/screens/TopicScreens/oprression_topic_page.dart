@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/culturalAT.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/interpersonalAT.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/personalAT.dart';
@@ -17,16 +18,69 @@ import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
 import '../../Audio/TopicAudios/OprresionT/InstitutionalAT.dart';
+import '../finalScreens/final_home.dart';
+import '../support_screens/support_home_screen.dart';
+import '../tweetScreen.dart';
 
 
-class OppresionTopicPage extends StatelessWidget {
+class OppresionTopicPage extends StatefulWidget {
   const OppresionTopicPage({Key? key}) : super(key: key);
 
+  @override
+  State<OppresionTopicPage> createState() => _OppresionTopicPageState();
+}
+
+class _OppresionTopicPageState extends State<OppresionTopicPage> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery. of(context). size. width ;
     double height = MediaQuery. of(context). size. height;
     return SafeArea(child: Scaffold(
+      bottomNavigationBar:  Container(
+        color: Colors.white,
+        child: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i){
+            setState((){
+              _currentIndex = i;
+            });
+            if(_currentIndex == 0){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+            }
+            else if(_currentIndex == 1){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+            }
+            else if(_currentIndex == 2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+            }
+          },
+          // onTap: (i) => setState(() => _currentIndex = i),
+
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Forum
+            SalomonBottomBarItem(
+              icon: Icon(Icons.message),
+              title: Text("Forum"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Support
+            SalomonBottomBarItem(
+              icon: Icon(Icons.support_agent_rounded),
+              title: Text("Support"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: Text("More About Oppression"),
         backgroundColor: Colors.pinkAccent,

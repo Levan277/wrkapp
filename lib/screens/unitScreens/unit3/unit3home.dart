@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:video_player/video_player.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_main.dart';
@@ -9,6 +10,10 @@ import 'package:wrkapp/screens/unitScreens/unit3/unit3Main.dart';
 import 'package:wrkapp/widgets/clipPaths/custom_clip_0.dart';
 import 'package:wrkapp/widgets/videoWidgets/asset_video_player.dart';
 import 'package:wrkapp/widgets/videoWidgets/chewie_list_widget.dart';
+
+import '../../finalScreens/final_home.dart';
+import '../../support_screens/support_home_screen.dart';
+import '../../tweetScreen.dart';
 
 class Unit3Home extends StatefulWidget {
   @override
@@ -76,12 +81,9 @@ class _Unit3HomeState extends State<Unit3Home> {
 
               // second column of bezel
               Container(
-                height: 600,
+                height: 400,
                 width: double.infinity,
-                child: ChewieListItem(videoPlayerController:
-                VideoPlayerController.asset('assets/videos/cake.mp4'),
-                  looping: true,
-                ),
+                child: Lottie.asset('assets/lottie/canada.json'),
                 // child:Expanded(child: AssetPlayerWidget()),
               ),
 
@@ -102,11 +104,27 @@ class _Unit3HomeState extends State<Unit3Home> {
 
           ),
         ),
-        bottomNavigationBar:  Container(
+
+        bottomNavigationBar:   Container(
           color: Colors.white,
           child: SalomonBottomBar(
             currentIndex: _currentIndex,
-            onTap: (i) => setState(() => _currentIndex = i),
+            onTap: (i){
+              setState((){
+                _currentIndex = i;
+              });
+              if(_currentIndex == 0){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+              }
+              else if(_currentIndex == 1){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+              }
+              else if(_currentIndex == 2){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+              }
+            },
+            // onTap: (i) => setState(() => _currentIndex = i),
+
             items: [
               /// Home
               SalomonBottomBarItem(

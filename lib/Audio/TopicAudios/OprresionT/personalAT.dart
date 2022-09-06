@@ -51,7 +51,7 @@ class _PersonalATState extends State<PersonalAT> {
 
   Future setAudio() async{
     //WHEN COMPLETED REPEAT AUDIO
-    audioPlayer.setReleaseMode(ReleaseMode.loop);
+    audioPlayer.setReleaseMode(ReleaseMode.stop);
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');

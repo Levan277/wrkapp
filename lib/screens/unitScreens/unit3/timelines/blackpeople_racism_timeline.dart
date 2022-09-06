@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
+import '../../../finalScreens/final_home.dart';
+import '../../../support_screens/support_home_screen.dart';
+import '../../../tweetScreen.dart';
 
 class BlackPeopleInCanadaRTimeline extends StatefulWidget {
   const BlackPeopleInCanadaRTimeline({Key? key}) : super(key: key);
@@ -9,9 +14,54 @@ class BlackPeopleInCanadaRTimeline extends StatefulWidget {
 }
 
 class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimeline> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
+      bottomNavigationBar:  Container(
+        color: Colors.white,
+        child: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i){
+            setState((){
+              _currentIndex = i;
+            });
+            if(_currentIndex == 0){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+            }
+            else if(_currentIndex == 1){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+            }
+            else if(_currentIndex == 2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+            }
+          },
+          // onTap: (i) => setState(() => _currentIndex = i),
+
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Forum
+            SalomonBottomBarItem(
+              icon: Icon(Icons.message),
+              title: Text("Forum"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Support
+            SalomonBottomBarItem(
+              icon: Icon(Icons.support_agent_rounded),
+              title: Text("Support"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
+      ),
       backgroundColor: Colors.white
       ,
       appBar: AppBar(
@@ -57,7 +107,9 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                       width: 200,
                       height: 300,
-                      child: Image(image: AssetImage('assets/images/race1.jpg'),),),
+                      child:  Image(image: AssetImage('assets/images/unit3images/1608b.jpg'),),
+
+                    ),
                   ),
                 ],
               ),
@@ -67,7 +119,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:  Image(image: AssetImage('assets/images/unit3images/1619b.jpg')),
                     ),
                   ),
                   Expanded(
@@ -116,7 +168,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1685b.jpg')),
                     ),
                   ),
                 ],
@@ -129,7 +181,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:Image(image: AssetImage('assets/images/unit3images/1775.jpg')),
                     ),
                   ),
 
@@ -181,7 +233,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                 ],
@@ -197,7 +249,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1815b.jpg')),
                     ),
                   ),
                   Expanded(
@@ -206,11 +258,13 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                       height: 400,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RichText(text:
-                        TextSpan(children: [
-                          TextSpan(text: '1815\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
-                          TextSpan(text: '\t\tFrom 1815 to 1865, “tens of thousands of African-Americans” fled to Canada using the Underground Railroad. (The Canadian Encyclopedia). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                        ]),
+                        child: Center(
+                          child: RichText(text:
+                          TextSpan(children: [
+                            TextSpan(text: '1815\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
+                            TextSpan(text: '\t\tFrom 1815 to 1865, “tens of thousands of African-Americans” fled to Canada using the Underground Railroad. (The Canadian Encyclopedia). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                          ]),
+                          ),
                         ),
                       ),
                     ),
@@ -242,11 +296,13 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                       ),
                     ),
                   ),
+
+
                   Expanded(
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                 ],
@@ -260,13 +316,13 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1850b.jpg')),
                     ),
                   ),
                   Expanded(
                     child: Container(
                       width: 200,
-                      height: 450,
+                      height: 550,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: RichText(text:
@@ -311,7 +367,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                 ],
@@ -325,7 +381,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1911.jpg')),
                     ),
                   ),
                   Expanded(
@@ -334,12 +390,14 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                       height: 400,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RichText(text:
-                        TextSpan(children: [
-                          TextSpan(text: '1911\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
-                          TextSpan(text: '\t\tFrank Oliver created immigration policies that “favoured nationality over occupation” (The Canadian Encyclopedia). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                          TextSpan(text: '\t\tAnti-Black campaign  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                        ]),
+                        child: Center(
+                          child: RichText(text:
+                          TextSpan(children: [
+                            TextSpan(text: '1911\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
+                            TextSpan(text: '\t\tFrank Oliver created immigration policies that “favoured nationality over occupation” (The Canadian Encyclopedia). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                            TextSpan(text: '\t\tAnti-Black campaign  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                          ]),
+                          ),
                         ),
                       ),
                     ),
@@ -359,12 +417,14 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                       height: 400,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RichText(text:
-                        TextSpan(children: [
-                          TextSpan(text: '1916\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
-                          TextSpan(text: '\t\tBlack Battalion were segregated in Canadian Military (Nova Scotia Canada).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                          TextSpan(text: '\t\tBlack volunteers were denied by Armed Forces until 1993 (Nova Scotia Canada). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                        ]),
+                        child: Center(
+                          child: RichText(text:
+                          TextSpan(children: [
+                            TextSpan(text: '1916\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
+                            TextSpan(text: '\t\tBlack Battalion were segregated in Canadian Military (Nova Scotia Canada).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                            TextSpan(text: '\t\tBlack volunteers were denied by Armed Forces until 1993 (Nova Scotia Canada). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                          ]),
+                          ),
                         ),
                       ),
                     ),
@@ -373,7 +433,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1916b.jpg')),
                     ),
                   ),
 
@@ -388,7 +448,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                   Expanded(
@@ -441,7 +501,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:null,
                     ),
                   ),
 
@@ -456,23 +516,25 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1964b.jpg')),
                     ),
                   ),
 
                   Expanded(
                     child: Container(
                       width: 200,
-                      height: 900,
+                      height: 600,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RichText(text:
-                        TextSpan(children: [
-                          TextSpan(text: '1964\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
-                          TextSpan(text: '\t\tAfricville was demolished   \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                          TextSpan(text: '\t\tDespite pushback from citizens, the Halifax Planning Commission shut it down because it “lack basic services such as water” (The Canadian Encyclopedia). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                        child: Center(
+                          child: RichText(text:
+                          TextSpan(children: [
+                            TextSpan(text: '1964\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
+                            TextSpan(text: '\t\tAfricville was demolished   \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                            TextSpan(text: '\t\tDespite pushback from citizens, the Halifax Planning Commission shut it down because it “lack basic services such as water” (The Canadian Encyclopedia). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
 
-                          ]),
+                            ]),
+                          ),
                         ),
                       ),
                     ),
@@ -508,7 +570,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1965.jpg')),
                     ),
                   ),
 
@@ -522,7 +584,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
 
@@ -570,7 +632,7 @@ class _BlackPeopleInCanadaRTimelineState extends State<BlackPeopleInCanadaRTimel
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
 

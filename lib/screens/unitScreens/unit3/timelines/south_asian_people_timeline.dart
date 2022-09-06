@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
+import '../../../finalScreens/final_home.dart';
+import '../../../support_screens/support_home_screen.dart';
+import '../../../tweetScreen.dart';
 
 class SouthAsianPeopleTimeline extends StatefulWidget {
   const SouthAsianPeopleTimeline({Key? key}) : super(key: key);
@@ -9,9 +14,54 @@ class SouthAsianPeopleTimeline extends StatefulWidget {
 }
 
 class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
+      bottomNavigationBar:  Container(
+        color: Colors.white,
+        child: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i){
+            setState((){
+              _currentIndex = i;
+            });
+            if(_currentIndex == 0){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+            }
+            else if(_currentIndex == 1){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+            }
+            else if(_currentIndex == 2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+            }
+          },
+          // onTap: (i) => setState(() => _currentIndex = i),
+
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Forum
+            SalomonBottomBarItem(
+              icon: Icon(Icons.message),
+              title: Text("Forum"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Support
+            SalomonBottomBarItem(
+              icon: Icon(Icons.support_agent_rounded),
+              title: Text("Support"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
+      ),
       backgroundColor: Colors.white
       ,
       appBar: AppBar(
@@ -57,7 +107,9 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                       width: 200,
                       height: 300,
-                      child: Image(image: AssetImage('assets/images/race1.jpg'),),),
+                      child: Image(image: AssetImage('assets/images/unit3images/1869s.jpg')),
+
+                    ),
                   ),
                 ],
               ),
@@ -67,7 +119,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1897s.jpg')),
                     ),
                   ),
                   Expanded(
@@ -117,7 +169,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                 ],
@@ -130,7 +182,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:null,
                     ),
                   ),
 
@@ -140,13 +192,15 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                       height: 600,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RichText(text:
-                        TextSpan(children: [
-                          TextSpan(text: '1903  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
-                          TextSpan(text: '\t\t“The first South Asian men arrived in Vancouver and Victoria” (South Asian Canadian Heritage). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                          TextSpan(text: '\t\t“From 1904-1905, the population of South Asian people in Canada increased. (South Asian Canadian Heritage). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                        child: Center(
+                          child: RichText(text:
+                          TextSpan(children: [
+                            TextSpan(text: '1903  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
+                            TextSpan(text: '\t\t“The first South Asian men arrived in Vancouver and Victoria” (South Asian Canadian Heritage). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                            TextSpan(text: '\t\t“From 1904-1905, the population of South Asian people in Canada increased. (South Asian Canadian Heritage). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
 
-                        ]),
+                          ]),
+                          ),
                         ),
                       ),
                     ),
@@ -183,7 +237,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1907s.jpg')),
                     ),
                   ),
                 ],
@@ -199,7 +253,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1908s.jpg')),
                     ),
                   ),
                   Expanded(
@@ -208,15 +262,17 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                       height: 1000,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RichText(text:
-                        TextSpan(children: [
-                          TextSpan(text: '1908 \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
-                          TextSpan(text: '\t\tThe “government passes an order-in-council…prohibiting immigration of persons that did not travel on a continuous journey to Canada” (South Asian Canadian Heritage).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                          TextSpan(text: '\t\tOn January 8th, “Canadian Prime Minister William Lyon Mackenzie King” along with others attempted to “send Indian immigrants to Honduras” to “get ‘rid’ of them” (South Asian Canadian Heritage).   \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                          TextSpan(text: '\t\tThanks to the help of Sant Teja Singh and the Sikh community, the plan was rejected (South Asian Canadian Heritage).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                          TextSpan(text: '\t\t A \$200 head tax was imposed “on all Asian immigrants” arriving in Canada. It was meant to “prevent the entry of wives and families of residing South Asians” (South Asian Canadian Heritage).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                        child: Center(
+                          child: RichText(text:
+                          TextSpan(children: [
+                            TextSpan(text: '1908 \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
+                            TextSpan(text: '\t\tThe “government passes an order-in-council…prohibiting immigration of persons that did not travel on a continuous journey to Canada” (South Asian Canadian Heritage).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                            TextSpan(text: '\t\tOn January 8th, “Canadian Prime Minister William Lyon Mackenzie King” along with others attempted to “send Indian immigrants to Honduras” to “get ‘rid’ of them” (South Asian Canadian Heritage).   \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                            TextSpan(text: '\t\tThanks to the help of Sant Teja Singh and the Sikh community, the plan was rejected (South Asian Canadian Heritage).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                            TextSpan(text: '\t\t A \$200 head tax was imposed “on all Asian immigrants” arriving in Canada. It was meant to “prevent the entry of wives and families of residing South Asians” (South Asian Canadian Heritage).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
 
-                        ]),
+                          ]),
+                          ),
                         ),
                       ),
                     ),
@@ -252,7 +308,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                 ],
@@ -266,7 +322,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:  Image(image: AssetImage('assets/images/unit3images/1914s.jpg')),
                     ),
                   ),
                   Expanded(
@@ -317,7 +373,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                 ],
@@ -331,7 +387,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                   Expanded(
@@ -366,11 +422,13 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                       height: 400,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RichText(text:
-                        TextSpan(children: [
-                          TextSpan(text: '1947\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
-                          TextSpan(text: '\t\tSouth Asian immigrants are finally able to vote and become Canadian citizens (South Asian Canadian Heritage). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                        ]),
+                        child: Center(
+                          child: RichText(text:
+                          TextSpan(children: [
+                            TextSpan(text: '1947\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
+                            TextSpan(text: '\t\tSouth Asian immigrants are finally able to vote and become Canadian citizens (South Asian Canadian Heritage). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                          ]),
+                          ),
                         ),
                       ),
                     ),
@@ -379,7 +437,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:  Image(image: AssetImage('assets/images/unit3images/1947s.jpg')),
                     ),
                   ),
 
@@ -394,7 +452,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                   Expanded(
@@ -446,7 +504,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
 
@@ -459,7 +517,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                   child: Container(
                       width: 200,
                       height: 300,
-                      child: Image(image: AssetImage('assets/images/race1.jpg'))
+                      child: Image(image: AssetImage('assets/images/unit3images/2010s.jpg')),
                   ),
                 ),
 
@@ -491,11 +549,13 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                       height: 400,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: RichText(text:
-                        TextSpan(children: [
-                          TextSpan(text: '2016\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
-                          TextSpan(text: '\t\tPrime Minister Justin Trudeau apologizes for turning back “passengers on the Komagata Maru in 1914” (South Asian Canadian Heritage).   \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-                        ]),
+                        child: Center(
+                          child: RichText(text:
+                          TextSpan(children: [
+                            TextSpan(text: '2016\n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black)),
+                            TextSpan(text: '\t\tPrime Minister Justin Trudeau apologizes for turning back “passengers on the Komagata Maru in 1914” (South Asian Canadian Heritage).   \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
+                          ]),
+                          ),
                         ),
                       ),
                     ),
@@ -505,7 +565,7 @@ class _SouthAsianPeopleTimelineState extends State<SouthAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/2016s.jpg')),
                     ),
                   ),
 

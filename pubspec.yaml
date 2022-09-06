@@ -96,6 +96,8 @@ flutter:
      - assets/lottie/
      - assets/
      - assets/images/unit1images/
+     - assets/images/unit2images/
+     - assets/images/unit3images/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

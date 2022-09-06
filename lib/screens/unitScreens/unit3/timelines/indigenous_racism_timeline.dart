@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
+import '../../../finalScreens/final_home.dart';
+import '../../../support_screens/support_home_screen.dart';
+import '../../../tweetScreen.dart';
 
 class IndigenousTimeline extends StatefulWidget {
   const IndigenousTimeline({Key? key}) : super(key: key);
@@ -9,9 +14,54 @@ class IndigenousTimeline extends StatefulWidget {
 }
 
 class _IndigenousTimelineState extends State<IndigenousTimeline> {
+ var  _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
+      bottomNavigationBar:  Container(
+        color: Colors.white,
+        child: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i){
+            setState((){
+              _currentIndex = i;
+            });
+            if(_currentIndex == 0){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+            }
+            else if(_currentIndex == 1){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+            }
+            else if(_currentIndex == 2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+            }
+          },
+          // onTap: (i) => setState(() => _currentIndex = i),
+
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Forum
+            SalomonBottomBarItem(
+              icon: Icon(Icons.message),
+              title: Text("Forum"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Support
+            SalomonBottomBarItem(
+              icon: Icon(Icons.support_agent_rounded),
+              title: Text("Support"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
+      ),
       backgroundColor: Colors.white
       ,
       appBar: AppBar(
@@ -56,7 +106,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                    child: Container(
                        width: 200,
                        height: 300,
-                       child: Image(image: AssetImage('assets/images/race1.jpg'),),),
+                       child: Image(image: AssetImage('assets/images/unit3images/1400i.jpg'),),),
                  ),
                 ],
               ),
@@ -66,7 +116,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1820i.jpg')),
                     ),
                   ),
                   Expanded(
@@ -116,7 +166,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1857i.jpg')),
                     ),
                   ),
                 ],
@@ -129,14 +179,14 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1869i.jpg')),
                     ),
                   ),
 
                   Expanded(
                     child: Container(
                       width: 200,
-                      height: 600,
+                      height: 700,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: RichText(text:
@@ -145,8 +195,8 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                           TextSpan(text: '\t\tThe Gradual Enfranchisement Act of 1869 was put into place (Facing History & Ourselves).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
                           TextSpan(text: '\t\tprovided the government with more control over who they could declare an ‘Indian’” (Indian Residential School History & Dialogue Centre). \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
                           TextSpan(text: '\t\tIt revoked the rights of Indigenous People and took away Indigenous women’s status if they married men without status (Indian Residential School History & Dialogue Centre).  \n\n',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.black)),
-
-                        ]),
+                           ],
+                         ),
                         ),
                       ),
                     ),
@@ -183,7 +233,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1876i.jpg')),
                     ),
                   ),
                 ],
@@ -199,7 +249,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                   Expanded(
@@ -249,7 +299,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:  Image(image: AssetImage('assets/images/unit3images/1883i.jpg')),
                     ),
                   ),
                 ],
@@ -263,7 +313,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:  Image(image: AssetImage('assets/images/unit3images/1907i.jpg')),
                     ),
                   ),
                   Expanded(
@@ -312,7 +362,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:null,
                     ),
                   ),
                 ],
@@ -326,7 +376,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                   Expanded(
@@ -373,7 +423,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
 
@@ -388,7 +438,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                   Expanded(
@@ -439,7 +489,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:  Image(image: AssetImage('assets/images/unit3images/1960i.jpg')),
                     ),
                   ),
 
@@ -453,8 +503,8 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                   Expanded(
                     child: Container(
                         width: 200,
-                        height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        height: 400,
+                        child:  Image(image: AssetImage('assets/images/unit3images/1971i.jpg')),
                     ),
                   ),
 
@@ -506,7 +556,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
 
@@ -520,7 +570,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:  Image(image: AssetImage('assets/images/unit3images/1996i.jpg')),
                     ),
                   ),
 
@@ -568,7 +618,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
 
@@ -586,7 +636,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                       width: 200,
                       height: 300,
-                      child: Image(image: AssetImage('assets/images/race1.jpg'))
+                      child:  Image(image: AssetImage('assets/images/unit3images/2008i.jpg')),
                 ),
                   ),
 
@@ -638,7 +688,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:  Image(image: AssetImage('assets/images/unit3images/2010i.jpg')),
                     ),
                   ),
 
@@ -656,7 +706,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:null,
                     ),
                   ),
 
@@ -710,7 +760,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
 
@@ -725,7 +775,7 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/2021i.jpg')),
                     ),
                   ),
 
@@ -762,3 +812,4 @@ class _IndigenousTimelineState extends State<IndigenousTimeline> {
     ));
   }
 }
+

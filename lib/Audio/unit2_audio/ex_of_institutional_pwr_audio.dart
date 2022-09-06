@@ -54,7 +54,7 @@ class _EOInstitutionalpwrAudioState extends State<EOInstitutionalpwrAudio> {
 
   Future setAudio() async{
     //WHEN COMPLETED REPEAT AUDIO
-    audioPlayer.setReleaseMode(ReleaseMode.loop);
+    audioPlayer.setReleaseMode(ReleaseMode.stop);
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
@@ -89,7 +89,7 @@ class _EOInstitutionalpwrAudioState extends State<EOInstitutionalpwrAudio> {
                   //   width: 60,
                   //   child: NeuBox(child: Icon(Icons.arrow_back)),
                   // ),
-                  Text('Example of Institutional Power',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                  Expanded(child: Text('Example of Institutional Power',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)),
                   // SizedBox(
                   //   height: 60,
                   //   width: 60,

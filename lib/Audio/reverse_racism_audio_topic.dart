@@ -53,11 +53,11 @@ class _ReverseRacismAudioTState extends State<ReverseRacismAudioT> {
 
   Future setAudio() async{
     //WHEN COMPLETED REPEAT AUDIO
-    audioPlayer.setReleaseMode(ReleaseMode.loop);
+    audioPlayer.setReleaseMode(ReleaseMode.stop);
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('LateNight.mp3');
+    final url = await player.load('u1_sec1_reverseracism.mp3');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -87,7 +87,7 @@ class _ReverseRacismAudioTState extends State<ReverseRacismAudioT> {
                     width: 60,
                     child: NeuBox(child: Icon(Icons.arrow_back)),
                   ),
-                  Text('P O W E R'),
+                  Text('Reverse Racism Example'),
                   SizedBox(
                     height: 60,
                     width: 60,
@@ -104,7 +104,7 @@ class _ReverseRacismAudioTState extends State<ReverseRacismAudioT> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(''),
+                      child: Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180,),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -114,22 +114,9 @@ class _ReverseRacismAudioTState extends State<ReverseRacismAudioT> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'Late Night',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.grey.shade700,
-                                ),
-                              ),
-                              const SizedBox(height: 6),
-                              const Text(
-                                'Harry Styles',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22,
-                                ),
-                              ),
+
+
+
                             ],
                           ),
                           const Icon(

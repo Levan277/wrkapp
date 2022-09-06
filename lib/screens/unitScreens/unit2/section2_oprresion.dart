@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:wrkapp/Audio/summary_of_units.dart';
+import 'package:wrkapp/Audio/summary_of_units_sec2_u2.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_institutional_pwr_audio.dart';
 import 'package:wrkapp/Audio/unit2_audio/oppression_audio.dart';
@@ -13,16 +15,70 @@ import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
+import '../../finalScreens/final_home.dart';
+import '../../support_screens/support_home_screen.dart';
+import '../../tweetScreen.dart';
 
-class Section2Oppresion extends StatelessWidget {
+
+class Section2Oppresion extends StatefulWidget {
+
   const Section2Oppresion({Key? key}) : super(key: key);
 
+  @override
+  State<Section2Oppresion> createState() => _Section2OppresionState();
+}
+
+class _Section2OppresionState extends State<Section2Oppresion> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery. of(context). size. width ;
     double height = MediaQuery. of(context). size. height;
     return SafeArea(child: Scaffold(
-      backgroundColor: Color(0xffF7FFA7),
+      bottomNavigationBar:  Container(
+        color: Colors.white,
+        child: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i){
+            setState((){
+              _currentIndex = i;
+            });
+            if(_currentIndex == 0){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+            }
+            else if(_currentIndex == 1){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+            }
+            else if(_currentIndex == 2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+            }
+          },
+          // onTap: (i) => setState(() => _currentIndex = i),
+
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Forum
+            SalomonBottomBarItem(
+              icon: Icon(Icons.message),
+              title: Text("Forum"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Support
+            SalomonBottomBarItem(
+              icon: Icon(Icons.support_agent_rounded),
+              title: Text("Support"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title:  Text('Unit 2: Power & Oppresion'),
         backgroundColor: Colors.pinkAccent,
@@ -87,37 +143,12 @@ class Section2Oppresion extends StatelessWidget {
             children: [
 
               SizedBox(height:700, width:double.infinity,child: OppresionAudio()),
-
+SizedBox(height: 25,),
               Row(
 
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  //image 1
-                  Container(
-                    height: 120.0,
-                    width: 120.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            'assets/images/laptop.jpg'),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                  //image 2
-                  Container(
-                    height: 120.0,
-                    width: 120.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            'assets/images/endracism2.jpeg'),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
+
                 ],),
 
               Padding(
@@ -148,7 +179,7 @@ class Section2Oppresion extends StatelessWidget {
                     text:  TextSpan(
                       children: [
                         TextSpan(text: 'Is “associated with our values, beliefs and feelings about individuals different from us” (Pizaña) \n', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16)),
-                        TextSpan(text: '   Example - Racism: believing that one racial group is smarter than another.', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
+                        TextSpan(text: 'Example - Racism: believing that one racial group is smarter than another.', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ),
@@ -160,13 +191,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/oppr1.jpg'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage:  AssetImage('assets/images/unit2images/oppr2.jpg'),
                   ),
                 ],
               ),
@@ -209,13 +240,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/oppr3.jpg'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage:  AssetImage('assets/images/unit2images/oppr4.jpg'),
                   ),
                 ],
               ),
@@ -257,13 +288,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage:  AssetImage('assets/images/unit2images/instopp1.jpg'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage:AssetImage('assets/images/unit2images/instopp2.jpg'),
                   ),
                 ],
               ),
@@ -306,13 +337,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/oppr5.jpg'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/oppr6.jpg'),
                   ),
                 ],
               ),
@@ -364,13 +395,13 @@ class Section2Oppresion extends StatelessWidget {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage:AssetImage('assets/images/unit2images/agentoppr1.jpg'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/agentoppr2.jpg'),
                   ),
                 ],
               ),
@@ -415,13 +446,13 @@ SizedBox(height: 10,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/si1.jpg'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/si2.jpg'),
                   ),
                 ],
               ),
@@ -464,19 +495,19 @@ SizedBox(height: 10,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/internalized1.jpg'),
                   ),
                   SizedBox(width: 70,),
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.black,
-                    backgroundImage: NetworkImage('https://picsum.photos/200'),
+                    backgroundImage: AssetImage('assets/images/unit2images/internalized2.jpg'),
                   ),
                 ],
               ),
+SizedBox(height: 25,),
 
-
-
+              SizedBox(height:700, width:double.infinity,child: SectionSummary2()),
 
 
             ],

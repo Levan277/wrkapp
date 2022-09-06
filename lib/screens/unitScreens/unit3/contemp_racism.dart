@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_institutional_pwr_audio.dart';
@@ -19,17 +20,69 @@ import 'package:wrkapp/screens/unitScreens/unit3/unit3Main.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
 import '../../../Audio/unit3Audio/lack_of_ack_anti_racism_south_asian.dart';
+import '../../finalScreens/final_home.dart';
+import '../../support_screens/support_home_screen.dart';
+import '../../tweetScreen.dart';
 
 
-class ContempRacism extends StatelessWidget {
+class ContempRacism extends StatefulWidget {
   const ContempRacism({Key? key}) : super(key: key);
 
+  @override
+  State<ContempRacism> createState() => _ContempRacismState();
+}
+
+class _ContempRacismState extends State<ContempRacism> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery. of(context). size. width ;
     double height = MediaQuery. of(context). size. height;
     return SafeArea(child: Scaffold(
-      backgroundColor: Color(0xffF7FFA7),
+      bottomNavigationBar:  Container(
+        color: Colors.white,
+        child: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i){
+            setState((){
+              _currentIndex = i;
+            });
+            if(_currentIndex == 0){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+            }
+            else if(_currentIndex == 1){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+            }
+            else if(_currentIndex == 2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+            }
+          },
+          // onTap: (i) => setState(() => _currentIndex = i),
+
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Forum
+            SalomonBottomBarItem(
+              icon: Icon(Icons.message),
+              title: Text("Forum"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Support
+            SalomonBottomBarItem(
+              icon: Icon(Icons.support_agent_rounded),
+              title: Text("Support"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         title: Text('Unit 3 | Racism in Canada, The Past & The Present '),

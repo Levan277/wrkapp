@@ -2,11 +2,18 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:lottie/lottie.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/personalAT.dart';
+import 'package:wrkapp/Audio/xenophobia_audio_topic.dart';
 import 'package:wrkapp/route/route.dart' as route;
+import 'package:wrkapp/screens/TopicScreens/colonization_topic.dart';
+import 'package:wrkapp/screens/TopicScreens/equity_topic.dart';
 import 'package:wrkapp/screens/TopicScreens/oprression_topic_page.dart';
+import 'package:wrkapp/screens/TopicScreens/policy_topic.dart';
+import 'package:wrkapp/screens/TopicScreens/racialization_topic.dart';
 import 'package:wrkapp/screens/TopicScreens/white_privilege_topic_page.dart';
+import 'package:wrkapp/screens/TopicScreens/white_supremacy_topic.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_final_home.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/unit2_HOME.dart';
@@ -16,6 +23,7 @@ import 'package:wrkapp/screens/unitScreens/unit4/unit4Home.dart';
 import 'package:wrkapp/screens/unitScreens/unit4/unit4Main.dart';
 import 'package:wrkapp/screens/unitScreens/unit5/unit5_home.dart';
 import '../TopicScreens/indigenous peoples_topic_page.dart';
+import '../support_screens/support_home_screen.dart';
 import '../tweetScreen.dart';
 
 class FinalHome extends StatefulWidget {
@@ -31,13 +39,9 @@ class _FinalHomeState extends State<FinalHome> {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-      backgroundColor: Colors.pink,
+      backgroundColor: Color(0xffFF8201),
       actions: [
-        IconButton(onPressed: (){  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeForum()));}, icon: Icon(Icons.messenger_rounded)),
-        IconButton(onPressed: (){}, icon: Icon(Icons.home),),
-        IconButton(onPressed: (){
-         Navigator.pushNamed(context, route.liveSupportScreen);
-        }, icon: Icon(Icons.support_agent_rounded),),
+
       ],
     ),
       body: SingleChildScrollView(
@@ -46,7 +50,7 @@ class _FinalHomeState extends State<FinalHome> {
 
             Container(
 
-              color: Colors.pink,
+              color: Color(0xffFF8201),
               height: 400,
               width: double.infinity,
               child: Column(
@@ -370,7 +374,7 @@ class _FinalHomeState extends State<FinalHome> {
             Container(
               width: double.infinity,
               height: 250,
-              color: Color(0xffFBC70A),
+              color: Color(0xffFF8201),
               child: Column(
                 children: [
                   Align(
@@ -378,9 +382,9 @@ class _FinalHomeState extends State<FinalHome> {
                         padding: const EdgeInsets.all(8.0),
                         child: Text('Topics',style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 40,color: Colors.white,
-                        ),),
+                        ),textAlign: TextAlign.center,),
                       ),
-                  alignment: Alignment.topLeft,
+                  alignment: Alignment.center,
                   ),
                 SizedBox(height: 10,),
 
@@ -464,6 +468,120 @@ class _FinalHomeState extends State<FinalHome> {
                             ),
                           ),
                         ),
+
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ColonizationTopic()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("Colonization/Decolonization",textAlign: TextAlign.center,),
+                            ),
+                          ),
+                        ),
+
+
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>EquityTopic()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("Equity",textAlign: TextAlign.center,),
+                            ),
+                          ),
+                        ),
+
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>PolicyTopic()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("Policy"),
+                            ),
+                          ),
+                        ),
+
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RacializationTopic()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("Racialization",textAlign: TextAlign.center,),
+                            ),
+                          ),
+                        ),
+
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RacializationTopic()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("Racialization",textAlign: TextAlign.center,),
+                            ),
+                          ),
+                        ),
+
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>WhiteSupremacyTopic()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("White Supremacy",textAlign: TextAlign.center,),
+                            ),
+                          ),
+                        ),
+
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>XenophobiaAudioT()));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                              radius: 60,
+                              foregroundColor: Colors.orange,
+                              child: Text("Xenophobia",textAlign: TextAlign.center,),
+                            ),
+                          ),
+                        ),
+
                       ],
                     ),
                   ),
@@ -471,7 +589,7 @@ class _FinalHomeState extends State<FinalHome> {
               ),
             ),
             Container(
-              color: Colors.black,
+              color: Colors.blue,
               width: double.infinity,
               height: 300,
               child: Column(
@@ -484,14 +602,19 @@ class _FinalHomeState extends State<FinalHome> {
                   SizedBox(height: 10,),
                   Text("Racism?",style: TextStyle(color: Colors.white,fontSize: 24),),
                    SizedBox(height: 5,),
-                  Expanded(child: Image.asset('assets/images/racePoll1.png',)),
+                  Expanded(
+                    child: Container(
+                      color: Colors.blue,
+                      child:   Lottie.asset('assets/lottie/racism.json') ,
+                    ),
+                  ),
                 ],
               ),
             ),
             
           Container(
-            color: Colors.lightBlueAccent,
-            height: 300,
+            color: Colors.blue,
+            height: 200,
             width:double.infinity,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -503,62 +626,71 @@ class _FinalHomeState extends State<FinalHome> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.black,
-                      radius: 40,
-                    ),
                     SizedBox(width: 10,),
                     Flexible(
                       child: Text("How Do You Respond To Microaggressions?",style: TextStyle(
-                        fontSize: 32,fontWeight: FontWeight.bold,
-                        
-                      ),),
+                        fontSize: 28,fontWeight: FontWeight.bold,
+
+                      ),textAlign: TextAlign.center,),
                     ),
                   ],
-                )
-             
+                ),
+
               ],
             ),
           ),
+            Container(
+              color: Colors.blue,
+              child:   Lottie.asset('assets/lottie/talk.json') ,
+            ),
+
           ],
         ),
       ),
-      bottomNavigationBar:  SalomonBottomBar(
-        currentIndex: _currentIndex,
-        onTap: (i) => setState(() => _currentIndex = i),
-        items: [
-          /// Home
-          SalomonBottomBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Home"),
-            selectedColor: Colors.purple,
-          ),
+      bottomNavigationBar:  Container(
+        color: Colors.white,
+        child: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i){
+            setState((){
+              _currentIndex = i;
+            });
+            if(_currentIndex == 0){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+            }
+            else if(_currentIndex == 1){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+            }
+            else if(_currentIndex == 2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+            }
+          },
+          // onTap: (i) => setState(() => _currentIndex = i),
 
-          /// Forum
-          SalomonBottomBarItem(
-            icon: Icon(Icons.message),
-            title: Text("Forum"),
-            selectedColor: Colors.orange,
-          ),
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.purple,
+            ),
 
-          /// Support
-          SalomonBottomBarItem(
-            icon: Icon(Icons.support_agent_rounded),
-            title: Text("Support"),
-            selectedColor: Colors.teal,
-          ),
-        ],
+            /// Forum
+            SalomonBottomBarItem(
+              icon: Icon(Icons.message),
+              title: Text("Forum"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Support
+            SalomonBottomBarItem(
+              icon: Icon(Icons.support_agent_rounded),
+              title: Text("Support"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
       ),
-      // bottomNavigationBar: CurvedNavigationBar(
-      //   // backgroundColor: Color(0xffF7C8D3),
-      //   backgroundColor: Colors.lightBlueAccent,
-      //   color: Colors.yellow.shade800,
-      //   items: [
-      //     Icon(Icons.home),
-      //     Icon(Icons.message),
-      //     Icon(Icons.support_agent_rounded),
-      //   ],
-      // ),
     );
   }
 }

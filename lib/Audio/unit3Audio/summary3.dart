@@ -54,7 +54,7 @@ class _Summary3U3State extends State<Summary3U3> {
 
   Future setAudio() async{
     //WHEN COMPLETED REPEAT AUDIO
-    audioPlayer.setReleaseMode(ReleaseMode.loop);
+    audioPlayer.setReleaseMode(ReleaseMode.stop);
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');

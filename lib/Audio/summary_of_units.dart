@@ -6,14 +6,14 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'neu_box_widget.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-class SummaryOfUnits extends StatefulWidget {
-  const SummaryOfUnits({Key? key}) : super(key: key);
+class SectionSummary extends StatefulWidget {
+  const SectionSummary({Key? key}) : super(key: key);
 
   @override
-  State<SummaryOfUnits> createState() => _SummaryOfUnitsState();
+  State<SectionSummary> createState() => _SectionSummaryState();
 }
 
-class _SummaryOfUnitsState extends State<SummaryOfUnits> {
+class _SectionSummaryState extends State<SectionSummary> {
   final audioPlayer  = AudioPlayer();
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
@@ -53,7 +53,7 @@ class _SummaryOfUnitsState extends State<SummaryOfUnits> {
 
   Future setAudio() async{
     //WHEN COMPLETED REPEAT AUDIO
-    audioPlayer.setReleaseMode(ReleaseMode.loop);
+    audioPlayer.setReleaseMode(ReleaseMode.stop);
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
@@ -89,7 +89,7 @@ class _SummaryOfUnitsState extends State<SummaryOfUnits> {
                   //   width: 60,
                   //   child: NeuBox(child: Icon(Icons.arrow_back)),
                   // ),
-                  Text('Summary of Units',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                  Text('Section Summary',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
                   // SizedBox(
                   //   height: 60,
                   //   width: 60,

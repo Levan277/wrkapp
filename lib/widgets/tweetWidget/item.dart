@@ -80,7 +80,7 @@ class _ItemPostState extends State<ItemPost> {
         icon: Icon(
         false? Icons.cancel
             : Icons.chat_bubble_outline,
-          color: Colors.blue,
+          color: Colors.red,
           size: 30.0,
 
         ),
@@ -106,20 +106,20 @@ class _ItemPostState extends State<ItemPost> {
     ],
     ),
 
-            Row(
-              children: [
-                IconButton(
-                  color: Colors.blue,
-                    icon: Icon(
-                           Icons.delete),
-
-                    onPressed: () {
-                              final docPost = FirebaseFirestore.instance.collection('posts').doc(widget.snapshotUser.data!.uid);
-                              docPost.delete();
-                    }),
-              
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     IconButton(
+            //       color: Colors.blue,
+            //         icon: Icon(
+            //                Icons.delete),
+            //
+            //         onPressed: () {
+            //                   final docPost = FirebaseFirestore.instance.collection('posts').doc(widget.snapshotUser.data!.uid);
+            //                   docPost.delete();
+            //         }),
+            //
+            //   ],
+            // ),
 
     ],),
 

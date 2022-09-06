@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
+import '../../../finalScreens/final_home.dart';
+import '../../../support_screens/support_home_screen.dart';
+import '../../../tweetScreen.dart';
 
 class EastAsianPeopleTimeline extends StatefulWidget {
   const EastAsianPeopleTimeline({Key? key}) : super(key: key);
@@ -9,11 +14,55 @@ class EastAsianPeopleTimeline extends StatefulWidget {
 }
 
 class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
+  var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      backgroundColor: Colors.white
-      ,
+      bottomNavigationBar:  Container(
+        color: Colors.white,
+        child: SalomonBottomBar(
+          currentIndex: _currentIndex,
+          onTap: (i){
+            setState((){
+              _currentIndex = i;
+            });
+            if(_currentIndex == 0){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+            }
+            else if(_currentIndex == 1){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+            }
+            else if(_currentIndex == 2){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+            }
+          },
+          // onTap: (i) => setState(() => _currentIndex = i),
+
+          items: [
+            /// Home
+            SalomonBottomBarItem(
+              icon: Icon(Icons.home),
+              title: Text("Home"),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Forum
+            SalomonBottomBarItem(
+              icon: Icon(Icons.message),
+              title: Text("Forum"),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Support
+            SalomonBottomBarItem(
+              icon: Icon(Icons.support_agent_rounded),
+              title: Text("Support"),
+              selectedColor: Colors.teal,
+            ),
+          ],
+        ),
+      ),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.pink,
         centerTitle: true,
@@ -59,7 +108,9 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                       width: 200,
                       height: 300,
-                      child: Image(image: AssetImage('assets/images/race1.jpg'),),),
+                      child:  Image(image: AssetImage('assets/images/unit3images/1788e.jpg')),
+
+                    ),
                   ),
                 ],
               ),
@@ -69,7 +120,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                   Expanded(
@@ -123,7 +174,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1885e.jpg')),
                     ),
                   ),
                 ],
@@ -136,14 +187,14 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:null,
                     ),
                   ),
 
                   Expanded(
                     child: Container(
                       width: 200,
-                      height: 600,
+                      height: 500,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
@@ -171,7 +222,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                   Expanded(
                     child: Container(
                       width: 200,
-                      height: 680,
+                      height: 500,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
@@ -190,7 +241,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                 ],
@@ -205,8 +256,8 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                   Expanded(
                     child: Container(
                         width: 200,
-                        height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        height: 500,
+                        child: Image(image: AssetImage('assets/images/unit3images/1902e.jpg')),
                     ),
                   ),
                   Expanded(
@@ -261,7 +312,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1903e.jpg')),
                     ),
                   ),
                 ],
@@ -275,7 +326,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                   Expanded(
@@ -328,7 +379,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                 ],
@@ -342,7 +393,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child:Image(image: AssetImage('assets/images/unit3images/1931e.jpg')),
                     ),
                   ),
                   Expanded(
@@ -392,7 +443,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1944.jpg')),
                     ),
                   ),
 
@@ -407,7 +458,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
                   Expanded(
@@ -460,7 +511,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1947e.jpg')),
                     ),
                   ),
 
@@ -473,7 +524,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
 
@@ -522,7 +573,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: null,
                     ),
                   ),
 
@@ -537,7 +588,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                   child: Container(
                       width: 200,
                       height: 300,
-                      child: Image(image: AssetImage('assets/images/race1.jpg'))
+                      child: Image(image: AssetImage('assets/images/unit3images/1975e.jpg')),
                   ),
                 ),
 
@@ -586,7 +637,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                     child: Container(
                         width: 200,
                         height: 300,
-                        child: Image(image: AssetImage('assets/images/race1.jpg'))
+                        child: Image(image: AssetImage('assets/images/unit3images/1988e.jpg')),
                     ),
                   ),
 
@@ -599,7 +650,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
                   child: Container(
                       width: 200,
                       height: 300,
-                      child: Image(image: AssetImage('assets/images/race1.jpg'))
+                      child: Image(image: AssetImage('assets/images/unit3images/2006e.jpg')),
                   ),
                 ),
                   Expanded(
@@ -629,6 +680,7 @@ class _EastAsianPeopleTimelineState extends State<EastAsianPeopleTimeline> {
           ),
         ],
       ),
-    ));
+      ),
+    );
   }
 }

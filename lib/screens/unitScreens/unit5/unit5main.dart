@@ -22,7 +22,6 @@ class _Unit5MainState extends State<Unit5Main> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      backgroundColor: Color(0xffF7FFA7),
 
       bottomNavigationBar:  Container(
         color: Colors.white,
@@ -71,7 +70,7 @@ class _Unit5MainState extends State<Unit5Main> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: Text("Unit 1"),
+        title: Text("Unit 5"),
         actions: [Icon(Icons.support_agent_rounded)],
       ),
       body: ListView(

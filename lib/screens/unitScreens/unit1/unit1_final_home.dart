@@ -1,12 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:video_player/video_player.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_main.dart';
 import 'package:wrkapp/widgets/clipPaths/custom_clip_0.dart';
 import 'package:wrkapp/widgets/videoWidgets/asset_video_player.dart';
 import 'package:wrkapp/widgets/videoWidgets/chewie_list_widget.dart';
+
+import '../../finalScreens/final_home.dart';
+import '../../support_screens/support_home_screen.dart';
+import '../../tweetScreen.dart';
 
 class Unit1Home extends StatefulWidget {
   @override
@@ -20,7 +25,7 @@ class _Unit1HomeState extends State<Unit1Home> {
     final Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.pink,
+        backgroundColor: Color(0xffFF8201),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -52,7 +57,7 @@ class _Unit1HomeState extends State<Unit1Home> {
                           Baseline(
                             baseline: 20,
                               baselineType: TextBaseline.alphabetic,
-                              child: Text("Familiarizing\n Yourself With\n Racism",style: GoogleFonts.montserrat(color: Colors.white, fontSize: 24),textAlign: TextAlign.center,))
+                              child: Text("Familiarizing\n Yourself With\n Racism",style: GoogleFonts.montserrat(color: Colors.white, fontSize: 22),textAlign: TextAlign.center,))
                         ],
                       ),
 
@@ -75,10 +80,7 @@ class _Unit1HomeState extends State<Unit1Home> {
  Container(
    height: 400,
    width: double.infinity,
-   child: ChewieListItem(videoPlayerController:
-   VideoPlayerController.asset('assets/videos/cake.mp4'),
-   looping: true,
-   ),
+   child: Lottie.asset('assets/lottie/thinking2.json',width: 300,height: 300),
    // child:Expanded(child: AssetPlayerWidget()),
  ),
 
@@ -103,7 +105,22 @@ class _Unit1HomeState extends State<Unit1Home> {
           color: Colors.white,
           child: SalomonBottomBar(
             currentIndex: _currentIndex,
-            onTap: (i) => setState(() => _currentIndex = i),
+            onTap: (i){
+              setState((){
+                _currentIndex = i;
+              });
+              if(_currentIndex == 0){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+              }
+              else if(_currentIndex == 1){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+              }
+              else if(_currentIndex == 2){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
+              }
+            },
+            // onTap: (i) => setState(() => _currentIndex = i),
+
             items: [
               /// Home
               SalomonBottomBarItem(
