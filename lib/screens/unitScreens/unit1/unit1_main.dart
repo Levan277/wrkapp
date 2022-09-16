@@ -494,14 +494,14 @@ class _UnitsPageState extends State<UnitsPage> {
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                 child: Container(
                   width: 180,
-                  height: 60,
+                  height: 65,
                   decoration: BoxDecoration(
                     color: Colors.pink,
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Privilege & White Privilege ",style: TextStyle(color: Colors.white,fontSize: 20),),
+                    child: Text("Privilege & White Privilege ",style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
                   ),),
                 ),
               ),
@@ -727,7 +727,7 @@ class _UnitsPageState extends State<UnitsPage> {
                     text:  TextSpan(
                         children: [
                           TextSpan(text: 'The treatment of a person/group of people as insignificant and/or powerless.', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          ]
+                          ],
                     ),
                   ),
                 ),

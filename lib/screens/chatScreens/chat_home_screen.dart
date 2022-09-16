@@ -12,7 +12,6 @@ import 'package:flutter/services.dart';
 import 'package:wrkapp/helpers.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:anim_search_bar/anim_search_bar.dart';
-
 import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
 
 

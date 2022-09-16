@@ -80,7 +80,7 @@ class _ItemPostState extends State<ItemPost> {
         icon: Icon(
         false? Icons.cancel
             : Icons.chat_bubble_outline,
-          color: Colors.red,
+          color: Colors.blue,
           size: 30.0,
 
         ),

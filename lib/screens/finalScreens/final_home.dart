@@ -1,4 +1,5 @@
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -56,7 +57,19 @@ class _FinalHomeState extends State<FinalHome> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Explore Units",style: TextStyle(color: Colors.white,fontSize: 42,fontWeight: FontWeight.w500),),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: AnimatedTextKit(isRepeatingAnimation:true,animatedTexts: [
+
+                      TypewriterAnimatedText("Explore Units",textStyle: TextStyle(color: Colors.white,fontSize: 42,fontWeight: FontWeight.w500),
+                      speed: Duration(milliseconds: 100),
+
+                      ),
+
+
+                    ]),
+                  ),
+                  // Text("Explore Units",style: TextStyle(color: Colors.white,fontSize: 42,fontWeight: FontWeight.w500),),
 
                   Container(
 
@@ -380,13 +393,21 @@ class _FinalHomeState extends State<FinalHome> {
                   Align(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('Topics',style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 40,color: Colors.white,
-                        ),textAlign: TextAlign.center,),
+                        child: AnimatedTextKit(isRepeatingAnimation:true,animatedTexts: [
+                          TypewriterAnimatedText("Topics In Depth",textStyle: TextStyle(color: Colors.white,fontSize: 42,fontWeight: FontWeight.w500),
+                            speed: Duration(milliseconds: 100),
+
+                          ),
+
+                        ]),
                       ),
                   alignment: Alignment.center,
                   ),
                 SizedBox(height: 10,),
+
+
+
+
 
                   Container(
                     width: double.infinity,
@@ -396,16 +417,6 @@ class _FinalHomeState extends State<FinalHome> {
                       shrinkWrap: true,
                       children: [
 
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.black,
-                            // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                            radius: 60,
-                            foregroundColor: Colors.orange,
-                            child: Text("Racism"),
-                          ),
-                        ),
 
 
                         InkWell(
@@ -442,16 +453,6 @@ class _FinalHomeState extends State<FinalHome> {
                         ),
 
 
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.black,
-                            // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                            radius: 60,
-                            foregroundColor: Colors.orange,
-                            child: Text("Racism"),
-                          ),
-                        ),
 
                         InkWell(
                           onTap: (){

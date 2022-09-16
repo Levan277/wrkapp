@@ -40,8 +40,8 @@ class Unit1 extends StatelessWidget {
                       padding: EdgeInsets.all(12.0),
                       child: Text("In this unit participants will learn to identify different forms of racism using vocabulary from the racism spectrum. ",style:
                       GoogleFonts.roboto(fontWeight: FontWeight.w500, fontSize: 18,color: Colors.white),
+                        ),
                       ),
-                    ),
                     ),
                     Expanded(child: Padding(
                       padding: const EdgeInsets.all(8.0),

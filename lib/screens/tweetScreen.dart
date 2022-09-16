@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/tweetScreens/add_tweet.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/screens/tweetScreens/profile_tweet_screen.dart';
@@ -16,6 +17,7 @@ class HomeForum extends StatefulWidget {
 }
 
 class _HomeForumState extends State<HomeForum> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   int _currentIndex = 0;
   final List<Widget> _children = [Feed(), Search()];
 
@@ -28,7 +30,7 @@ class _HomeForumState extends State<HomeForum> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pink,
+        backgroundColor:  Color(0xffFF8201),
         title: Text('Home'),
 
       ),
@@ -58,15 +60,15 @@ class _HomeForumState extends State<HomeForum> {
                 Navigator.of(context).pushNamed( route.editProfile);
               },),
 
-            ListTile(title: Card(child: Text('Logout'),),
-            onTap: (){
-             //TODO LOGOUT
-            },)
+          //   ListTile(title: Card(child: Text('Logout'),),
+          //   onTap: () async{
+          // await _auth.signOut();
+          //   },)
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.yellow,
+        backgroundColor:  Color(0xffFF8201),
         onTap: onTabPressed,
         currentIndex: _currentIndex,
         showSelectedLabels: false,
@@ -74,10 +76,14 @@ class _HomeForumState extends State<HomeForum> {
         items: [
         BottomNavigationBarItem(icon: Icon(Icons.home),label: ''),
         BottomNavigationBarItem(icon: Icon(Icons.search),label: ''),
-      ],
+          BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.home_work_sharp),onPressed: (){Navigator.
+          push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+
+          },),label: ''),
+    ],
+    ),
 
 
-      ),
       body: _children[_currentIndex],
     );
   }

@@ -10,16 +10,16 @@ class Authentications {
   String email = "";
   String password = "";
   String username = "";
-
+  String country = "";
+String affiliation = "";
   //creating instance of firebase auth
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 
   Future<String> signUp(
-      {required String email, required String password, required String username, required Uint8List file}) async {
+      {required String email, required String password, required String username, required Uint8List file, required String country, required String affiliation}) async {
     String res = "some error occured";
-;
     try{
       if(email.isNotEmpty || password.isNotEmpty||username.isNotEmpty || file!=null ){
         UserCredential cred = (await _auth.createUserWithEmailAndPassword(
@@ -34,7 +34,9 @@ class Authentications {
           'username': username,
           'uid': cred.user!.uid,
          'photoUrl': photoUrl,
-         'bannerImageUrl': ''
+         'bannerImageUrl': '',
+         'country': country,
+         'affiliation': affiliation,
         });
 
        res = "success";

@@ -93,39 +93,9 @@ class _Unit4MainState extends State<Unit4Main> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              SizedBox(height:600, width:double.infinity,child: SummaryU4()),
 
-              Row(
 
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  //image 1
-                  Container(
-                    height: 120.0,
-                    width: 120.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            'assets/images/laptop.jpg'),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                  //image 2
-                  Container(
-                    height: 120.0,
-                    width: 120.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                            'assets/images/endracism2.jpeg'),
-                        fit: BoxFit.fill,
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                ],),
+
 
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -173,17 +143,9 @@ class _Unit4MainState extends State<Unit4Main> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundColor: Colors.black,
-                    backgroundImage: null,
-                  ),
+                Expanded(child: Center(child: Image.asset('assets/images/unit1images/whitePrivcircle.jpg'))),
                   SizedBox(width: 70,),
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundColor: Colors.black,
-                    backgroundImage: null,
-                  ),
+
                 ],
               ),
 
@@ -276,17 +238,12 @@ SizedBox(height: 10,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundColor: Colors.black,
-                    backgroundImage: null,
-                  ),
-                  SizedBox(width: 70,),
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundColor: Colors.black,
-                    backgroundImage: null,
-                  ),
+
+               Expanded(
+                 child: Container(
+                   child: Image.asset('assets/images/unit1images/colonization.jpg')
+                 ),
+               )
                 ],
               ),
 

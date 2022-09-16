@@ -202,18 +202,36 @@ Widget inputFile({label, obscureText = false, textEditingController})
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      Text(
-        label,
-        style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w400,
-            color:Colors.black87
-        ),
+      // Text(
+      //   label,
+      //   style: TextStyle(
+      //       fontSize: 15,
+      //       fontWeight: FontWeight.w400,
+      //       color:Colors.black87
+      //   ),
+      //
+      // ),
+  RichText(
+  text: TextSpan(
+      text: label,
+      style: TextStyle(
+          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+      children: [
+        TextSpan(
+            text: ' *',
+            style: TextStyle(
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+                fontSize: 16))
+      ]),
 
-      ),
+
+  ),
+
       SizedBox(
         height: 5,
       ),
+
       TextField(
         controller: textEditingController,
         obscureText: obscureText,
@@ -230,6 +248,7 @@ Widget inputFile({label, obscureText = false, textEditingController})
                 borderSide: BorderSide(color: Colors.grey.shade400),
             ),
         ),
+
       ),
       SizedBox(height: 10,)
     ],
