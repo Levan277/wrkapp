@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
 import 'package:wrkapp/main.dart';
 import 'package:wrkapp/route/route.dart' as route;
+import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/utils/utils.dart';
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -42,7 +43,8 @@ _isLoading = true;
       _isLoading = false;
     });
   // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MyApp()), (route) => false);
-    Navigator.pushNamed(context, route.finalHome);
+  //   Navigator.pushNamed(context, route.finalHome);
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
     if(res!="success"){
 
       showSnackBar(res, context);

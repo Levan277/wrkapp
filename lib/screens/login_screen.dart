@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
 import 'package:wrkapp/connectionsFirebase/forgot_password.dart';
 import 'package:wrkapp/route/route.dart' as route;
+import 'package:wrkapp/screens/finalScreens/final_home.dart';
+import 'package:wrkapp/screens/signup_screen.dart';
 import 'package:wrkapp/utils/utils.dart';
 
 import '../main.dart';
@@ -38,7 +40,9 @@ class _LoginScreenState extends State<LoginScreen> {
     });
     if(res=="success"){
       // Navigator.pushNamed(context, route.homePage);
-     Navigator.pushNamed(context, route.finalHome);
+     // Navigator.pushNamed(context, route.finalHome);
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome(
+      )));
 
     }
     else{
@@ -159,7 +163,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text("Don't have an account?"),
                       InkWell(
                         onTap: (){
-                        Navigator.pushNamed(context, route.signupPage);
+                        // Navigator.pushNamed(context, route.signupPage);
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupScreen()));
                         },
                         child: Text(" Sign up", style: TextStyle(
                           fontWeight: FontWeight.w600,

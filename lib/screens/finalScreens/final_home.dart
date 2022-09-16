@@ -1,6 +1,7 @@
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:lottie/lottie.dart';
@@ -15,6 +16,7 @@ import 'package:wrkapp/screens/TopicScreens/policy_topic.dart';
 import 'package:wrkapp/screens/TopicScreens/racialization_topic.dart';
 import 'package:wrkapp/screens/TopicScreens/white_privilege_topic_page.dart';
 import 'package:wrkapp/screens/TopicScreens/white_supremacy_topic.dart';
+import 'package:wrkapp/screens/login_screen.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_final_home.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/unit2_HOME.dart';
@@ -40,8 +42,21 @@ class _FinalHomeState extends State<FinalHome> {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
+      title: Center(child: Text("Welcome to AR4YT",style: TextStyle(fontSize: 20,color: Colors.black),)),
       backgroundColor: Color(0xffFF8201),
       actions: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FloatingActionButton(
+            onPressed: () async{
+              await FirebaseAuth.instance.signOut();
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => LoginScreen()));
+            },
+            child: Icon(Icons.logout_rounded),
+            backgroundColor: Colors.black,
+          ),
+        ),
 
       ],
     ),

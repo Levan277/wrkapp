@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:wrkapp/constants/color.dart';
+import 'package:wrkapp/screens/finalScreens/final_home.dart';
+import 'package:wrkapp/screens/login_screen.dart';
 import 'route/route.dart' as route;
 import 'package:stream_feed_flutter_core/stream_feed_flutter_core.dart';
 
@@ -41,15 +45,37 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-   // home:ContempRacism(),
-      onGenerateRoute: route.controller,
-      initialRoute: route.loginPage,
+
+   home:     StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot){
+          if(snapshot.connectionState == ConnectionState.active){
+    if(snapshot.hasData){
+
+      return FinalHome();
+    }
+    else if(snapshot.hasError){
+    return Center(child: Text('${snapshot.error}'),);
+       }
+    }
+            if(snapshot.connectionState == ConnectionState.waiting){
+              return Center(child: CircularProgressIndicator(color: kPrimaryColor,));
+            }
+
+            return const LoginScreen();
+          }
+
+      ),
+
+
+
+      // route.loginPage,
       //
 
     );
   }
 }
-
+//
 
 
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/route/route.dart' as route;
+import 'package:wrkapp/screens/support_screens/main_support_screen.dart';
 
 
 class LiveSupportHome extends StatefulWidget {
@@ -18,7 +19,8 @@ class _LiveSupportHomeState extends State<LiveSupportHome> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           IconButton(onPressed:(){
-            Navigator.pushNamed(context,route.liveChat);
+            // Navigator.pushNamed(context,route.liveChat);
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveChat()));
           },icon: Padding(
             padding: const EdgeInsets.only(right: 8),
             child: Icon(Icons.message, size: 34,),
