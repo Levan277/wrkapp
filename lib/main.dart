@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:wrkapp/constants/color.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/login_screen.dart';
+import 'package:wrkapp/screens/splash_screen.dart';
 import 'route/route.dart' as route;
 import 'package:stream_feed_flutter_core/stream_feed_flutter_core.dart';
 
@@ -62,7 +63,7 @@ class MyApp extends StatelessWidget {
               return Center(child: CircularProgressIndicator(color: kPrimaryColor,));
             }
 
-            return const LoginScreen();
+            return const SplashScreen();
           }
 
       ),

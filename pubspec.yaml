@@ -65,10 +65,18 @@ dependencies:
   url_launcher: ^6.1.5
   salomon_bottom_bar: ^3.3.1
   expandable: ^5.0.1
+  flutter_launcher_icons: ^0.10.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/united_church_logo.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/uc_logo_fore.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
