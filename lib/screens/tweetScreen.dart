@@ -55,10 +55,7 @@ class _HomeForumState extends State<HomeForum> {
             onTap: (){
              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Profile(uid: FirebaseAuth.instance.currentUser!.uid)));
             }) ,
-            ListTile(title: Card(child: Text('Edit')),
-              onTap: (){
-                Navigator.of(context).pushNamed( route.editProfile);
-              },),
+
 
           //   ListTile(title: Card(child: Text('Logout'),),
           //   onTap: () async{

@@ -6,14 +6,14 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'neu_box_widget.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-class Unit1SummarySec1 extends StatefulWidget {
-  const Unit1SummarySec1({Key? key}) : super(key: key);
+class Unit1Sec2Summary extends StatefulWidget {
+  const Unit1Sec2Summary({Key? key}) : super(key: key);
 
   @override
-  State<Unit1SummarySec1> createState() => _Unit1SummarySec1State();
+  State<Unit1Sec2Summary> createState() => _Unit1Sec2SummaryState();
 }
 
-class _Unit1SummarySec1State extends State<Unit1SummarySec1> {
+class _Unit1Sec2SummaryState extends State<Unit1Sec2Summary> {
   final audioPlayer  = AudioPlayer();
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
@@ -57,7 +57,7 @@ class _Unit1SummarySec1State extends State<Unit1SummarySec1> {
     //load audio from assets
 
     final player = AudioCache(prefix: 'assets/');
-    final url = await player.load('u1_sec1_summary.mp3');
+    final url = await player.load('u1_sec2_summary.mp3');
     audioPlayer.setSourceUrl(url.toString());
   }
 
@@ -85,7 +85,6 @@ class _Unit1SummarySec1State extends State<Unit1SummarySec1> {
 
                   Flexible(child: Text('Section 2 Summary ',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)),
 
-
                 ],
               ),
 
@@ -97,7 +96,7 @@ class _Unit1SummarySec1State extends State<Unit1SummarySec1> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180,),
+                      child: Image.asset('assets/images/audiopic.jpg',width: double.infinity,height: 180 ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),

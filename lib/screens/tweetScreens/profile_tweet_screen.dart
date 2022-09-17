@@ -66,8 +66,8 @@ appBar: AppBar(
                              if(FirebaseAuth.instance.currentUser!.uid == widget.uid)
                         TextButton(onPressed: (){
                           // Navigator.pushNamed(context, route.profile);
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile(uid: '')));
-                        }, child: Text("Edit profile",style: TextStyle(color: Colors.white),))
+
+                        }, child: Text("",style: TextStyle(color: Colors.white),))
                         else if(FirebaseAuth.instance.currentUser!.uid != widget.uid && !Provider.of<bool>(context))
         TextButton(onPressed: (){
           //write follow action

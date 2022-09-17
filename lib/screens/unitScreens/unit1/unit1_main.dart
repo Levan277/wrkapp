@@ -6,6 +6,7 @@ import 'package:wrkapp/Audio/u1_sec1_summary_audio.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/support_screens/support_home_screen.dart';
 import 'package:wrkapp/screens/tweetScreen.dart';
+import 'package:wrkapp/screens/unitScreens/unit1/racism_spectrum.dart';
 
 import '../unit3/contemp_racism.dart';
 
@@ -102,7 +103,7 @@ class _UnitsPageState extends State<UnitsPage> {
                                 ElevatedButton(
                                   child: Text('Section 2: Racism Spectrum',style: GoogleFonts.montserrat(fontSize: 15)),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ContempRacism()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>RacismSpectrum()));
                                   },
                                 ),
 
