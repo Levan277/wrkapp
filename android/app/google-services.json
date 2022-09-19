@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:153617040200:android:932151b40c3e998f75a97d",
+        "mobilesdk_app_id": "1:153617040200:android:05e8037c104b97e175a97d",
         "android_client_info": {
-          "package_name": "com.example.wrkapp"
+          "package_name": "com.united.ar4yt"
         }
       },
       "oauth_client": [
@@ -29,6 +29,13 @@
             {
               "client_id": "153617040200-g8ab5vecsruqncq8vjq2tglk9dk6eaq2.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "153617040200-78dsrikb5oaghp2erqe325mkarmkrs17.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.wrkapp"
+              }
             }
           ]
         }
