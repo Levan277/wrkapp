@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wrkapp/services/post.dart';
-
+import 'package:bad_words/bad_words.dart';
 class Add extends StatefulWidget {
   const Add({Key? key}) : super(key: key);
 
@@ -12,14 +12,21 @@ class _AddState extends State<Add> {
   @override
   final PostService _postService = PostService();
   String text = "";
+  final filter = Filter();
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Add Post'),
         actions: [
           ElevatedButton(onPressed: () async{
-            await _postService.savePost(text);
-            Navigator.pop(context);
+            if(filter.isProfane(text)){
+              print("put a nickle in the swear jar!");
+            }
+            else{
+              await _postService.savePost(text);
+              Navigator.pop(context);
+            }
+
           }, child: Text('Post'),)
         ],
       ),

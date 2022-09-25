@@ -4,10 +4,12 @@
 
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wrkapp/app.dart';
 import 'package:wrkapp/route/route.dart' as route;
+import 'package:wrkapp/screens/errorScreens/something_went_wrong.dart';
 import 'package:wrkapp/services/replies.dart';
 import '../../models/post.dart';
 import '../../models/users.dart';
@@ -106,7 +108,33 @@ class _ItemPostState extends State<ItemPost> {
     ],
     ),
 
-            // Row(
+            Row(
+              children: [
+                IconButton(
+                    icon: Icon(Icons.delete,color: Colors.blue,),
+
+
+                    onPressed: (){
+                      final docUser = FirebaseFirestore.instance.collection('posts').doc(widget.post.id);
+
+
+                        if(widget.snapshotUser.data!.uid == FirebaseAuth.instance.currentUser!.uid){
+                          docUser.delete();
+                        }
+                   else{
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>SomethingWrongScreen()));
+                        }
+
+
+
+
+
+
+
+                    }),
+
+              ],
+            ),     // Row(
             //   children: [
             //     IconButton(
             //       color: Colors.blue,
@@ -128,8 +156,12 @@ class _ItemPostState extends State<ItemPost> {
 
     ),
     Divider(),
+
     ],
     ),
+      
     );
+    
   }
 }
+

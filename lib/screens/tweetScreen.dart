@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
+import 'package:wrkapp/screens/login_screen.dart';
 import 'package:wrkapp/screens/tweetScreens/add_tweet.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/screens/tweetScreens/profile_tweet_screen.dart';
@@ -56,6 +57,15 @@ class _HomeForumState extends State<HomeForum> {
              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Profile(uid: FirebaseAuth.instance.currentUser!.uid)));
             }) ,
 
+            ListTile(title: Card(child: Text('Delete Account')),
+                onTap: (){
+
+                  showDialog(context: context, builder: (_)=>CustomAlert(),barrierDismissible: false
+                  );
+
+
+                }) ,
+
 
           //   ListTile(title: Card(child: Text('Logout'),),
           //   onTap: () async{
@@ -81,7 +91,35 @@ class _HomeForumState extends State<HomeForum> {
     ),
 
 
+
+
+
+
       body: _children[_currentIndex],
     );
   }
 }
+
+class CustomAlert extends StatelessWidget {
+   CustomAlert({Key? key}) : super(key: key);
+final user = FirebaseAuth.instance.currentUser;
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(title: Text("Are You Sure You Want To Delete Your Account? All Data Will Be Lost. Please Log Out and Sign Back In If Action Does Not Complete!"),
+      actions: [
+        TextButton(onPressed: () async{
+
+          FirebaseAuth.instance.currentUser!.delete().then((value) => FirebaseAuth.instance.signOut()).then((value) => Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen())));
+        }, child: Text("Yes")),
+        TextButton(onPressed: (){
+          Navigator.pop(context);
+        }, child: Text("No")),
+      ],
+      elevation: 24.0,
+
+    );
+  }
+}
+
+
+
