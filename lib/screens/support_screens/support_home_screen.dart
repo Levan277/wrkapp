@@ -15,6 +15,7 @@ class _LiveSupportHomeState extends State<LiveSupportHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.orange,),
       bottomNavigationBar:Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
