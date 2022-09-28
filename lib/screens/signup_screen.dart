@@ -9,6 +9,7 @@ import 'package:wrkapp/main.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/utils/utils.dart';
+import 'package:wrkapp/widgets/hyperlink_widget.dart';
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
 
@@ -30,6 +31,7 @@ class _SignupScreenState extends State<SignupScreen> {
   TextEditingController _countryController = new TextEditingController();
   Uint8List? _image;
   bool _isLoading = false;
+  bool checkBoxVal = false;
 
   Future<void> signUpUser() async{
 
@@ -38,7 +40,7 @@ _isLoading = true;
     });
 
     String res =  await Authentications().signUp(email: _emailController.text, password: _passwordController.text, username: _usernameController.text,file: _image!,country: _countryController.text,affiliation: selectedItem!,
-    );
+    acceptAgreement: checkBoxVal);
     setState((){
       _isLoading = false;
     });
@@ -153,6 +155,21 @@ _isLoading = true;
                 ),
 
 
+Row(children: [
+  Checkbox(value: checkBoxVal, onChanged: (value){
+    setState(() {
+      checkBoxVal = value!;
+    });
+  }),
+  Text("*",style: TextStyle(
+      color: Colors.red,
+      fontWeight: FontWeight.bold,
+      fontSize: 16),),
+  SizedBox(width: 15,),
+  HyperLinkText(text:"You Must Read and Accept The EULA Conditions",
+    urlText: 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
+  ),
+],)
 
 
 
@@ -160,6 +177,7 @@ _isLoading = true;
               ],
 
             ),
+
 
 
           ),
@@ -224,9 +242,8 @@ _isLoading = true;
                   fontSize: 18,
                   color: Colors.white,
 
+                  ),
                 ),
-                ),
-
               ),
 
 

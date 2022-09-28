@@ -12,28 +12,7 @@ class SomethingWrongScreen extends StatelessWidget {
             "assets/images/3_Something Went Wrong.png",
             fit: BoxFit.cover,
           ),
-          Positioned(
-            bottom: MediaQuery.of(context).size.height * 0.15,
-            left: MediaQuery.of(context).size.width * 0.3,
-            right: MediaQuery.of(context).size.width * 0.3,
-            child: TextButton(
-              style: TextButton.styleFrom(
-                textStyle: TextStyle(
-                  color: Color(0xFF7070DA),
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50)),
-              ),
 
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text(
-                "go back".toUpperCase(),
-                style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 24),
-              ),
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Flexible(child: Text("You Cannot Delete A Post That Is Not Yours!" ,style: TextStyle(color: Colors.purple,fontSize: 18,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)),

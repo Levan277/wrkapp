@@ -60,6 +60,7 @@ class _SummaryU4State extends State<SummaryU4> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('LateNight.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.stop();
   }
 
   @override
@@ -187,40 +188,38 @@ class _SummaryU4State extends State<SummaryU4> {
                 height: 80,
                 child: Row(
                   children:  [
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_previous,
-                            size: 32,
-                          )),
-                    ),
+
                     Expanded(
                       flex: 2,
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.0),
-                        child: NeuBox(
-                            child: IconButton(
-                              icon: Icon(Icons.play_arrow),
-                              iconSize: 32,
-                              onPressed: () async{
-                                if(isPlaying){
-                                  await audioPlayer.pause();
-                                }
-                                else{
-                                  await audioPlayer.resume();
-                                }
-                              },
+                        child: GestureDetector(
+                          onTap: () async{
+                            if(isPlaying==true){
+                              await audioPlayer.pause();
+                            }
+                            else{
+                              await audioPlayer.resume();
+                            }
+                          },
+                          child: NeuBox(
+                              child: IconButton(
+                                icon: Icon(isPlaying?Icons.pause:Icons.play_arrow),
+                                iconSize: 32,
+                                onPressed: () async{
+                                  if(isPlaying==true){
+                                    await audioPlayer.pause();
+                                  }
+                                  else{
+                                    await audioPlayer.resume();
+                                  }
+                                },
 
-                            )),
+                              )),
+                        ),
                       ),
                     ),
-                    Expanded(
-                      child: NeuBox(
-                          child: Icon(
-                            Icons.skip_next,
-                            size: 32,
-                          )),
-                    ),
+
                   ],
                 ),
               )

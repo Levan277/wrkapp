@@ -25,6 +25,7 @@ class _Unit1HomeState extends State<Unit1Home> {
     final Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(backgroundColor: Colors.black,),
         backgroundColor: Color(0xffFF8201),
         body: SingleChildScrollView(
           child: Column(

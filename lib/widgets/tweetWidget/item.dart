@@ -126,15 +126,24 @@ class _ItemPostState extends State<ItemPost> {
                         }
 
 
-
-
-
-
-
                     }),
 
               ],
-            ),     // Row(
+            ),
+
+            Row(
+              children: [
+                IconButton(
+                    icon: Icon(Icons.flag,color: Colors.blue,),
+
+
+                    onPressed: (){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("This user has been flagged. We will review the profile and take action if needed"))
+                    );
+                    }),
+              ],
+            ), // Row(
             //   children: [
             //     IconButton(
             //       color: Colors.blue,

@@ -39,6 +39,7 @@ class _XenophobiaTopicState extends State<XenophobiaTopic> {
     double width = MediaQuery. of(context). size. width ;
     double height = MediaQuery. of(context). size. height;
     return SafeArea(child: Scaffold(
+
       bottomNavigationBar:  Container(
         color: Colors.white,
         child: SalomonBottomBar(

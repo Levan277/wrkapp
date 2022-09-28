@@ -11,6 +11,7 @@ class Authentications {
   String password = "";
   String username = "";
   String country = "";
+  bool acceptAgreement = false;
 String affiliation = "";
   //creating instance of firebase auth
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -18,7 +19,7 @@ String affiliation = "";
 
 
   Future<String> signUp(
-      {required String email, required String password, required String username, required Uint8List file, required String country, required String affiliation}) async {
+      {required String email, required String password, required String username, required Uint8List file, required String country, required String affiliation,required bool acceptAgreement }) async {
     String res = "some error occured";
     try{
       if(email.isNotEmpty || password.isNotEmpty||username.isNotEmpty || file!=null ){
@@ -37,6 +38,7 @@ String affiliation = "";
          'bannerImageUrl': '',
          'country': country,
          'affiliation': affiliation,
+         'EULA': acceptAgreement,
         });
 
        res = "success";

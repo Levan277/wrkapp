@@ -60,6 +60,7 @@ class _Summary1U3State extends State<Summary1U3> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u3_sec1_summary1.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.pause();
   }
 
   @override
@@ -191,20 +192,30 @@ class _Summary1U3State extends State<Summary1U3> {
                       flex: 2,
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.0),
-                        child: NeuBox(
-                            child: IconButton(
-                              icon: Icon(Icons.play_arrow),
-                              iconSize: 32,
-                              onPressed: () async{
-                                if(isPlaying){
-                                  await audioPlayer.pause();
-                                }
-                                else{
-                                  await audioPlayer.resume();
-                                }
-                              },
+                        child: GestureDetector(
+                          onTap: () async{
+                            if(isPlaying==true){
+                              await audioPlayer.pause();
+                            }
+                            else{
+                              await audioPlayer.resume();
+                            }
+                          },
+                          child: NeuBox(
+                              child: IconButton(
+                                icon: Icon(isPlaying?Icons.pause:Icons.play_arrow),
+                                iconSize: 32,
+                                onPressed: () async{
+                                  if(isPlaying==true){
+                                    await audioPlayer.pause();
+                                  }
+                                  else{
+                                    await audioPlayer.resume();
+                                  }
+                                },
 
-                            )),
+                              )),
+                        ),
                       ),
                     ),
 

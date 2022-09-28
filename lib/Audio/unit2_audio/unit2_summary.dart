@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:stream_feed_flutter_core/stream_feed_flutter_core.dart';
 import '../neu_box_widget.dart';
 
 class Unit2SummaryA extends StatefulWidget {
@@ -57,6 +58,7 @@ class _Unit2SummaryAState extends State<Unit2SummaryA> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u2_sec2_summary.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.pause();
   }
 
   @override
@@ -188,20 +190,30 @@ class _Unit2SummaryAState extends State<Unit2SummaryA> {
                       flex: 2,
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.0),
-                        child: NeuBox(
-                            child: IconButton(
-                              icon: Icon(Icons.play_arrow),
-                              iconSize: 32,
-                              onPressed: () async{
-                                if(isPlaying){
-                                  await audioPlayer.pause();
-                                }
-                                else{
-                                  await audioPlayer.resume();
-                                }
-                              },
+                        child: GestureDetector(
+                          onTap: () async{
+                            if(isPlaying==true){
+                              await audioPlayer.pause();
+                            }
+                            else{
+                              await audioPlayer.resume();
+                            }
+                          },
+                          child: NeuBox(
+                              child: IconButton(
+                                icon: Icon(isPlaying?Icons.pause:Icons.play_arrow),
+                                iconSize: 32,
+                                onPressed: () async{
+                                  if(isPlaying==true){
+                                    await audioPlayer.pause();
+                                  }
+                                  else{
+                                    await audioPlayer.resume();
+                                  }
+                                },
 
-                            )),
+                              )),
+                        ),
                       ),
                     ),
 

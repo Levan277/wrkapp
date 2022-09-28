@@ -31,6 +31,7 @@ class _ColonizationATState extends State<ColonizationAT> {
       });
     });
 
+
     //Listen to audio duration
     audioPlayer.onDurationChanged.listen((newDuration) {
       setState((){
@@ -41,7 +42,7 @@ class _ColonizationATState extends State<ColonizationAT> {
     //Listen to audio position
     audioPlayer.onPositionChanged.listen((newPosition) {
       setState((){
-        position =newPosition;
+        position = newPosition;
       });
     });
   }
@@ -54,6 +55,8 @@ class _ColonizationATState extends State<ColonizationAT> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u1_sec1_colonization.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.pause();
+
   }
 
   @override
@@ -61,6 +64,7 @@ class _ColonizationATState extends State<ColonizationAT> {
 
     super.dispose();
     audioPlayer.dispose();
+
   }
   @override
   Widget build(BuildContext context) {
@@ -157,7 +161,7 @@ class _ColonizationATState extends State<ColonizationAT> {
                     await audioPlayer.seek(position);
 
                     //play audio if paused
-                    await audioPlayer.resume();
+                    await audioPlayer.stop();
                   }),
 
               Padding(
@@ -185,20 +189,30 @@ class _ColonizationATState extends State<ColonizationAT> {
                       flex: 2,
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.0),
-                        child: NeuBox(
-                            child: IconButton(
-                              icon: Icon(Icons.play_arrow),
-                              iconSize: 32,
-                              onPressed: () async{
-                                if(isPlaying){
-                                  await audioPlayer.pause();
-                                }
-                                else{
-                                  await audioPlayer.resume();
-                                }
-                              },
+                        child: GestureDetector(
+                          onTap: () async{
+                            if(isPlaying==true){
+                              await audioPlayer.pause();
+                            }
+                            else{
+                              await audioPlayer.resume();
+                            }
+                          },
+                          child: NeuBox(
+                              child: IconButton(
+                                icon: Icon(isPlaying?Icons.pause:Icons.play_arrow),
+                                iconSize: 32,
+                                onPressed: () async{
+                                  if(isPlaying==true){
+                                    await audioPlayer.pause();
+                                  }
+                                  else{
+                                    await audioPlayer.resume();
+                                  }
+                                },
 
-                            )),
+                              )),
+                        ),
                       ),
                     ),
 

@@ -16,6 +16,7 @@ import 'package:wrkapp/screens/TopicScreens/policy_topic.dart';
 import 'package:wrkapp/screens/TopicScreens/racialization_topic.dart';
 import 'package:wrkapp/screens/TopicScreens/white_privilege_topic_page.dart';
 import 'package:wrkapp/screens/TopicScreens/white_supremacy_topic.dart';
+import 'package:wrkapp/screens/TopicScreens/xenophobia_topic.dart';
 import 'package:wrkapp/screens/login_screen.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_final_home.dart';
@@ -584,7 +585,7 @@ class _FinalHomeState extends State<FinalHome> {
 
                         InkWell(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>XenophobiaAudioT()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>XenophobiaTopic()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
