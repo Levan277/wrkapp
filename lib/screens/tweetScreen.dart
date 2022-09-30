@@ -20,12 +20,19 @@ class HomeForum extends StatefulWidget {
 class _HomeForumState extends State<HomeForum> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   int _currentIndex = 0;
-  final List<Widget> _children = [Feed(), Search()];
+  final List<Widget> _children = [Feed(), Search(),FinalHome()];
 
   void onTabPressed(int index){
     setState((){
       _currentIndex = index;
+      if(_currentIndex == 2){
+        Navigator.pop(context);
+      }
     });
+
+    dispose(){
+
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -83,10 +90,7 @@ class _HomeForumState extends State<HomeForum> {
         items: [
         BottomNavigationBarItem(icon: Icon(Icons.home),label: ''),
         BottomNavigationBarItem(icon: Icon(Icons.search),label: ''),
-          BottomNavigationBarItem(icon: IconButton(icon: Icon(Icons.home_work_sharp),onPressed: (){Navigator.
-          push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
-
-          },),label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.home_max_sharp),label: ''),
     ],
     ),
 

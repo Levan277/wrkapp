@@ -39,6 +39,7 @@ class FinalHome extends StatefulWidget {
 
 class _FinalHomeState extends State<FinalHome> {
   var _currentIndex = 0;
+  // final screens = [FinalHome(),HomeForum(),LiveSupportHome()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -664,6 +665,29 @@ class _FinalHomeState extends State<FinalHome> {
           ],
         ),
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: currentIndex,
+      //   onTap: (index)=> setState(()=>currentIndex=index),
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       label: 'Home',
+      //       backgroundColor: Colors.red
+      //
+      //     ), BottomNavigationBarItem(
+      //       icon: Icon(Icons.message),
+      //       label: 'Forum',
+      //         backgroundColor: Colors.red
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.support_agent_outlined),
+      //       label: 'Support',
+      //         backgroundColor: Colors.red,
+      //     ),
+      //   ],
+      // )
+
+
       bottomNavigationBar:  Container(
         color: Colors.white,
         child: SalomonBottomBar(
@@ -681,6 +705,10 @@ class _FinalHomeState extends State<FinalHome> {
             else if(_currentIndex == 2){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
             }
+            else{
+              _currentIndex = 0;
+            }
+
           },
           // onTap: (i) => setState(() => _currentIndex = i),
 

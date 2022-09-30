@@ -57,6 +57,9 @@ class _WhitePrivilegeTopicState extends State<WhitePrivilegeTopic> {
             else if(_currentIndex == 2){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
             }
+            else{
+              _currentIndex = 0;
+            }
           },
           // onTap: (i) => setState(() => _currentIndex = i),
 
@@ -88,7 +91,7 @@ class _WhitePrivilegeTopicState extends State<WhitePrivilegeTopic> {
         title: Text("More About White Privilege"),
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        actions: [Icon(Icons.support_agent_rounded)],
+
       ),
       body: ListView(
         children: [

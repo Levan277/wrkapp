@@ -47,6 +47,9 @@ class _Unit5HomeState extends State<Unit5Home> {
               else if(_currentIndex == 2){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
               }
+              else{
+                _currentIndex = 0;
+              }
             },
             // onTap: (i) => setState(() => _currentIndex = i),
 

@@ -59,6 +59,9 @@ class _RacializationTopicState extends State<RacializationTopic> {
             else if(_currentIndex == 2){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
             }
+            else{
+              _currentIndex = 0;
+            }
           },
           // onTap: (i) => setState(() => _currentIndex = i),
 
@@ -90,7 +93,7 @@ class _RacializationTopicState extends State<RacializationTopic> {
         title: Text("More About Racialization"),
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        actions: [Icon(Icons.support_agent_rounded)],
+
       ),
       body: ListView(
         children: [

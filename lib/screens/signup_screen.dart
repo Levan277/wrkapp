@@ -35,6 +35,13 @@ class _SignupScreenState extends State<SignupScreen> {
 
   Future<void> signUpUser() async{
 
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        backgroundColor: Colors.blue,
+        duration: Duration(seconds: 5),
+        content: Text('An Error Occured: Please Enter all details, Important: Include a photo.'),
+      ),
+    );
     setState((){
 _isLoading = true;
     });
@@ -46,12 +53,19 @@ _isLoading = true;
     });
   // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MyApp()), (route) => false);
   //   Navigator.pushNamed(context, route.finalHome);
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+
     if(res!="success"){
 
-      showSnackBar(res, context);
-    }else{
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.blue,
+            duration: Duration(seconds: 5),
+            content: Text('An Error Occured: Please Enter all details, include a photo if possible'),
+          ),
+      );
 
+    }else{
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
     }
   }
   @override
@@ -114,7 +128,7 @@ _isLoading = true;
                     ):
                     const  CircleAvatar(
                       radius: 64.0,
-                      backgroundImage: NetworkImage("https://www.kindpng.com/picc/m/192-1925162_login-icon-png-transparent-png.png"),
+                      backgroundImage: AssetImage('assets/images/emptyImage.png'),
 
                     ),
                     Positioned(
@@ -228,15 +242,7 @@ Row(children: [
                   borderRadius: BorderRadius.circular(50),
 
                 ),
-                child: _isLoading? Column(children: [Center(child: CircularProgressIndicator(color: Colors.white,),),      AlertDialog(
-                  title: Text("Information Error"),
-                  content: Text("Please Enter all Required data and include a photo"),
-                  actions: [
-                    TextButton(onPressed: (){
-                     Navigator.pushNamed(context, route.signupPage);
-                    }, child: Text("OK")),
-                  ],
-                )],):const Text(
+                child: Text(
                   "Sign up", style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 18,

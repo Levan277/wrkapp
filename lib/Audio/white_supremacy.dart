@@ -81,19 +81,11 @@ class _WhiteSupremacyAudioTState extends State<WhiteSupremacyAudioT> {
 
               // back button and menu button
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: NeuBox(child: Icon(Icons.arrow_back)),
-                  ),
-                  Text('White Supremacy Example'),
-                  SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: NeuBox(child: Icon(Icons.menu)),
-                  ),
+
+                  Text('White Supremacy Example',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+
                 ],
               ),
 
@@ -120,11 +112,7 @@ class _WhiteSupremacyAudioTState extends State<WhiteSupremacyAudioT> {
 
                             ],
                           ),
-                          const Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                            size: 32,
-                          ),
+
                         ],
                       ),
                     )

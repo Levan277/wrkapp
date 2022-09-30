@@ -56,6 +56,9 @@ class _WhiteSupremacyTopicState extends State<WhiteSupremacyTopic> {
             else if(_currentIndex == 2){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
             }
+            else{
+              _currentIndex = 0;
+            }
           },
           // onTap: (i) => setState(() => _currentIndex = i),
 
@@ -87,7 +90,7 @@ class _WhiteSupremacyTopicState extends State<WhiteSupremacyTopic> {
         title: Text("More About White Supremacy"),
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        actions: [Icon(Icons.support_agent_rounded)],
+
       ),
       body: ListView(
         children: [

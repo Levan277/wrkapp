@@ -81,10 +81,10 @@ class _XenophobiaAudioTState extends State<XenophobiaAudioT> {
 
               // back button and menu button
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
 
-                  Text('Xenophobia Example'),
+                  Text('Xenophobia Example',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
 
                 ],
               ),

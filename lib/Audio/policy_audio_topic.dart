@@ -81,19 +81,11 @@ class _PolicyAudioTState extends State<PolicyAudioT> {
 
               // back button and menu button
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: NeuBox(child: Icon(Icons.arrow_back)),
-                  ),
-                  Text('Policy Example'),
-                  SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: NeuBox(child: Icon(Icons.menu)),
-                  ),
+
+                  Text('Policy Example',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+
                 ],
               ),
 
@@ -115,29 +107,12 @@ class _PolicyAudioTState extends State<PolicyAudioT> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                '',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.grey.shade700,
-                                ),
-                              ),
+
                               const SizedBox(height: 6),
-                              const Text(
-                                '',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22,
-                                ),
-                              ),
+
                             ],
                           ),
-                          const Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                            size: 32,
-                          ),
+
                         ],
                       ),
                     )

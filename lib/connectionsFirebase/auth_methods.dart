@@ -19,14 +19,14 @@ String affiliation = "";
 
 
   Future<String> signUp(
-      {required String email, required String password, required String username, required Uint8List file, required String country, required String affiliation,required bool acceptAgreement }) async {
+      {required String email, required String password, required String username, Uint8List? file, required String country, required String affiliation,required bool acceptAgreement }) async {
     String res = "some error occured";
     try{
       if(email.isNotEmpty || password.isNotEmpty||username.isNotEmpty || file!=null ){
         UserCredential cred = (await _auth.createUserWithEmailAndPassword(
             email: email, password: password));
 
-        String photoUrl = await StorageMethods().uploadImageToStorage('profilePics', file, false);
+        String photoUrl = await StorageMethods().uploadImageToStorage('profilePics', file!, false);
         //add users to the database
        await  _firestore.collection('users').doc(cred.user!.uid
        ).set({
