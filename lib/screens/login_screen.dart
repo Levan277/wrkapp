@@ -5,7 +5,8 @@ import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
 import 'package:wrkapp/connectionsFirebase/forgot_password.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
-import 'package:wrkapp/screens/signup_screen.dart';
+import 'package:wrkapp/screens/register_screen.dart';
+
 import 'package:wrkapp/utils/utils.dart';
 
 import '../main.dart';
@@ -58,20 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back_ios,
-              size: 20,
-              color: Colors.black,),
 
-
-          ), systemOverlayStyle: SystemUiOverlayStyle.dark,
-        ),
         body: Container(
           height: MediaQuery.of(context).size.height,
           width: double.infinity,
@@ -164,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       InkWell(
                         onTap: (){
                         // Navigator.pushNamed(context, route.signupPage);
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupScreen()));
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
                         },
                         child: Text(" Sign up", style: TextStyle(
                           fontWeight: FontWeight.w600,

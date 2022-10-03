@@ -6,27 +6,27 @@ import 'package:wrkapp/connectionsFirebase/storage_methods.dart';
 import 'package:wrkapp/main.dart';
 import 'package:wrkapp/models/user.dart';
 class Authentications {
-
   String email = "";
   String password = "";
   String username = "";
   String country = "";
   bool acceptAgreement = false;
 String affiliation = "";
+String photoUrl = '';
   //creating instance of firebase auth
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 
   Future<String> signUp(
-      {required String email, required String password, required String username, Uint8List? file, required String country, required String affiliation,required bool acceptAgreement }) async {
+      {required String email, required String password, required String username, required String country, required String affiliation,required bool acceptAgreement }) async {
     String res = "some error occured";
     try{
-      if(email.isNotEmpty || password.isNotEmpty||username.isNotEmpty || file!=null ){
+      if(email.isNotEmpty || password.isNotEmpty||username.isNotEmpty ){
         UserCredential cred = (await _auth.createUserWithEmailAndPassword(
             email: email, password: password));
 
-        String photoUrl = await StorageMethods().uploadImageToStorage('profilePics', file!, false);
+        // String photoUrl = await StorageMethods().uploadImageToStorage('profilePics', false);
         //add users to the database
        await  _firestore.collection('users').doc(cred.user!.uid
        ).set({

@@ -58,11 +58,13 @@ appBar: AppBar(
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Provider.of<UserModel1>(context).profileImageUrl != ''
+                        Provider.of<UserModel1?>(context)!.profileImageUrl != ''
                             ?
                         CircleAvatar(radius: 30,
                           backgroundImage: NetworkImage(Provider.of<UserModel1>(context).profileImageUrl),
-                        ) : Icon(Icons.person, size: 50.0,),
+                        ) :
+
+                        Icon(Icons.person, size: 50.0,color: Colors.white,),
 
                              if(FirebaseAuth.instance.currentUser!.uid == widget.uid)
                         TextButton(onPressed: (){

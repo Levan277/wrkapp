@@ -17,7 +17,7 @@ class _ListUsersState extends State<ListUsers> {
 
   @override
   Widget build(BuildContext context) {
-    List<UserModel1> users = Provider.of<List<UserModel1>>(context) ?? [];
+    List<UserModel1> users = Provider.of<List<UserModel1>?>(context) ?? [];
     // final users = Provider.of<List<UserModel1>>(context) ?? [];
     return ListView.builder(
         shrinkWrap: true,
@@ -33,10 +33,11 @@ class _ListUsersState extends State<ListUsers> {
                 Padding(padding: EdgeInsets.all(10),
                 child: Row(
                   children: [
-                    user.profileImageUrl != '' ?
-                        CircleAvatar(radius: 20,
-                        backgroundImage: NetworkImage(user.profileImageUrl),
-                        ) : Icon(Icons.person, size: 30.0,),
+                    // user.profileImageUrl != '' ?
+                    //     CircleAvatar(radius: 20,
+                    //     backgroundImage: NetworkImage(user.profileImageUrl),
+                    //     ) :
+                    Icon(Icons.person, size: 30.0,),
                     SizedBox(width: 10,),
                     Text(user.username),
                   ],

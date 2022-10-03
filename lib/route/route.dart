@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:stream_feed_flutter_core/stream_feed_flutter_core.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/home_screen.dart';
-import 'package:wrkapp/screens/signup_screen.dart';
+
 import 'package:wrkapp/screens/login_screen.dart';
 import 'package:wrkapp/screens/featured_screen.dart';
 import 'package:wrkapp/screens/chatScreens/main_chat_home_screen.dart';
@@ -48,8 +48,7 @@ Route<dynamic> controller(RouteSettings settings){
       return MaterialPageRoute(builder: (context) => FeaturedScreen());
     case loginPage:
       return MaterialPageRoute(builder: (context) => const LoginScreen());
-    case signupPage:
-      return MaterialPageRoute(builder: (context) => const SignupScreen());
+
     case chatScreen1:
       return MaterialPageRoute(builder: (context) => const MainChatHome());
     case searchContactPage:

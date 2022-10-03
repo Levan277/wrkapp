@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           if(snapshot.connectionState == ConnectionState.active){
     if(snapshot.hasData){
 
-      return FinalHome();
+      return LoginScreen();
     }
     else if(snapshot.hasError){
     return Center(child: Text('${snapshot.error}'),);
