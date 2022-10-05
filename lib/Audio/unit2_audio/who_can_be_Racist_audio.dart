@@ -61,6 +61,7 @@ class _WhoCanBeRacistAState extends State<WhoCanBeRacistA> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u2_s3_whocanberacist.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

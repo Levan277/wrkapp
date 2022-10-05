@@ -60,6 +60,7 @@ class _ModelMinorityMythState extends State<ModelMinorityMyth> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u3_sec2_model_minority_myth.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

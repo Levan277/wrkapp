@@ -45,7 +45,7 @@ class _LackOfAckAntiSouthRacismState extends State<LackOfAckAntiSouthRacism> {
     //Listen to audio position
     audioPlayer.onPositionChanged.listen((newPosition) {
       setState((){
-        position =newPosition;
+        position = newPosition;
       });
     });
 
@@ -60,6 +60,7 @@ class _LackOfAckAntiSouthRacismState extends State<LackOfAckAntiSouthRacism> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u3_sec2_lack_of_ack_anti_south_asian_racism.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

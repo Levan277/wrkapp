@@ -57,6 +57,7 @@ class _PersonalATState extends State<PersonalAT> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u2_sec2_personaloppr.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

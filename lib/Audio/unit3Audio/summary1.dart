@@ -60,6 +60,7 @@ class _Summary1U3State extends State<Summary1U3> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u3_sec1_summary1.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

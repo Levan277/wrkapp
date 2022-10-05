@@ -58,6 +58,7 @@ class _Unit1Sec2SummaryState extends State<Unit1Sec2Summary> {
 
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u1_sec2_summary.mp3');
+    audioPlayer.setVolume(1.0);
     audioPlayer.setSourceUrl(url.toString());
     audioPlayer.pause();
   }

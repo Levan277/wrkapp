@@ -54,6 +54,7 @@ class _RacializationATState extends State<RacializationAT> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u1_sec1_racialization.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

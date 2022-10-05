@@ -46,7 +46,7 @@ class _WhoCanBeRacist4AState extends State<WhoCanBeRacist4A> {
     //Listen to audio position
     audioPlayer.onPositionChanged.listen((newPosition) {
       setState((){
-        position =newPosition;
+        position = newPosition;
       });
     });
 
@@ -61,6 +61,7 @@ class _WhoCanBeRacist4AState extends State<WhoCanBeRacist4A> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u2_sec3_whocanberacist4.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

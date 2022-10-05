@@ -56,7 +56,9 @@ class _CulturalATState extends State<CulturalAT> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u2_sec2_cultoppr.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
+
   }
 
   @override

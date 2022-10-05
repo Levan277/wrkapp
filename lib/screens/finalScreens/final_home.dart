@@ -99,18 +99,12 @@ class _FinalHomeState extends State<FinalHome> {
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       children: [
-                        SizedBox(width: 15,),
+SizedBox(width: 15,),
                         //card 1
                         InkWell(
-
-
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit1Home()));
-                          },
-                          child: Container(decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(70)),
-                            image: DecorationImage(image: AssetImage('assets/images/u1.png')),
-                          ),
+                          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit1Home()));},
+                          child: Container(
+                            child: Image.asset('assets/images/u1.png'),
                           ),
                         ),
 

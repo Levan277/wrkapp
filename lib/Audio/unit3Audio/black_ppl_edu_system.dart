@@ -45,14 +45,14 @@ class _BlackPeopleEduAState extends State<BlackPeopleEduA> {
     //Listen to audio position
     audioPlayer.onPositionChanged.listen((newPosition) {
       setState((){
-        position =newPosition;
+        position = newPosition;
       });
     });
 
 
   }
 
-  Future setAudio() async{
+  Future setAudio() async {
     //WHEN COMPLETED REPEAT AUDIO
     audioPlayer.setReleaseMode(ReleaseMode.stop);
     //load audio from assets
@@ -60,6 +60,7 @@ class _BlackPeopleEduAState extends State<BlackPeopleEduA> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u3_sec2_black_in_education_system.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

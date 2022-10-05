@@ -57,6 +57,7 @@ class _ReflectionScenarioU2State extends State<ReflectionScenarioU2> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u2_sec3_scenario_activ.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

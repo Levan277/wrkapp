@@ -59,6 +59,7 @@ class _OppresionAudioState extends State<OppresionAudio> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

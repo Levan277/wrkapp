@@ -60,6 +60,7 @@ class _Unit5SummaryAState extends State<Unit5SummaryA> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('U5_ Summary_of_Unit.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 

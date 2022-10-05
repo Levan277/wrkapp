@@ -59,6 +59,7 @@ class _XenophobiaAudioTState extends State<XenophobiaAudioT> {
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u1_sec1_xenophobia.mp3');
     audioPlayer.setSourceUrl(url.toString());
+    audioPlayer.setVolume(1.0);
     audioPlayer.pause();
   }
 
