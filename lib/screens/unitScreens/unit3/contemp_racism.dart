@@ -20,6 +20,7 @@ import 'package:wrkapp/screens/unitScreens/unit3/unit3Main.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
 import '../../../Audio/unit3Audio/lack_of_ack_anti_racism_south_asian.dart';
+import '../../../widgets/Asset_player.dart';
 import '../../finalScreens/final_home.dart';
 import '../../support_screens/support_home_screen.dart';
 import '../../tweetScreen.dart';
@@ -169,7 +170,8 @@ class _ContempRacismState extends State<ContempRacism> {
                 ),
               ),
 
-              SizedBox(height:700, width:double.infinity,child: LackOfHousingA()),
+              // SizedBox(height:700, width:double.infinity,child: LackOfHousingA()),
+              AssetPlayerWidget(asset: 'assets/u3_sec2_indig_lackofhousing.mp3', description: 'Indigenous Lack of Suitable Housing'),
 
               Container(
                 padding: EdgeInsets.all(12.0),
@@ -218,8 +220,8 @@ class _ContempRacismState extends State<ContempRacism> {
                   ),
                 ),
               ),
-
-              SizedBox(height:700, width:double.infinity,child: BlackPeopleEduA()),
+              AssetPlayerWidget(asset: 'assets/u3_sec2_black_in_education_system.mp3', description: 'Black People in The Education System'),
+              // SizedBox(height:700, width:double.infinity,child: BlackPeopleEduA()),
 
               Container(
                 padding: EdgeInsets.all(12.0),
@@ -271,9 +273,9 @@ class _ContempRacismState extends State<ContempRacism> {
                   ),
                 ),
               ),
-
-              SizedBox(height:700, width:double.infinity,child: LackOfAckAntiSouthRacism()),
-
+              //
+              // SizedBox(height:700, width:double.infinity,child: LackOfAckAntiSouthRacism()),
+              AssetPlayerWidget(asset: 'assets/u3_sec2_lack_of_ack_anti_south_asian_racism.mp3', description: 'The Lack of Ackknowledgment of Anti-South Asian Racism'),
 
               Container(
                 padding: EdgeInsets.all(12.0),
@@ -320,8 +322,9 @@ class _ContempRacismState extends State<ContempRacism> {
                   ),
                 ),
               ),
+              AssetPlayerWidget(asset: 'assets/u3_sec2_model_minority_myth.mp3', description: 'The Model Minority Myth'),
 
-              SizedBox(height:700, width:double.infinity,child: ModelMinorityMyth()),
+              // SizedBox(height:700, width:double.infinity,child: ModelMinorityMyth()),
 
 
               Container(
@@ -346,8 +349,6 @@ class _ContempRacismState extends State<ContempRacism> {
                 ),
               ),
 
-              Container(child: Center(child: Text("Click Below To Explore TimeLines",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,),textAlign: TextAlign.center,)),),
-              SizedBox(height: 30,),
 
 
             ],

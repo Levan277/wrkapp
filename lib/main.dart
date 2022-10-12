@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:wrkapp/connectionsFirebase/AuthenticationService.dart';
 import 'package:wrkapp/constants/color.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
+import 'package:wrkapp/screens/home_screen.dart';
 import 'package:wrkapp/screens/login_screen.dart';
 import 'package:wrkapp/screens/splash_screen.dart';
 import 'route/route.dart' as route;
@@ -18,19 +20,52 @@ void main() async {
 
 
 
-
-
-
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key, }) : super(key: key);
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isNewUser = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getUserStatus();
+  }
+
+  Future<void> getUserStatus() async{
+    final val = await authService.read('pin');
+    if(val.isNotEmpty){
+      setState(() {
+        isNewUser = false;
+      });
+    }
+    authService.isNewUserController.add(isNewUser);
+  }
 //UCCan@1=2
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
+
+   // home: FutureBuilder<String>(
+   //   future: authService.read('pin'),
+   //   builder: (context,snapshot){
+   //     if(snapshot.connectionState == ConnectionState.waiting){
+   //       return Scaffold(body: Center(child: CircularProgressIndicator(),),);
+   //     }
+   //     if(snapshot.hasData && snapshot.data.isNotEmpty){
+   //       return PasscodePage();
+   //     }
+   //     return RegisterPage();
+   //   },
+   // ),
+// home: HomeScreen(),
    home:     StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot){

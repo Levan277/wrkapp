@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:video_player/video_player.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/culturalAT.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/interpersonalAT.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/personalAT.dart';
@@ -19,8 +20,10 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
+import 'package:wrkapp/widgets/videoWidgets/chewie_list_widget.dart';
 
 import '../../Audio/TopicAudios/OprresionT/InstitutionalAT.dart';
+import '../../widgets/Asset_player.dart';
 import '../finalScreens/final_home.dart';
 import '../support_screens/support_home_screen.dart';
 import '../tweetScreen.dart';
@@ -97,14 +100,16 @@ class _ColonizationTopicState extends State<ColonizationTopic> {
         children: [
           Column(
             children: [
-              SizedBox(height:700, width:double.infinity,child: ColonizationAT()),
+              AssetPlayerWidget(asset: 'assets/u1_sec1_colonization.mp3', description: 'Colonization Example'),
+              // SizedBox(height:700, width:double.infinity,child: ColonizationAT()),
               SizedBox(height: 25,),
-              SizedBox(height:700, width:double.infinity,child: DecolonizationAT()),
+              AssetPlayerWidget(asset: 'assets/u1_sec1_decolonization.mp3', description: 'Decolonization Example'),
+
+              // SizedBox(height:700, width:double.infinity,child: DecolonizationAT()),
             ],
 
 
           ),
-
 
 
 

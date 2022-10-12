@@ -21,6 +21,7 @@ import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section2_oprresion.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
+import '../../../widgets/Asset_player.dart';
 import '../../../widgets/videoWidgets/chewie_list_widget.dart';
 import '../../finalScreens/final_home.dart';
 import '../../support_screens/support_home_screen.dart';
@@ -108,18 +109,22 @@ class _Section3WCBRState extends State<Section3WCBR> {
              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
              child: Container(
 
-                 child: Center(child: Text("Who Can Be Racist?",textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 32),))),
+                 child: Center(child: Text("",textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 32),))),
            ),
               SizedBox(height: 15,),
-              SizedBox(height:700, width:double.infinity,child: WhoCanBeRacistA()),
+              // SizedBox(height:700, width:double.infinity,child: WhoCanBeRacistA()),
+              AssetPlayerWidget(asset: 'assets/u2_s3_whocanberacist.mp3', description: 'Who Can Be Racist? PT:1'),
               SizedBox(height: 25,),
-              SizedBox(height:700, width:double.infinity,child: WhoCanBeRacist2A()),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist2.mp3', description: 'Who Can Be Racist: PT:2 '),
               SizedBox(height: 25,),
-              SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist3A()),
+              // SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist3A()),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist3.mp3', description: 'Who Can Be Racist: PT:3'),
               SizedBox(height: 25,),
-              SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist4A()),
+              // SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist4A()),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist4.mp3', description: 'Who Can Be Racist: PT:4'),
               SizedBox(height: 25,),
-              SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist5A()),
+              // SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist5A()),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist5.mp3', description: 'Who can Be Racist: PT:5'),
 
               SizedBox(height: 20,),
               Row(
@@ -149,7 +154,8 @@ class _Section3WCBRState extends State<Section3WCBR> {
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                 child: Text("Reflection",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
               ),
-              SizedBox(height:600, width:double.infinity,child: ReflectionScenarioU2()),
+              // SizedBox(height:600, width:double.infinity,child: ReflectionScenarioU2()),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_scenario_activ.mp3', description: 'The Scenario'),
               SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),

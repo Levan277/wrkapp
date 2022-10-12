@@ -3,13 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wrkapp/connectionsFirebase/auth_methods.dart';
 import 'package:wrkapp/connectionsFirebase/forgot_password.dart';
+import 'package:wrkapp/connectionsFirebase/local_auth_api.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/register_screen.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import 'package:wrkapp/utils/utils.dart';
 
 import '../main.dart';
+import '../widgets/secureStorage.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -19,9 +22,25 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
   TextEditingController _emailController = new TextEditingController();
   TextEditingController _passwordController = new TextEditingController();
   bool _isLoading = false;
+  bool _hasLoggedIn = false;
+  bool checkedValue = false;
+
+  @override
+  Future initState() async {
+    // TODO: implement initState
+    super.initState();
+    final name = await UserSecureStorage.getUsername() ?? '';
+  final pass = await UserSecureStorage.getPass() ?? '';
+    setState(() {
+      this._emailController.text = name;
+      this._passwordController.text = pass;
+    });
+  }
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -36,14 +55,18 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     String res = await Authentications().signIn(email: _emailController.text, password:_passwordController.text);
+
     setState((){
       _isLoading = false;
+      _hasLoggedIn = true;
     });
     if(res=="success"){
       // Navigator.pushNamed(context, route.homePage);
      // Navigator.pushNamed(context, route.finalHome);
+
       Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome(
       )));
+
 
     }
     else{
@@ -125,13 +148,35 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontSize: 18,
                           color: Colors.white,
 
+                          ),
                         ),
-                        ),
+
 
                       ),
                     ),
                   ),
+                  CheckboxListTile(
+                    title: Text("Save Login Info"),
+                    value: checkedValue,
+                    onChanged: (newValue) async{
+                      await UserSecureStorage.setUsername(_emailController.text);
+                      await UserSecureStorage.setPass(_passwordController.text);
+                      setState(() {
+                        checkedValue = true;
 
+                      });
+                    },
+                    controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
+                  ),
+                // FloatingActionButton(onPressed: ()async{
+                //   final isAuthenticated = await LocalAuthApi.authenticate();
+                //
+                //   if(isAuthenticated && _hasLoggedIn == true){
+                //
+                //
+                //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>FinalHome()));
+                //   }
+                // }),
                 GestureDetector(
                   child:Text(
                     'Forgot Password?',
@@ -154,7 +199,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         // Navigator.pushNamed(context, route.signupPage);
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
                         },
-                        child: Text(" Sign up", style: TextStyle(
+                        child: Text("Sign up", style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 18,
 
@@ -185,7 +230,13 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-
+  // Widget buildButton() => ButtonWidget(
+  //     text: 'save',
+  //     onClicked() async{
+  // await UserSecureStorage.setUsername(_emailController.text);
+  // await UserSecureStorage.setPass(_passwordController.text);
+  // }
+  // );
 }
 
 
@@ -246,5 +297,9 @@ Widget inputFile({label, obscureText = false, textEditingController})
       SizedBox(height: 10,)
     ],
   );
+
+
   }
+
+
 

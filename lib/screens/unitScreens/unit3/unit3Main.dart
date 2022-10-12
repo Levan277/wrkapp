@@ -20,6 +20,7 @@ import 'package:wrkapp/screens/unitScreens/unit3/timelines/east_asian_timeline.d
 import 'package:wrkapp/screens/unitScreens/unit3/timelines/indigenous_racism_timeline.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
+import '../../../widgets/Asset_player.dart';
 import '../../finalScreens/final_home.dart';
 import '../../support_screens/support_home_screen.dart';
 import '../../tweetScreen.dart';
@@ -149,13 +150,17 @@ class _Unit3MainState extends State<Unit3Main> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              SizedBox(height:600, width:double.infinity,child: Summary1U3()),
+              // SizedBox(height:600, width:double.infinity,child: Summary1U3()),
+              AssetPlayerWidget(asset: 'assets/u3_sec1_summary1.mp3', description: 'Summary PT:1'),
               SizedBox(height: 25,),
-              SizedBox(height:600, width:double.infinity,child: Summary2U3()),
+              // SizedBox(height:600, width:double.infinity,child: Summary2U3()),
+              AssetPlayerWidget(asset: 'assets/u3_sec1_summary2.mp3', description: 'Summary PT:2'),
               SizedBox(height: 25,),
-              SizedBox(height:600, width:double.infinity,child: Summary3U3()),
+              // SizedBox(height:600, width:double.infinity,child: Summary3U3()),
+              AssetPlayerWidget(asset: 'assets/u3_sec1_summary3.mp3', description: 'Summary PT:3'),
               SizedBox(height: 25,),
-              SizedBox(height:600, width:double.infinity,child: Summary4U3()),
+              AssetPlayerWidget(asset: 'assets/u3_sec1_summary4.mp3', description: 'Summary PT:4'),
+              // SizedBox(height:600, width:double.infinity,child: Summary4U3()),
 
 SizedBox(height: 20,),
 

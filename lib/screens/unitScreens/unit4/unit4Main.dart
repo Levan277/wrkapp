@@ -15,6 +15,7 @@ import 'package:wrkapp/screens/unitScreens/unit2/section2_oprresion.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
+import '../../../widgets/Asset_player.dart';
 import '../../finalScreens/final_home.dart';
 import '../../support_screens/support_home_screen.dart';
 import '../../tweetScreen.dart';
@@ -249,7 +250,8 @@ SizedBox(height: 10,),
 
 
               SizedBox(height: 20,),
-              SizedBox(height:700, width:double.infinity,child: PowerOfAccum()),
+              AssetPlayerWidget(asset: 'assets/u4_sec2_power_of_accumulated_power.mp3', description: 'Power of The Accumulated Power'),
+              // SizedBox(height:700, width:double.infinity,child: PowerOfAccum()),
 
               // Center(
               //   child: Container(
@@ -262,23 +264,6 @@ SizedBox(height: 10,),
               //   ),
               // ),
               //superiority audio
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             ],
           ),
         ],

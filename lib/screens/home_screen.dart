@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wrkapp/widgets/Asset_player.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -12,15 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      body: Center(
-        child: Container(
-          child: Column(
-            children: [
-              Text("HOME PAGE"),
-            ],
-          ),
-        ),
-      ),
+      body: AssetPlayerWidget(asset: 'assets/u1_sec1_equity.mp3', description: 'pokemon',),
     ));
   }
 }

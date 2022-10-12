@@ -8,6 +8,7 @@ import 'package:wrkapp/screens/support_screens/support_home_screen.dart';
 import 'package:wrkapp/screens/tweetScreen.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/racism_spectrum.dart';
 
+import '../../../widgets/Asset_player.dart';
 import '../unit3/contemp_racism.dart';
 
 
@@ -945,8 +946,8 @@ class _UnitsPageState extends State<UnitsPage> {
                   ),
                 ],
               ),
-
-              SizedBox(height:700, width:double.infinity,child: Unit1SummarySec1()),
+              AssetPlayerWidget(asset: 'assets/u1_sec1_summary.mp3', description: 'Section 1: Summary'),
+              // SizedBox(height:700, width:double.infinity,child: Unit1SummarySec1()),
             ],
           )
         ],

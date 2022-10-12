@@ -18,6 +18,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wrkapp/Audio/white_supremacy.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
+import 'package:wrkapp/widgets/Asset_player.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
 import '../../Audio/TopicAudios/OprresionT/InstitutionalAT.dart';
@@ -97,7 +98,7 @@ class _WhitePrivilegeTopicState extends State<WhitePrivilegeTopic> {
         children: [
           Column(
             children: [
-              SizedBox(height:700, width:double.infinity,child: WhitePrivilAT()),
+             AssetPlayerWidget(asset: 'assets/u1_sec1_white_privil.mp3', description: 'White Privilege Example'),
               SizedBox(height: 15,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -175,7 +176,8 @@ class _WhitePrivilegeTopicState extends State<WhitePrivilegeTopic> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height:600, width:double.infinity,child: BenefitOfDoubt()),
+              AssetPlayerWidget(asset: 'assets/u4_sec2_power_benefit_of_doubt.mp3', description: 'Power of The Benefit of The Doubt'),
+
 
 
               const Padding(
@@ -194,6 +196,8 @@ class _WhitePrivilegeTopicState extends State<WhitePrivilegeTopic> {
                         TextSpan(text: '1.\t“If white people are accused of a crime, they are less likely to be presumed guilty, less likely to be sentenced to death and more likely to be portrayed in a fair, nuanced manner by the media outlets” (Collins).  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
                         TextSpan(text: "\tActivity #1: Look into the #IfTheyGunnedMeDown campaign \n",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18,color: Colors.black),children: [WidgetSpan(child: SizedBox(height: 30,),),],),
                         TextSpan(text: '2.\t“The personal faults…of white people will likely not be used to later deny opportunities or compassion to people who share their racial identity” (Collins).  \n', style: TextStyle(color: Colors.black,fontSize: 16),),
+
+
                       ],
                     ),
                   ),

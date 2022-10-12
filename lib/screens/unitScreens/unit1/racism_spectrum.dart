@@ -8,6 +8,7 @@ import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/support_screens/support_home_screen.dart';
 import 'package:wrkapp/screens/tweetScreen.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/unit1_main.dart';
+import 'package:wrkapp/widgets/Asset_player.dart';
 
 import '../unit3/contemp_racism.dart';
 
@@ -127,7 +128,8 @@ class _RacismSpectrumState extends State<RacismSpectrum> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height:700, width:double.infinity,child: Unit1Sec2Summary()),
+              AssetPlayerWidget(asset: 'assets/u1_sec2_summary.mp3', description: 'Section 2: Summary'),
+              // SizedBox(height:700, width:double.infinity,child: Unit1Sec2Summary()),
 SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.all(8.0),

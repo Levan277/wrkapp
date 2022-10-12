@@ -15,6 +15,7 @@ import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
+import '../../../widgets/Asset_player.dart';
 import '../../finalScreens/final_home.dart';
 import '../../support_screens/support_home_screen.dart';
 import '../../tweetScreen.dart';
@@ -142,7 +143,7 @@ class _Section2OppresionState extends State<Section2Oppresion> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              SizedBox(height:700, width:double.infinity,child: OppresionAudio()),
+
 SizedBox(height: 25,),
               Row(
 
@@ -506,8 +507,8 @@ SizedBox(height: 10,),
                 ],
               ),
 SizedBox(height: 25,),
-
-              SizedBox(height:700, width:double.infinity,child: SectionSummary2()),
+              AssetPlayerWidget(asset: 'assets/u2_sec2_summary.mp3', description: 'Section Summary'),
+              // SizedBox(height:700, width:double.infinity,child: SectionSummary2()),
 
 
             ],

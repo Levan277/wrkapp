@@ -31,7 +31,6 @@ class _ColonizationATState extends State<ColonizationAT> {
       });
     });
 
-
     //Listen to audio duration
     audioPlayer.onDurationChanged.listen((newDuration) {
       setState((){
@@ -42,9 +41,11 @@ class _ColonizationATState extends State<ColonizationAT> {
     //Listen to audio position
     audioPlayer.onPositionChanged.listen((newPosition) {
       setState((){
-        position = newPosition;
+        position =newPosition;
       });
     });
+
+
   }
 
   Future setAudio() async{
@@ -54,9 +55,9 @@ class _ColonizationATState extends State<ColonizationAT> {
 
     final player = AudioCache(prefix: 'assets/');
     final url = await player.load('u1_sec1_colonization.mp3');
+
     audioPlayer.setSourceUrl(url.toString());
     audioPlayer.pause();
-
   }
 
   @override
@@ -64,7 +65,6 @@ class _ColonizationATState extends State<ColonizationAT> {
 
     super.dispose();
     audioPlayer.dispose();
-
   }
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class _ColonizationATState extends State<ColonizationAT> {
                   //   width: 60,
                   //   child: NeuBox(child: Icon(Icons.arrow_back)),
                   // ),
-                  Text('Colonization Example',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                  Text('Decolonization Example',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
                   // SizedBox(
                   //   height: 60,
                   //   width: 60,

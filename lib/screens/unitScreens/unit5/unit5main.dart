@@ -5,6 +5,7 @@ import 'package:wrkapp/Audio/unit5_audio/summary_unit5.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/support_screens/support_home_screen.dart';
 import 'package:wrkapp/screens/tweetScreen.dart';
+import '../../../widgets/Asset_player.dart';
 import '../../../widgets/hyperlink_widget.dart';
 import 'package:expandable/expandable.dart';
 
@@ -80,7 +81,8 @@ class _Unit5MainState extends State<Unit5Main> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height:700, width:double.infinity,child: Unit5SummaryA()),
+              AssetPlayerWidget(asset: 'assets/u5_summ.m4a', description: 'Summary of Unit '),
+              // SizedBox(height:700, width:double.infinity,child: Unit5SummaryA()),
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                 child: Text("What makes a good ally? ",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),

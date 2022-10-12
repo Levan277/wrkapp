@@ -12,6 +12,7 @@ import 'package:wrkapp/Audio/unit2_audio/what_is_superiority_audio.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section2_oprresion.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
+import 'package:wrkapp/widgets/Asset_player.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
 import '../../finalScreens/final_home.dart';
@@ -267,15 +268,16 @@ SizedBox(height: 20,),
     //superiority audio
               SizedBox(height: 10,),
 
-              SizedBox(height: 700, width:double.infinity,child: WISuperiorityAudio()),
-
+              // SizedBox(height: 700, width:double.infinity,child: WISuperiorityAudio()),
+AssetPlayerWidget(asset: 'assets/u2_sec1_superiority.mp3', description: 'What is Superiority?'),
               Center(
                 child: Padding(padding:
                 EdgeInsets.all(12),
                 child:   Text('Activity #1',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,),) ,
                 ),
               ),
-              SizedBox(height:700, width:double.infinity,child: EOIndividualpwrAud()),
+              // SizedBox(height:700, width:double.infinity,child: EOIndividualpwrAud()),
+              AssetPlayerWidget(asset: 'assets/u2_Sec1_individualpower.mp3', description: 'Example of Individual Power'),
               SizedBox(height: 15,),
               Center(
                 child: Padding(padding:
@@ -332,7 +334,8 @@ SizedBox(height: 10,),
 
 
 
-              SizedBox(height:700, width:double.infinity,child: EOInstitutionalpwrAudio()),
+              // SizedBox(height:700, width:double.infinity,child: EOInstitutionalpwrAudio()),
+              AssetPlayerWidget(asset: 'assets/u2_sec1_instpwr.mp3', description: 'Example of Institutional power'),
               SizedBox(height: 15,),
               Center(
                 child: Padding(padding:
@@ -358,8 +361,9 @@ SizedBox(height: 10,),
                 ),
 
               ),
-
-              SizedBox(height:700, width:double.infinity,child: SectionSummary()),
+              //
+              // SizedBox(height:700, width:double.infinity,child: SectionSummary()),
+              AssetPlayerWidget(asset: 'assets/u2_Sec1_sum.mp3', description: 'Section Summary'),
             ],
           ),
         ],

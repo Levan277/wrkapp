@@ -41,7 +41,7 @@ class _RacializationATState extends State<RacializationAT> {
     //Listen to audio position
     audioPlayer.onPositionChanged.listen((newPosition) {
       setState((){
-        position =newPosition;
+        position = newPosition;
       });
     });
   }

@@ -22,6 +22,7 @@ import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
 import '../../Audio/TopicAudios/OprresionT/InstitutionalAT.dart';
+import '../../widgets/Asset_player.dart';
 import '../finalScreens/final_home.dart';
 import '../support_screens/support_home_screen.dart';
 import '../tweetScreen.dart';
@@ -97,7 +98,8 @@ class _EquityTopicState extends State<EquityTopic> {
         children: [
           Column(
             children: [
-              SizedBox(height:700, width:double.infinity,child: EquityAT()),
+              AssetPlayerWidget(asset: 'assets/u1_sec1_equity.mp3', description: 'Equity Example'),
+
 
             ],
 

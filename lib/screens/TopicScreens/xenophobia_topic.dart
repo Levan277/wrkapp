@@ -17,6 +17,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wrkapp/Audio/xenophobia_audio_topic.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section1_typesofpower.dart';
 import 'package:wrkapp/screens/unitScreens/unit2/section3_whocanbeRacist.dart';
+import 'package:wrkapp/widgets/Asset_player.dart';
 import 'package:wrkapp/widgets/hyperlink_widget.dart';
 
 import '../../Audio/TopicAudios/OprresionT/InstitutionalAT.dart';
@@ -97,7 +98,8 @@ class _XenophobiaTopicState extends State<XenophobiaTopic> {
         children: [
           Column(
             children: [
-              SizedBox(height:700, width:double.infinity,child: XenophobiaAudioT()),
+              AssetPlayerWidget(asset: 'assets/u1_sec1_xenophobia.mp3', description: 'Xenophobia Example'),
+
 
             ],
 
