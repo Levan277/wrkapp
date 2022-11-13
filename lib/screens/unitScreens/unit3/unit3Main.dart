@@ -1,3 +1,4 @@
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
@@ -179,20 +180,15 @@ SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: 'Indigenous Ethnocultural Groups: ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                        TextSpan(text: 'Keep in mind, there are many diverse groups of people within these three ethnocultural groups\n', style: TextStyle(color: Colors.black,fontSize: 16,),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                        TextSpan(text: '\t1. They are the indigenous (native) people of Canada; the first people to live on this land. \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t2. The community is comprised of the:  \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t\t\ta. First Nations \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t\t\tb. Metis \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t\t\tc. Inuit peoples (check the “Indigenous Peoples” topic page for more info about each group!) \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-
-                      ],
-                    ),
+                  child:
+                  ExpandableText(
+                      'Indigenous Ethnocultural Groups: Keep in mind, there are many diverse groups of people within these three ethnocultural groups\n\t1. They are the indigenous (native) people of Canada; the first people to live on this land. \n\t2. The community is comprised of the:  \n\t\t\t\ta. First Nations \n\t\t\t\tb. Metis \n\t\t\t\tc. Inuit peoples (check the “Indigenous Peoples” topic page for more info about each group!) \n',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
 
@@ -204,19 +200,15 @@ SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: 'Black Ethnocultural Groups: ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                        TextSpan(text: ' Keep in mind, this is not an extensive list. These are just some of the predominant Black ethnocultural groups in Canada.\n', style: TextStyle(color: Colors.black,fontSize: 16,),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                        TextSpan(text: '\t\t1. Caribbean  \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t2. Jamaican  \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t3. Ethiopian  \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t4. Trinidadian  \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
+                  child:
 
-                      ],
-                    ),
+                  ExpandableText(
+                      'Black Ethnocultural Groups: Keep in mind, this is not an extensive list. These are just some of the predominant Black ethnocultural groups in Canada.\n\t\t1. Caribbean  \n\t\t2. Jamaican  \n\t\t3. Ethiopian  \n\t\t4. Trinidadian  \n',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
                 ),
               ),
 
@@ -228,19 +220,16 @@ SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: 'South Asian Ethnocultural Groups: ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                        TextSpan(text: 'Keep in mind, this is not an extensive list. These are just some of the predominant South Asian ethnocultural groups in Canada. \n', style: TextStyle(color: Colors.black,fontSize: 16,),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                        TextSpan(text: '\t\t1. Indian  \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t2. Pakistani \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t3. Bangladeshis   \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t4. Sri Lankan  \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
+                  child:
 
-                      ],
-                    ),
+                  ExpandableText(
+                      'South Asian Ethnocultural Groups: Keep in mind, this is not an extensive list. These are just some of the predominant South Asian ethnocultural groups in Canada. \n\t\t1. Indian  \n\t\t2. Pakistani \n\t\t3. Bangladeshis   \n\t\t4. Sri Lankan  \n',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
 
@@ -252,19 +241,16 @@ SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: 'East Asian Ethnocultural Groups: ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                        TextSpan(text: 'Keep in mind, this is not an extensive list. These are just some of the predominant East Asian ethnocultural groups in Canada. \n', style: TextStyle(color: Colors.black,fontSize: 16,),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                        TextSpan(text: '\t\t1. Chinese  \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t2. Japanese \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t3. South Korean   \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
-                        TextSpan(text: '\t\t4. North Korean \n', style: TextStyle(color: Colors.black,fontSize: 16,)),
+                  child:
 
-                      ],
-                    ),
+                  ExpandableText(
+                      'East Asian Ethnocultural Groups: Keep in mind, this is not an extensive list. These are just some of the predominant East Asian ethnocultural groups in Canada. \n\t\t1. Chinese  \n\t\t2. Japanese \n\t\t3. South Korean   \n\t\t4. North Korean \n',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
 
@@ -367,23 +353,6 @@ SizedBox(height: 30,),
 
 
 
-
-
-              //
-              // Container(
-              //   padding: EdgeInsets.all(12.0),
-              //   child: Card(
-              //     child: RichText(
-              //       text:  TextSpan(
-              //         children: [
-              //           TextSpan(text: 'The power one person has over another. ', style: TextStyle(color: Colors.black,fontSize: 16)),
-              //
-              //
-              //         ],
-              //       ),
-              //     ),
-              //   ),
-              // ),
 
             ],
           ),

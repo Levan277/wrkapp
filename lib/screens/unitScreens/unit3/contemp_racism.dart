@@ -1,3 +1,4 @@
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
@@ -157,15 +158,17 @@ class _ContempRacismState extends State<ContempRacism> {
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RichText(
-                      text:  TextSpan(
-                        children: [
+                    child:
 
-                          TextSpan(text: 'There are many systems in place that affect the well-being of Indigenous peoples today (many of which you will get to explore in just a moment). One of the issues facing Indigenous peoples is the lack of affordable and suitable housing. \n', style: TextStyle(color: Colors.black,fontSize: 16,),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-
-                        ],
-                      ),
+                    ExpandableText(
+                        'There are many systems in place that affect the well-being of Indigenous peoples today (many of which you will get to explore in just a moment). One of the issues facing Indigenous peoples is the lack of affordable and suitable housing. \n',
+                        expandText: 'show more',
+                        collapseText: 'show less',
+                        style: TextStyle(color: Colors.black,fontSize: 16)
                     ),
+
+
+
                   ),
                 ),
               ),
@@ -178,21 +181,17 @@ class _ContempRacismState extends State<ContempRacism> {
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RichText(
-                      text:  TextSpan(
-                        children: [
+                    child:
 
-                          TextSpan(text: 'Activity:Look into one issue surrounding Indigenous People that you don’t know much about and share your findings with someone else.  \n', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\tTopic Examples: \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t1. Inadequate living situations in Indigenous communities \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t2.High levels of incarceration  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t3. Higher rates of suicide and child/youth deaths  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t4. Lack of access to quality education  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t5. Poverty (leading to issues such as poorer health)   \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t6. Crisis of missing Indigenous women    \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                        ],
-                      ),
+                    ExpandableText(
+                        'Activity:Look into one issue surrounding Indigenous People that you don’t know much about and share your findings with someone else. \n\tTopic Examples: \n\t\t\t1. Inadequate living situations in Indigenous communities \n\t\t\t2.High levels of incarceration  \n\t\t\t3. Higher rates of suicide and child/youth deaths  \n\t\t\t4. Lack of access to quality education  \n\t\t\t5. Poverty (leading to issues such as poorer health)   \n\t\t\t6. Crisis of missing Indigenous women    \n',
+                        expandText: 'show more',
+                        collapseText: 'show less',
+                        style: TextStyle(color: Colors.black,fontSize: 16)
                     ),
+
+
+
                   ),
                 ),
               ),
@@ -208,15 +207,16 @@ class _ContempRacismState extends State<ContempRacism> {
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RichText(
-                      text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Like the Indigenous population, the Black population is also overrepresented in the justice system and are 4 times as likely to be racially profiled by police (Black and Indigenous people in Montreal) (Sheppard, Thermitus and Jones). \n', style: TextStyle(color: Colors.black,fontSize: 16,),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
+                    child:
 
-
-                        ],
-                      ),
+                    ExpandableText(
+                        'Like the Indigenous population, the Black population is also overrepresented in the justice system and are 4 times as likely to be racially profiled by police (Black and Indigenous people in Montreal) (Sheppard, Thermitus and Jones). \n',
+                        expandText: 'show more',
+                        collapseText: 'show less',
+                        style: TextStyle(color: Colors.black,fontSize: 16)
                     ),
+
+
                   ),
                 ),
               ),
@@ -228,21 +228,17 @@ class _ContempRacismState extends State<ContempRacism> {
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RichText(
-                      text:  TextSpan(
-                        children: [
+                    child:
 
-                          TextSpan(text: 'Activity:Look into one issue surrounding Black people that you don’t know much about and share your findings with someone else.  \n', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\tTopic Examples: \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t1. The Race Riot at Cole Harbour District High School \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t2. The Voice of the Fugitive, a magazine created by Mary and Henry Bibb to combat racism in Canada & America  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t3. Segregated schools  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t4. Discrimination against Black people in education   \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t5. Police brutality in Canada (ex. you can start with these names: Jermaine Carby and Nicholas Gibbs)    \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t6. Portray of Black people in media (ex. news, TV)     \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                        ],
-                      ),
+
+                    ExpandableText(
+                        'Activity:Look into one issue surrounding Black people that you don’t know much about and share your findings with someone else.  \n\tTopic Examples: \n\t\t\t1. The Race Riot at Cole Harbour District High School \n\t\t\t2. The Voice of the Fugitive, a magazine created by Mary and Henry Bibb to combat racism in Canada & America  \n\t\t\t3. Segregated schools  \n\t\t\t4. Discrimination against Black people in education   \n\t\t\t5. Police brutality in Canada (ex. you can start with these names: Jermaine Carby and Nicholas Gibbs)    \n\t\t\t6. Portray of Black people in media (ex. news, TV)     \n',
+                        expandText: 'show more',
+                        collapseText: 'show less',
+                        style: TextStyle(color: Colors.black,fontSize: 16)
                     ),
+
+
                   ),
                 ),
               ),
@@ -260,15 +256,16 @@ class _ContempRacismState extends State<ContempRacism> {
                     padding: const EdgeInsets.all(8.0),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: RichText(
-                        text:  TextSpan(
-                          children: [
+                      child:
 
-                            TextSpan(text: ' Much like people of East Asian Descent, people of South Asian Descent have had to deal with the ramifications of racist policies and immigration laws that barred them from freely living in Canada.   \n', style: TextStyle(color: Colors.black,fontSize: 16,),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-
-                          ],
-                        ),
+                      ExpandableText(
+                          'Much like people of East Asian Descent, people of South Asian Descent have had to deal with the ramifications of racist policies and immigration laws that barred them from freely living in Canada.   \n',
+                          expandText: 'show more',
+                          collapseText: 'show less',
+                          style: TextStyle(color: Colors.black,fontSize: 16)
                       ),
+
+
                     ),
                   ),
                 ),
@@ -282,19 +279,23 @@ class _ContempRacismState extends State<ContempRacism> {
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RichText(
-                      text:  TextSpan(
-                        children: [
+                    child:
 
-                          TextSpan(text: 'Activity: Look into one issue surrounding South Asian people that you don’t know much about and share your findings with someone else. \n', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\tTopic Examples: \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t1. Discrimination against South Asian people during COVID-19 pandemic \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t2. Racism against people of South Asian descent in education  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t3. Discrimination in immigration process (especially for women)   \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t4. Lack of media coverage on South Asian people    \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                        ],
-                      ),
+
+                    ExpandableText(
+                        'Activity: Look into one issue surrounding South Asian people that you don’t know much about and share your findings with someone else. \n'
+                            '\tTopic Examples: \n'
+                            '\t\t\t1. Discrimination against South Asian people during COVID-19 pandemic \n\n'
+                            '\t\t\t2. Racism against people of South Asian descent in education  \n\n'
+                            '\t\t\t3. Discrimination in immigration process (especially for women)   \n\n'
+                            '\t\t\t4. Lack of media coverage on South Asian people    \n\n',
+
+                        expandText: 'show more',
+                        collapseText: 'show less',
+                        style: TextStyle(color: Colors.black,fontSize: 16)
                     ),
+
+
                   ),
                 ),
               ),
@@ -332,19 +333,23 @@ class _ContempRacismState extends State<ContempRacism> {
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RichText(
-                      text:  TextSpan(
-                        children: [
+                    child:
 
-                          TextSpan(text: 'Activity: Look into one issue surrounding East Asian people that you don’t know much about and share your findings with someone else.  \n', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\tTopic Examples: \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t1. Hate crimes against East Asian people  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t2. Pay differences between Asian and white Canadians    \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t3. Discrimination of Asian Canadians during the COVID-19 pandemic     \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                          TextSpan(text: '\t\t\t4. Internment of people of Japanese people (Japanese Canadians held at Hastings Park)   \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child:SizedBox(height: 30,) )]),
-                        ],
-                      ),
+
+                    ExpandableText(
+                        'Activity: Look into one issue surrounding East Asian people that you don’t know much about and share your findings with someone else.  \n'
+                            '\tTopic Examples: \n\n'
+                            '\t\t\t1. Hate crimes against East Asian people  \n\n'
+                            '\t\t\t2. Pay differences between Asian and white Canadians    \n\n'
+                            '\t\t\t3. Discrimination of Asian Canadians during the COVID-19 pandemic \n \n'
+                            '\t\t\t4. Internment of people of Japanese people (Japanese Canadians held at Hastings Park) \n  \n',
+                        expandText: 'show more',
+                        collapseText: 'show less',
+                        style: TextStyle(color: Colors.black,fontSize: 16)
                     ),
+
+
+
                   ),
                 ),
               ),

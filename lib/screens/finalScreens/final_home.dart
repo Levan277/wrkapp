@@ -8,6 +8,7 @@ import 'package:lottie/lottie.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:wrkapp/Audio/TopicAudios/OprresionT/personalAT.dart';
 import 'package:wrkapp/Audio/xenophobia_audio_topic.dart';
+import 'package:wrkapp/TutorialScreens/ForumTutorialScreen.dart';
 import 'package:wrkapp/route/route.dart' as route;
 import 'package:wrkapp/screens/TopicScreens/colonization_topic.dart';
 import 'package:wrkapp/screens/TopicScreens/equity_topic.dart';
@@ -362,61 +363,6 @@ SizedBox(width: 15,),
                 ],
               ),
             ),
-            Container(
-              color: Colors.blue,
-              width: double.infinity,
-              height: 300,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Have You Ever Experienced",style: TextStyle(color: Colors.white,fontSize: 24),),
-                  ),
-                  SizedBox(height: 10,),
-                  Text("Racism?",style: TextStyle(color: Colors.white,fontSize: 24),),
-                   SizedBox(height: 5,),
-                  Expanded(
-                    child: Container(
-                      color: Colors.blue,
-                      child:   Lottie.asset('assets/lottie/racism.json') ,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            
-          Container(
-            color: Colors.blue,
-            height: 200,
-            width:double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Lets Talk About It",style: TextStyle(color: Colors.white,fontSize: 32),),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(width: 10,),
-                    Flexible(
-                      child: Text("How Do You Respond To Microaggressions?",style: TextStyle(
-                        fontSize: 28,fontWeight: FontWeight.bold,
-
-                      ),textAlign: TextAlign.center,),
-                    ),
-                  ],
-                ),
-
-              ],
-            ),
-          ),
-            Container(
-              color: Colors.blue,
-              child:   Lottie.asset('assets/lottie/talk.json') ,
-            ),
 
           ],
         ),
@@ -456,7 +402,7 @@ SizedBox(width: 15,),
               Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
             }
             else if(_currentIndex == 1){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ForumTutorialScreen()));
             }
             else if(_currentIndex == 2){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));

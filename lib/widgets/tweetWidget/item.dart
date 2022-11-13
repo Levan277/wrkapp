@@ -42,10 +42,16 @@ class _ItemPostState extends State<ItemPost> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
+
               Text("Post",style: TextStyle(color: Colors.white),),
               SizedBox(height: 20,),
               Row(
                 children: [
+
+
+
+
+                  //debug
                   widget.snapshotUser.data!.profileImageUrl != '' ?
                   CircleAvatar(radius: 20,
                       backgroundImage: NetworkImage(widget.snapshotUser.data!.profileImageUrl)
@@ -168,7 +174,7 @@ class _ItemPostState extends State<ItemPost> {
 
     ],
     ),
-      
+
     );
     
   }

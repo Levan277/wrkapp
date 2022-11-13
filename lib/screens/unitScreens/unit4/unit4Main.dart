@@ -1,5 +1,6 @@
 
 
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
@@ -107,15 +108,16 @@ class _Unit4MainState extends State<Unit4Main> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: '\t1. White privilege is not “the suggestion that white people have never struggled” (Collins). .\n ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        TextSpan(text: '\t2. White privilege is not “the assumption that everything a white person has accomplished is unearned” (Collins). ', style: TextStyle(color: Colors.black,fontSize: 16)),
+                  child:
 
-                      ],
-                    ),
+                  ExpandableText(
+                      '\t1. White privilege is not “the suggestion that white people have never struggled” (Collins).\n \n\t2. White privilege is not “the assumption that everything a white person has accomplished is unearned” (Collins).',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
 
@@ -130,15 +132,17 @@ class _Unit4MainState extends State<Unit4Main> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: '\t1. White Privilege – “is having greater access to power and resources than people of color [in the same situation] do” \n ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        TextSpan(text: '\t2. A different race based on the belief that one’s own race is superior.”  When someone believes that their race—which remember is a social construct that has no grounds in biology—is better than someone else’s, that person will always view themselves as more powerful, no matter what the situation is.  ', style: TextStyle(color: Colors.black,fontSize: 16)),
+                  child:
 
-                      ],
-                    ),
+                  ExpandableText(
+               '\t1. White Privilege – “is having greater access to power and resources than people of color [in the same situation] do” \n\n\t2. A different race based on the belief that one’s own race is superior.”  When someone believes that their race—which remember is a social construct that has no grounds in biology—is better than someone else’s, that person will always view themselves as more powerful, no matter what the situation is. ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
+
                 ),
               ),
               Row(
@@ -177,17 +181,18 @@ class _Unit4MainState extends State<Unit4Main> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: '\t1. “Power of Normal” – is addressing smaller, more trivial issues surrounding White privilege such as Band-aid colours,Hair products for all hair types and Lack of foods from other cultures in grocery stores    \n ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        TextSpan(text: '\t2. These are issues that tend to get more attention than larger issues that have a greater effect on people from that race.  Visit the ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                        TextSpan(text: '“White Privilege” ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                        TextSpan(text: 'topics page for a deeper look into these examples.  ', style: TextStyle(color: Colors.black,fontSize: 16)),
+                  child:
 
-                      ],
-                    ),
+                  ExpandableText(
+                      '\t1. “Power of Normal” – is addressing smaller, more trivial issues surrounding White privilege such as Band-aid colours,Hair products for all hair types and Lack of foods from other cultures in grocery stores    \n'
+                          '\n \t2. These are issues that tend to get more attention than larger issues that have a greater effect on people from that race.  Visit the '
+                          '“White Privilege” topics page for a deeper look into these examples. ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
 
@@ -221,14 +226,15 @@ SizedBox(height: 10,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: '“Power of the Benefit of the Doubt” – relates to the fact that white people are more likely to be viewed in a positive light than non-white people. \nWhite people tend to be “treated as individuals, rather than as representatives of (or exceptions to) a stereotyped racial identity”.\n   ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        TextSpan(text: 'Example - “White people are less likely to be followed, interrogated or search by law enforcement because they look ‘suspicious’” (Collins). ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                      ],
-                    ),
+                  child:
+                  ExpandableText(
+                      '“Power of the Benefit of the Doubt” – relates to the fact that white people are more likely to be viewed in a positive light than non-white people. \nWhite people tend to be “treated as individuals, rather than as representatives of (or exceptions to) a stereotyped racial identity”.\n\n'
+                          'Example - “White people are less likely to be followed, interrogated or search by law enforcement because they look ‘suspicious’” (Collins).  ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
                 ),
               ),
 

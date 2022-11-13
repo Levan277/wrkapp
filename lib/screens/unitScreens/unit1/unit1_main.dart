@@ -7,6 +7,7 @@ import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/support_screens/support_home_screen.dart';
 import 'package:wrkapp/screens/tweetScreen.dart';
 import 'package:wrkapp/screens/unitScreens/unit1/racism_spectrum.dart';
+import 'package:expandable_text/expandable_text.dart';
 
 import '../../../widgets/Asset_player.dart';
 import '../unit3/contemp_racism.dart';
@@ -20,6 +21,9 @@ class UnitsPage extends StatefulWidget {
 }
 
 class _UnitsPageState extends State<UnitsPage> {
+  bool isVisible = false;
+  bool isVisible2 = true;
+  bool tapOnce = false;
   var _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -150,23 +154,30 @@ class _UnitsPageState extends State<UnitsPage> {
          Container(
 
            padding: EdgeInsets.all(12.0),
-           child: Card(
-             child: RichText(
-               text:  TextSpan(
-                 children: [
-                   TextSpan(text: 'defined as a group of people that ', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                   TextSpan(text: 'share', style: GoogleFonts.montserrat(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                   TextSpan(text: '“certain distinctive physical traits” (Blakemore). ',style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                   TextSpan(text: ' “’Race’ is usually associated with biology and ',style: TextStyle(color: Colors.black,fontSize: 16)),
-                   TextSpan(text: 'linked with physical characteristics ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                   TextSpan(text: 'such as skin color or hair texture” (Blakemore). \n',style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                   TextSpan(text: 'Example - ',style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                   TextSpan(text: ' When someone is describing their friend groups, they might say, “Jim is White, Kevin is Black, Iko is Japanese, and Juno is Latina.” ',style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                 ]
+
+           child:Column(
+             children: [
+
+
+
+               Card(
+                 child:ExpandableText(
+                   'defined as a group of people that share “certain distinctive physical traits” (Blakemore).  “’Race’ is usually associated with biology and linked with physical characteristics such as skin color or hair texture” (Blakemore). \nExample -  When someone is describing their friend groups, they might say, “Jim is White, Kevin is Black, Iko is Japanese, and Juno is Latina.”  ',
+                   expandText: 'show more',
+                   collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
+                 ),
+
+
                ),
-             ),
+
+             ],
            ),
+
          ),
+
+
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -199,21 +210,17 @@ class _UnitsPageState extends State<UnitsPage> {
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text("Racism",style: TextStyle(color: Colors.white,fontSize: 20),),
-                  ),),
+                 ) ,),
                 ),
               ),
+
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'is defined as “prejudice, antagonism [definition] or ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'discrimination…against someone ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'of a different race ',style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: ' based on the belief that one’s own race is superior” (McWhorter). ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        ]
-                    ),
+                  child: ExpandableText(
+                    'is defined as “prejudice, antagonism [definition] or discrimination…against someone of a different race based on the belief that one’s own race is superior” (McWhorter).',
+                    expandText: 'show more',
+                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
                 ),
               ),
@@ -257,16 +264,13 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'when we say “power” in this curriculum, we are referring to institutional power which is the ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '“ability or official authority to decide what is best for others. ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'The ability to decide who will have access to resources. The capacity to exercise control over others” ',style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '(Vanderbilt University). ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        ]
-                    ),
+                  child:ExpandableText(
+                    'when we say “power” in this curriculum, we are referring to institutional power which is the “ability or official authority to decide what is best for others. The ability to decide who will have access to resources. The capacity to exercise control over others” (Vanderbilt University). ',
+                    expandText: 'show more',
+                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -308,16 +312,16 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'is the act of giving a racial character to someone or something.', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '(Canadian Race Relations Foundation). ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'Also, due to generalization, many people find this term too generic, and therefore do not use it. ', style: TextStyle(color: Colors.black,fontSize: 16)  ,children: [WidgetSpan(child: SizedBox(height: 30,))]
-    ),
-                        ]
-                    ),
+                  child: ExpandableText(
+                    'is the act of giving a racial character to someone or something. (Canadian Race Relations Foundation). Also, due to generalization, many people find this term too generic, and therefore do not use it. ',
+                    expandText: 'show more',
+                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
+
+
+
                 ),
               ),
               Row(
@@ -359,14 +363,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'A term used to describe people who are not White. However, this term is not used to describe Indigenous peoples', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-
-                        ]
-                    ),
+                  child:ExpandableText(
+                    'A term used to describe people who are not White. However, this term is not used to describe Indigenous peoples.',
+                    expandText: 'show more',
+                    collapseText: 'show less',
                   ),
+
+
+
+
                 ),
               ),
               Row(
@@ -408,14 +413,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'is a law put into place by an organization (ex. the government) that is agreed to by those in/participating in that organization. ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-
-                        ]
-                    ),
+                  child:
+                  ExpandableText(
+                    'is a law put into place by an organization (ex. the government) that is agreed to by those in/participating in that organization. ',
+                    expandText: 'show more',
+                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
+
                 ),
               ),
               Row(
@@ -459,19 +465,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Equality – ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16)),
-                          TextSpan(text: ' “means providing everyone with the same amount of resources regardless of whether everyone needs them” ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '(Mlaba). \n\n', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16)),
-
-                          TextSpan(text: 'Equity – ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16)),
-                          TextSpan(text: '“is when resources are shared based on what each person needs in order to…level the playing field” ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '(Mlaba). ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16)),
-                        ]
-                    ),
+                  child:
+                  ExpandableText(
+                    'Equality –  “means providing everyone with the same amount of resources regardless of whether everyone needs them” (Mlaba).\n\n Equity – “is when resources are shared based on what each person needs in order to…level the playing field” (Mlaba). ',
+                    expandText: 'show more',
+                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
+
                 ),
               ),
 
@@ -510,19 +512,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Privilege – ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: ' “A right or ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: 'benefit that is given to some people ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: ' “and not others”.\n\n ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: 'White privilege – ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: ' “white privilege is when ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: 'White people “[have] greater access to power and resources than people of colour [in the same situation] do” (Collins). ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        ]
-                    ),
+                  child:
+
+                  ExpandableText(
+                    'Privilege –  “A right or benefit that is given to some people “and not others”.\n\n White privilege – “white privilege is when White people “[have] greater access to power and resources than people of colour [in the same situation] do” (Collins). ',
+                    expandText: 'show more',
+                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -565,16 +563,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: ' “In very simplistic terms, ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: ' Xenophobia is a fear of people or ideas that are foreign or different from those in a particular society ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'It is “a deep-rooted, irrational (illogical or senseless) hatred towards or fear of foreigners (people who are not from that area), or of ideas or beliefs that are perceived as…strange or outside the norm” ', style: TextStyle(color: Colors.black, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '(White). ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        ]
-                    ),
+                  child:
+
+                  ExpandableText(
+                    '“In very simplistic terms, Xenophobia is a fear of people or ideas that are foreign or different from those in a particular society It is “a deep-rooted, irrational (illogical or senseless) hatred towards or fear of foreigners (people who are not from that area), or of ideas or beliefs that are perceived as strange or outside the norm” (White). ',
+                    expandText: 'show more',
+                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -618,14 +615,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Is when people from minority groups are “given benefits at the expense of” White people “who, apart from race, would have had a superior claim to enjoy them” ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '(Newkirk II). ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        ]
-                    ),
+                  child:
+                  ExpandableText(
+                    'Is when people from minority groups are “given benefits at the expense of” White people “who, apart from race, would have had a superior claim to enjoy them” (Newkirk II). ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -667,23 +665,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Colonization – ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'The ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: ' act of taking control of an area ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'or a country ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: 'that is not your own, especially using force, ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'and sending people from your own country to live there” ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: '(Oxford Learner’s Dictionary). \n\n', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                  child:
 
-                          TextSpan(text: 'Decolonization – ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '“The process of a colony or colonies becoming independent” ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: '(Oxford Learner’s Dictionary). ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        ]
-                    ),
+                  ExpandableText(
+                    'Colonization – The act of taking control of an area or a country that is not your own, especially using force, and sending people from your own country to live there” (Oxford Learner’s Dictionary). \n\nDecolonization – “The process of a colony or colonies becoming independent” (Oxford Learner’s Dictionary). ',
+                    expandText: 'show more',
+                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -725,13 +715,16 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'The treatment of a person/group of people as insignificant and/or powerless.', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          ],
-                    ),
+                  child:
+
+                  ExpandableText(
+                    'The treatment of a person/group of people as insignificant and/or powerless. ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -772,13 +765,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'The exercise of authority or power in a cruel or unjust manner.', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        ]
-                    ),
+                  child:
+                  ExpandableText(
+                    'The exercise of authority or power in a cruel or unjust manner. ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -820,14 +815,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: '“The belief that the white race is inherently superior to other races and that white people should have control over people of other races ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: '(Merriam-Webster Dictionary).', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        ]
-                    ),
+                  child:
+                  ExpandableText(
+                    '“The belief that the white race is inherently superior to other races and that white people should have control over people of other races (Merriam-Webster Dictionary).',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -869,16 +865,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Systemic racism – ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'Is racism that exists across a society. \n\n', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: 'Institutional racism – ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: 'is a racial discrimination that has become established as normal behaviour within a society or organization.  ', style: TextStyle(color: Colors.black,fontSize: 16),),
-                         ]
-                    ),
+                  child:
+                  ExpandableText(
+                    'Systemic racism – Is racism that exists across a society. \n\n Institutional racism – is a racial discrimination that has become established as normal behaviour within a society or organization. ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -920,14 +915,15 @@ class _UnitsPageState extends State<UnitsPage> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'refers to the representations…and stories conveying the idea that behaviours and values associated with ‘whiteness’…are automatically ‘better’ or more ‘normal’ than those associated with other racially defined groups”', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: '(Racial Equity Tools).', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, decoration: TextDecoration.underline,fontSize: 16)),
-                        ]
-                    ),
+                  child:
+                  ExpandableText(
+                    'refers to the representations…and stories conveying the idea that behaviours and values associated with ‘whiteness’…are automatically ‘better’ or more ‘normal’ than those associated with other racially defined groups” (Racial Equity Tools).',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(

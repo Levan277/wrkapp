@@ -9,15 +9,104 @@ import 'package:wrkapp/screens/tweetScreens/profile_tweet_screen.dart';
 import 'package:lottie/lottie.dart';
 import '../widgets/tweetWidget/feed.dart';
 import '../widgets/tweetWidget/search.dart';
+import 'package:tutorial/tutorial.dart';
 
 class HomeForum extends StatefulWidget {
   const HomeForum({Key? key}) : super(key: key);
 
   @override
   State<HomeForum> createState() => _HomeForumState();
+
+
+
+
 }
 
 class _HomeForumState extends State<HomeForum> {
+
+
+  var keyMenu = GlobalKey();
+  var keyButton = GlobalKey();
+  var keyHome = GlobalKey();
+  List<TutorialItem> itens = [];
+  @override
+  void initState() {
+    itens.addAll({
+      TutorialItem(
+          globalKey: keyMenu,
+          touchScreen: true,
+          top: 200,
+          left: 50,
+          children: [
+            Text(
+              "The three horizontal lined button will display the ability to delete your account, View your posts in the profile section and Explain why a black screen may be seen ",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            SizedBox(
+              height: 100,
+            )
+          ],
+          widgetNext: Text(
+            "Tap to Continue",
+            style: TextStyle(
+              color: Colors.purple,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          shapeFocus: ShapeFocus.oval),
+      TutorialItem(
+        globalKey: keyButton,
+        touchScreen: true,
+        top: 200,
+        left: 50,
+        children: [
+          Text(
+            "Add a Post",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          SizedBox(
+            height: 100,
+          )
+        ],
+        widgetNext: Text(
+          "Tap to Continue",
+          style: TextStyle(
+            color: Colors.purple,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        shapeFocus: ShapeFocus.oval,
+      ),
+      TutorialItem(
+        globalKey: keyHome,
+        touchScreen: true,
+        bottom: 50,
+        left: 50,
+        children: [
+          Text(
+            "Navigates back to the Main Home Screen",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          SizedBox(
+            height: 10,
+          )
+        ],
+        widgetNext: Text(
+          "Tap to Continue",
+          style: TextStyle(
+            color: Colors.purple,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        shapeFocus: ShapeFocus.square,
+      ),
+    });
+
+    Future.delayed(Duration(microseconds: 200)).then((value) {
+      Tutorial.showTutorial(context, itens);
+    });
+    super.initState();
+  }
   final FirebaseAuth _auth = FirebaseAuth.instance;
   int _currentIndex = 0;
   final List<Widget> _children = [Feed(), Search(),FinalHome()];
@@ -27,6 +116,8 @@ class _HomeForumState extends State<HomeForum> {
       _currentIndex = index;
       if(_currentIndex == 2){
         Navigator.pop(context);
+        Navigator.pop(context);
+        // Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
       }
     });
 
@@ -38,17 +129,23 @@ class _HomeForumState extends State<HomeForum> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        key: keyMenu,
+
         backgroundColor:  Color(0xffFF8201),
         title: Text('Home'),
 
       ),
       floatingActionButton: FloatingActionButton(
+        key: keyButton,
         onPressed: (){
           Navigator.of(context).push(MaterialPageRoute(builder: (context) => Add()));
         },
         child: Icon(Icons.add),
 
       ),
+      
+
+
       drawer: Drawer(
 
         child: ListView(
@@ -72,6 +169,42 @@ class _HomeForumState extends State<HomeForum> {
 
 
                 }) ,
+SizedBox(height: 100,),
+            Container(
+          height: 380,
+              decoration: BoxDecoration(
+                color: Colors.blueGrey,
+                gradient: LinearGradient(
+                    colors: [Colors.black,Colors.grey],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.green,
+                    offset: Offset(10,20),
+                    blurRadius: 30,
+                  )
+                ],
+
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Viewing A Black Screen?",style: TextStyle(color: Colors.white,fontSize: 24),),
+                  ),
+                  SizedBox(height: 25,),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(child: Text("Start Following Other Users, to See Their Posts!",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),)),
+                  ),
+                  SizedBox(height: 10,),
+                Expanded(child: Padding(padding:EdgeInsets.all(8.0),
+                    child: Image.asset("assets/images/ReadingKid.jpg",),))
+                ],
+              ),
+            ),
 
 
           //   ListTile(title: Card(child: Text('Logout'),),
@@ -82,12 +215,14 @@ class _HomeForumState extends State<HomeForum> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        key: keyHome,
         backgroundColor:  Color(0xffFF8201),
         onTap: onTabPressed,
         currentIndex: _currentIndex,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: [
+
         BottomNavigationBarItem(icon: Icon(Icons.home),label: ''),
         BottomNavigationBarItem(icon: Icon(Icons.search),label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.home_max_sharp),label: ''),

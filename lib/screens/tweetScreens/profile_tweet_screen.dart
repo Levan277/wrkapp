@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wrkapp/app.dart';
 import 'package:wrkapp/services/user.dart';
 import 'package:wrkapp/services/post.dart';
 import 'package:wrkapp/models/users.dart';
@@ -82,8 +83,12 @@ _userService.followUser(widget.uid);
                                    //write unfollow action
                                    _userService.unfollowUser(widget.uid);
                                  }, child: Text("UnFollow")),
+
+
                       ],
                     ),
+
+
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Container(

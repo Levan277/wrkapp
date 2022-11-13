@@ -1,4 +1,5 @@
 
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
@@ -135,7 +136,7 @@ class _Section3WCBRState extends State<Section3WCBR> {
                 ],),
 
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                padding: EdgeInsets.all(10),
                 child: Text("Scenerio Activity",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
               ),
               SizedBox(height: 20,),
@@ -146,7 +147,15 @@ class _Section3WCBRState extends State<Section3WCBR> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child:   Text('Jordan, who is a black girl, is dating David, who is a white boy. When David asks to go over to Jordan’s house to hang out, Jordan gets nervous and usually makes up excuses about why he cannot come over. One day David finally persuades Jordan to let him go over to her house so he can meet her family. Though, Jordan sets one condition; David is not allowed to introduce himself as her boyfriend. David asks why not, and Jordan replies saying, “My parents have made it very clear that I am not allowed to date a white person.” Shocked, David asks why not, and Jordan answers, “They do not want to ruin our bloodline. They want to keep it Black.” David does not ask Jordan any other follow-up questions, though feels very uncomfortable when he does eventually meet Jordan’s family as Jordan’s “friend.”  ', style: TextStyle(color: Colors.black,fontSize: 16,height: 1.5),),
+                  child:     ExpandableText(
+                      'Jordan, who is a black girl, is dating David, who is a white boy. When David asks to go over to Jordan’s house to hang out, Jordan gets nervous and usually makes up excuses about why he cannot come over. One day David finally persuades Jordan to let him go over to her house so he can meet her family. Though, Jordan sets one condition; David is not allowed to introduce himself as her boyfriend. David asks why not, and Jordan replies saying, “My parents have made it very clear that I am not allowed to date a white person.” Shocked, David asks why not, and Jordan answers, “They do not want to ruin our bloodline. They want to keep it Black.” David does not ask Jordan any other follow-up questions, though feels very uncomfortable when he does eventually meet Jordan’s family as Jordan’s “friend.” ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
+                  ),
+
+
+
                 ),
               ),
               SizedBox(height: 15,),
@@ -166,14 +175,15 @@ class _Section3WCBRState extends State<Section3WCBR> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: '\t a. Why do you think is the underlying reason why Jordan’s parents are against Jordan being in a relationship with a white person? Where do you think this rule of keeping the bloodline intact came from?\n\n ', style: TextStyle(color: Colors.black,fontSize: 16,),),
-                          TextSpan(text: '\t b. Would you consider Jordan’s parents to be racist? Why or why not?  ', style: TextStyle(color: Colors.black,fontSize: 16),),
-                        ]
-                    ),
+                  child:
+
+                  ExpandableText(
+                      '\t a. Why do you think is the underlying reason why Jordan’s parents are against Jordan being in a relationship with a white person? Where do you think this rule of keeping the bloodline intact came from?\n\n \t b. Would you consider Jordan’s parents to be racist? Why or why not? ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
                 ),
               ),
 
@@ -187,14 +197,15 @@ class _Section3WCBRState extends State<Section3WCBR> {
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: '\t a. Do you think that David’s parents are racist?\n\n ', style: TextStyle(color: Colors.black,fontSize: 16,),),
-                          TextSpan(text: '\t b. What do you think is the underlying reason why David’s parents are against David being in a relationship with a Black person? Is their reasoning different to Jordan’s parents’ reasoning? Why or why not?   ', style: TextStyle(color: Colors.black,fontSize: 16),),
-                        ]
-                    ),
+                  child:
+                  ExpandableText(
+                      '\t a. Do you think that David’s parents are racist?\n\n \t b. What do you think is the underlying reason why David’s parents are against David being in a relationship with a Black person? Is their reasoning different to Jordan’s parents’ reasoning? Why or why not? ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               //definition 2

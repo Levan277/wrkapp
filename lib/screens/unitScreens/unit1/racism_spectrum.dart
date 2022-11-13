@@ -1,3 +1,4 @@
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -154,9 +155,15 @@ SizedBox(height: 20,),
               Container(
 
                 padding: EdgeInsets.all(12.0),
-                child: Text("Looking at the following chart, take note of what forms of racism you, your family and/or friends have experienced, and what types of racism you have participated in. Then ask yourself these questions: Which forms of racism have you heard about? What haven’t you heard about? Were there acts of racism that you didn’t know were racist? If so, what were they? ",style: TextStyle(
-                  fontSize: 20,
-                ),)
+                child:ExpandableText(
+                  'Looking at the following chart, take note of what forms of racism you, your family and/or friends have experienced, and what types of racism you have participated in. Then ask yourself these questions: Which forms of racism have you heard about? What haven’t you heard about? Were there acts of racism that you didn’t know were racist? If so, what were they? ',
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 20)
+
+              ),
+
+
+
               ),
               SizedBox(height: 10,),
               Center(child: Image.asset('assets/images/racism_spec.jpg'),heightFactor: 1.5,),
@@ -188,18 +195,15 @@ SizedBox(height: 20,),
               ),
        Container(
          padding: EdgeInsets.all(8.0),
-         child: RichText(
-           text:  TextSpan(
-               children: [
-                 TextSpan(text: 'Where are you on each scale right now? Why do you think you fall there? What things in your life do you think has contributed to where you fall on the scale at this moment in your life?\n ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                 TextSpan(text: 'Have you been in other places on this scale throughout your life? If so, where? Why? What things in your past do you think contributed to where you fell on the scale before?\n ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                 TextSpan(text: 'Do you like where you are on the scale right now? Why or why not?\n  ',style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                 TextSpan(text: 'If you are unhappy with where you are on the scale right now, where would you wish you were? How do you think you would achieve moving places on the scale? \n ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                 TextSpan(text: 'Where do you think is a healthy place to be on the scale? Why?\n ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                 TextSpan(text: 'Where do you think the people you surround yourself with (i.e., friends, family) are on the scale? \n ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-               ]
-           ),
+         child:
+
+         ExpandableText(
+             'Where are you on each scale right now? Why do you think you fall there? What things in your life do you think has contributed to where you fall on the scale at this moment in your life?\n Have you been in other places on this scale throughout your life? If so, where? Why? What things in your past do you think contributed to where you fell on the scale before?\nDo you like where you are on the scale right now? Why or why not?\n If you are unhappy with where you are on the scale right now, where would you wish you were? How do you think you would achieve moving places on the scale? \n If you are unhappy with where you are on the scale right now, where would you wish you were? How do you think you would achieve moving places on the scale? \n Where do you think is a healthy place to be on the scale? Why?\nWhere do you think the people you surround yourself with (i.e., friends, family) are on the scale? \n  ',
+             expandText: 'show more',
+             collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
          ),
+
        ),
 
               SizedBox(height: 10,),

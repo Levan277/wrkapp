@@ -7,9 +7,10 @@ import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/home_screen.dart';
 import 'package:wrkapp/screens/login_screen.dart';
 import 'package:wrkapp/screens/splash_screen.dart';
+import 'TutorialScreens/ForumTutorialScreen.dart';
 import 'route/route.dart' as route;
 import 'package:stream_feed_flutter_core/stream_feed_flutter_core.dart';
-
+import 'package:rename_app/rename_app.dart';
 
 
 void main() async {
@@ -65,7 +66,7 @@ class _MyAppState extends State<MyApp> {
    //     return RegisterPage();
    //   },
    // ),
-// home: HomeScreen(),
+// home: ForumTutorialScreen(),
    home:     StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot){

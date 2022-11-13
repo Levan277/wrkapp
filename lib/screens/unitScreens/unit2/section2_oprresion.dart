@@ -1,4 +1,5 @@
 
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
@@ -176,14 +177,15 @@ SizedBox(height: 25,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: 'Is “associated with our values, beliefs and feelings about individuals different from us” (Pizaña) \n', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16)),
-                        TextSpan(text: 'Example - Racism: believing that one racial group is smarter than another.', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                      ],
-                    ),
+                  child:
+                  ExpandableText(
+                      'Is “associated with our values, beliefs and feelings about individuals different from us” (Pizaña) \n Example - Racism: believing that one racial group is smarter than another.',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -224,15 +226,16 @@ SizedBox(height: 25,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Interpersonal means “relating to relationships or communication between people” (Oxford Dictionaries). \n', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: '“So, interpersonal oppression focuses on “our actions, behaviour and language as we interact with individuals different from us” \n', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: '   Example -  Racism: racist jokes, use of racial slurs, harassment, stereotyping ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                        ]
-                    ),
+                  child:
+
+                  ExpandableText(
+                      'Interpersonal means “relating to relationships or communication between people” (Oxford Dictionaries). \n “So, interpersonal oppression focuses on “our actions, behaviour and language as we interact with individuals different from us” \n Example -  Racism: racist jokes, use of racial slurs, harassment, stereotyping',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(
@@ -272,14 +275,13 @@ SizedBox(height: 25,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Includes “the rules, policies, procedures and practices…within an institution that define who…can fully participate or those that may be excluded” (Pizaña).\n', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: '   Example - Racism: A company refusing to hire someone because of their hairstyle or religious clothing ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
+                  child:
 
-                        ]
-                    ),
+                  ExpandableText(
+                      'Includes “the rules, policies, procedures and practices within an institution that define who…can fully participate or those that may be excluded” (Pizaña).\n Example - Racism: A company refusing to hire someone because of their hairstyle or religious clothing ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
                 ),
               ),
@@ -321,15 +323,18 @@ SizedBox(height: 25,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Is “how we define what is right, normal, the truth or beautiful” \n', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: '   Example - Racism: “The cultural narrative that White folks are safer, less violent, and better citizens”  ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
+                  child:
 
-                        ]
-                    ),
+
+                  ExpandableText(
+                      'Is “how we define what is right, normal, the truth or beautiful” \n  Example - Racism: “The cultural narrative that White folks are safer, less violent, and better citizens” ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
+
                 ),
               ),
               Row(
@@ -378,16 +383,16 @@ SizedBox(height: 25,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: '“Are members of the dominant social groups” that are privileged [in comparison to targets of oppression]”. ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: ' (Vanderbilt University)\n', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                          TextSpan(text: '   Example-  A White person going through customs without having to worry about being racially profiled and stopped at the boarder because of their race.” ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
+                  child:
 
-                        ]
-                    ),
+
+                  ExpandableText(
+                      '“Are members of the dominant social groups” that are privileged [in comparison to targets of oppression]”.(Vanderbilt University)\n Example-  A White person going through customs without having to worry about being racially profiled and stopped at the boarder because of their race.”',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
                 ),
               ),
               Row(
@@ -429,15 +434,12 @@ SizedBox(height: 10,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: '“Are members of social identity groups that are” denied the right to vote, “exploited, and victimized, by agents of oppression” ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: ' (Vanderbilt University).\n', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                          TextSpan(text: '   Example- Racialized groups like Black and Indigenous people are more likely to be incarcerated. ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-
-                        ]
-                    ),
+                  child:
+                  ExpandableText(
+                      '“Are members of social identity groups that are” denied the right to vote, “exploited, and victimized, by agents of oppression” (Vanderbilt University).\n Example- Racialized groups like Black and Indigenous people are more likely to be incarcerated. ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
                 ),
               ),
@@ -478,16 +480,16 @@ SizedBox(height: 10,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Is the process in which “people in the target group make oppression…personal” by believing the “lies, prejudices, and stereotypes” to be the truth. ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: ' (Vanderbilt University).\n', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                          TextSpan(text: 'Effects of internalized oppression include ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                          TextSpan(text: 'Low self-esteem, Self-doubt, Self-loathing ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold)),
-                        ],
-                    ),
+                  child:
+
+                  ExpandableText(
+                      'Is the process in which “people in the target group make oppression…personal” by believing the “lies, prejudices, and stereotypes” to be the truth.(Vanderbilt University).\nEffects of internalized oppression include low self-esteem, Self-doubt, Self-loathing ',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
+
                 ),
               ),
               Row(

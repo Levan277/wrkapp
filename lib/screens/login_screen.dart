@@ -30,15 +30,10 @@ class _LoginScreenState extends State<LoginScreen> {
   bool checkedValue = false;
 
   @override
-  Future initState() async {
+  void initState()   {
     // TODO: implement initState
     super.initState();
-    final name = await UserSecureStorage.getUsername() ?? '';
-  final pass = await UserSecureStorage.getPass() ?? '';
-    setState(() {
-      this._emailController.text = name;
-      this._passwordController.text = pass;
-    });
+  saveUserCredentials();
   }
 
   @override
@@ -49,6 +44,14 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordController.dispose();
   }
 
+  Future saveUserCredentials()async{
+    final name = await  UserSecureStorage.getUsername() ?? '';
+    final pass =  await UserSecureStorage.getPass() ?? '';
+    setState(() {
+      this._emailController.text =  name;
+      this._passwordController.text =  pass;
+    });
+  }
   void loginUser() async{
     setState((){
       _isLoading = true;

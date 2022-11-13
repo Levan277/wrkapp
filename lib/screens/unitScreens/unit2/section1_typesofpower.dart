@@ -1,5 +1,6 @@
 
 
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
@@ -178,15 +179,15 @@ SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'The power one person has over another. ', style: GoogleFonts.montserrat(color: Colors.black,fontSize: 16)),
+                  child:
 
-
-     ],
-                    ),
+                  ExpandableText(
+                      'The power one person has over another.',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
                 ),
               ),
               Row(
@@ -228,13 +229,15 @@ SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'The power an insitution has over many people. ', style: TextStyle(color: Colors.black,fontSize: 16)),
-                        ]
-                    ),
+                  child:
+
+                  ExpandableText(
+                      'The power an insitution has over many people.',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
                 ),
               ),
               Row(
@@ -294,15 +297,15 @@ AssetPlayerWidget(asset: 'assets/u2_sec1_superiority.mp3', description: 'What is
 
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text: TextSpan(
-                        children: [
-                          TextSpan(text: 'Before completely the activity below, watch the full interaction between Amy Cooper and Christian Cooper* ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),),
+                  child:
 
-
-                        ]
-                    ),
+                  ExpandableText(
+                      'Before completely the activity below, watch the full interaction between Amy Cooper and Christian Cooper',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
                 ),
 
               ),
@@ -313,21 +316,16 @@ SizedBox(height: 10,),
         Container(
         padding: EdgeInsets.all(12.0),
     child: Card(
-    child: RichText(
-    text: TextSpan(
-    children: [
-    TextSpan(text: '1. Pay attention to Amy and Christian’s attitudes and physicality (expressions, gestures, body posture) in the situation. How do they differ? \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+    child:
 
-    TextSpan(text: '2. Why do you think Amy reacted the way that she did?  \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-    TextSpan(text: '3. What was Christian’s goal in the situation? What was Amy’s?  \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-    TextSpan(text: '4. Who had more power in the altercation? How did each of them use their power? What type of power was demonstrated in this situation? \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-    TextSpan(text: '5. How is, “I’m going to tell them that there’s an African American man threatening my life” a powerful statement? What baggage does it carry? What does is reflect about society?  \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-    TextSpan(text: '6. What do you think could have happened if Christian did not record the interaction? Do you think the power dynamics would have changed? If so, how?  \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-
-
-    ]
+    ExpandableText(
+        '1. Pay attention to Amy and Christian’s attitudes and physicality (expressions, gestures, body posture) in the situation. How do they differ? \n 2. Why do you think Amy reacted the way that she did? \n 3. What was Christian’s goal in the situation? What was Amy’s?\n4. Who had more power in the altercation? How did each of them use their power? What type of power was demonstrated in this situation? \n 5. How is, “I’m going to tell them that there’s an African American man threatening my life” a powerful statement? What baggage does it carry? What does is reflect about society?  \n6. What do you think could have happened if Christian did not record the interaction? Do you think the power dynamics would have changed? If so, how?  \n',
+        expandText: 'show more',
+        collapseText: 'show less',
+        style: TextStyle(color: Colors.black,fontSize: 16)
     ),
-    ),
+
+
     ),
 
     ),
@@ -349,15 +347,15 @@ SizedBox(height: 10,),
               Container(
                 padding: EdgeInsets.all(12.0),
                 child: Card(
-                  child: RichText(
-                    text: TextSpan(
-                        children: [
-                          TextSpan(text: '1.How is the use of power different in this example to the Amy Cooper/Christian situation?  \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                  child:
 
-                          TextSpan(text: '2. In the Amy Cooper/Christian altercation, Christian had some power as he was able to film Amy. Why would it have been harder for the Indigenous people to gain power in their situation?   \n ', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold,),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                        ]
-                    ),
+                  ExpandableText(
+                      '1.How is the use of power different in this example to the Amy Cooper/Christian situation?  \n 2. In the Amy Cooper/Christian altercation, Christian had some power as he was able to film Amy. Why would it have been harder for the Indigenous people to gain power in their situation?   \n',
+                      expandText: 'show more',
+                      collapseText: 'show less',
+                      style: TextStyle(color: Colors.black,fontSize: 16)
                   ),
+
                 ),
 
               ),
