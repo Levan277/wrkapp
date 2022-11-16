@@ -1,6 +1,6 @@
 List items = [
   {
-    "header": "Welcome To Forum",
+    "header": "Welcome",
     "description":
     "Here, You Will Be Able to Search Up Users by Username to View There Posts",
     "image": "assets/images/undraw_welcome.jpg"

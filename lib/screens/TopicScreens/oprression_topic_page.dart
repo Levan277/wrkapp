@@ -1,4 +1,5 @@
 
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
@@ -110,14 +111,21 @@ class _OppresionTopicPageState extends State<OppresionTopicPage> {
                 Center(child: Padding(
                   padding: const EdgeInsets.all(8.0),
                  child: Card(
-                    child: RichText(
-                      text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'What are some beliefs you have developed over the years that would be considered as personal oppression?', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                    child:
 
-                        ],
-                      ),
+                    ExpandableText(
+                        ' What are some beliefs you have developed over the years that would be considered as personal oppression?'
+                            ''
+                            ''
+                            '',
+
+
+                        expandText: 'show more',
+                        collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
                     ),
+
+
                   ),
 
                 )),
@@ -127,14 +135,21 @@ class _OppresionTopicPageState extends State<OppresionTopicPage> {
               Center(child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: 'Brainstorm some situations where either you or someone else has taken their personal beliefs and used them against others? ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                  child:
 
-                      ],
-                    ),
+                  ExpandableText(
+                      ' Brainstorm some situations where either you or someone else has taken their personal beliefs and used them against others?'
+                          ''
+                          ''
+                          '',
+
+
+                      expandText: 'show more',
+                      collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
                   ),
+
+
                 ),
                ),
               ),
@@ -144,14 +159,19 @@ class _OppresionTopicPageState extends State<OppresionTopicPage> {
               Center(child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child:  Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: 'Can you think of an example of institutional oppression? Possibly in the education system or policing system, for example?  ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                  child:
+                  ExpandableText(
+                      'Can you think of an example of institutional oppression? Possibly in the education system or policing system, for example?  '
+                          ''
+                          ''
+                          '',
 
-                      ],
-                    ),
+
+                      expandText: 'show more',
+                      collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
                   ),
+
                 ),
 
               )),
@@ -162,14 +182,20 @@ class _OppresionTopicPageState extends State<OppresionTopicPage> {
               Center(child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: 'What examples of oppression at the cultural level can you think of? Possibly things you have personally experienced. ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                  child:
 
-                      ],
-                    ),
+                  ExpandableText(
+                      'What examples of oppression at the cultural level can you think of? Possibly things you have personally experienced. '
+                          ''
+                          ''
+                          '',
+
+
+                      expandText: 'show more',
+                      collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
                   ),
+
                 ),
               )),
 

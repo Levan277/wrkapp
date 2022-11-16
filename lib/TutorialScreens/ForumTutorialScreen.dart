@@ -13,58 +13,62 @@ class _ForumTutorialScreenState extends State<ForumTutorialScreen> {
 
 
   List<Widget> slides = items
-      .map((item) => Container(
-      padding: EdgeInsets.symmetric(horizontal: 18.0),
-      child: Expanded(
-        child: Column(
-          children: <Widget>[
-            Flexible(
-              flex: 1,
-              fit: FlexFit.tight,
-              child: Image.asset(
-                item['image'],
-                fit: BoxFit.fitWidth,
-              width: 200,
+      .map((item) => Expanded(
+        child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 18.0),
+        child: Expanded(
+          child: Column(
+            children: <Widget>[
+              Flexible(
+                flex: 1,
+                fit: FlexFit.tight,
+                child: Image.asset(
+                  item['image'],
+                  fit: BoxFit.fitWidth,
+                width: 200,
 
-                alignment: Alignment.bottomCenter,
-              ),
-            ),
-            Flexible(
-              flex: 1,
-              fit: FlexFit.tight,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 30.0),
-                child: Column(
-                  children: <Widget>[
-                    Text(item['header'],
-                        style: TextStyle(
-                            fontSize: 50.0,
-                            fontWeight: FontWeight.w300,
-                            color: Color(0XFF3F3D56),
-                            height: 2.0)),
-
-
-                    Text(
-                      item['description'],
-                      style: TextStyle(
-                          color: Colors.grey,
-                          letterSpacing: 1.2,
-                          fontSize: 16.0,
-                          height: 1.3),
-                      textAlign: TextAlign.center,
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Button(),
-                    ),
-                  ],
+                  alignment: Alignment.bottomCenter,
                 ),
               ),
-            )
-          ],
-        ),
-      )))
+              Flexible(
+                flex: 1,
+                fit: FlexFit.tight,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Column(
+                    children: <Widget>[
+                      Center(
+                        child: Text(item['header'],
+                            style: TextStyle(
+                                fontSize: 50.0,
+                                fontWeight: FontWeight.w300,
+                                color: Color(0XFF3F3D56),
+                                height: 2.0,)),
+                      ),
+
+
+                      Text(
+                        item['description'],
+                        style: TextStyle(
+                            color: Colors.grey,
+                            letterSpacing: 1.2,
+                            fontSize: 16.0,
+                            height: 1.3),
+                        textAlign: TextAlign.center,
+                      ),
+
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Button(),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        )),
+      ))
       .toList();
 
   List<Widget> indicator() => List<Widget>.generate(

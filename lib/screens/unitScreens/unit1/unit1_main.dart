@@ -77,7 +77,7 @@ class _UnitsPageState extends State<UnitsPage> {
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
         title: Text("Unit 1"),
-        actions: [Icon(Icons.support_agent_rounded)],
+        actions: [],
       ),
       body: ListView(
         children: [

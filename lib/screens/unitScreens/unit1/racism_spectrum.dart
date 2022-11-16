@@ -1,8 +1,10 @@
 import 'package:expandable_text/expandable_text.dart';
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:video_player/video_player.dart';
 import 'package:wrkapp/Audio/u1_sec1_summary_audio.dart';
 import 'package:wrkapp/Audio/u1_sec2_summary.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
@@ -22,7 +24,15 @@ class RacismSpectrum extends StatefulWidget {
 }
 
 class _RacismSpectrumState extends State<RacismSpectrum> {
+  late FlickManager flickManager;
   var _currentIndex = 0;
+
+  @override
+  void initState() {
+
+    super.initState();
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u1_s2.mp4'));
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
@@ -129,7 +139,17 @@ class _RacismSpectrumState extends State<RacismSpectrum> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AssetPlayerWidget(asset: 'assets/u1_sec2_summary.mp3', description: 'Section 2: Summary'),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+                ),
+                child:FlickVideoPlayer(
+                  flickManager: flickManager,
+
+
+                ) ,
+              ),
+              // AssetPlayerWidget(asset: 'assets/u1_sec2_summary.mp3', description: 'Section 2: Summary',),
               // SizedBox(height:700, width:double.infinity,child: Unit1Sec2Summary()),
 SizedBox(height: 20,),
               Padding(

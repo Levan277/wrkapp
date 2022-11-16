@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -19,7 +20,27 @@ class Unit1Home extends StatefulWidget {
 }
 
 class _Unit1HomeState extends State<Unit1Home> {
+
+
+
+
+  late FlickManager flickManager;
   var _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u1_intro.mp4'));
+
+  }
+
+  @override
+  void dispose() {
+    flickManager.dispose();
+    super.dispose();
+
+  }
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -77,13 +98,24 @@ class _Unit1HomeState extends State<Unit1Home> {
                 ],
               ),
 
+
               // second column of bezel
- Container(
-   height: 400,
-   width: double.infinity,
-   child: Lottie.asset('assets/lottie/thinking2.json',width: 300,height: 300),
-   // child:Expanded(child: AssetPlayerWidget()),
- ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+                ),
+                child:FlickVideoPlayer(
+                  flickManager: flickManager,
+
+
+                ) ,
+              ),
+ // Container(
+ //   height: 400,
+ //   width: double.infinity,
+ //   child: Lottie.asset('assets/lottie/thinking2.json',width: 300,height: 300),
+ //   // child:Expanded(child: AssetPlayerWidget()),
+ // ),
 
               Container(
                 child: ElevatedButton(
@@ -91,6 +123,7 @@ class _Unit1HomeState extends State<Unit1Home> {
                     backgroundColor:MaterialStateProperty.all(Colors.black),
                   ),
                   onPressed: (){
+
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>UnitsPage()));
                   },
                   child: Text("Explore",style: GoogleFonts.montserrat(color: Colors.white),),
@@ -199,3 +232,7 @@ class DrawClip2 extends CustomClipper<Path> {
     return true;
   }
 }
+
+
+
+

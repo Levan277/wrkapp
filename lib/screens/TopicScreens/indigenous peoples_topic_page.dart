@@ -1,3 +1,4 @@
+import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
@@ -108,14 +109,20 @@ class _IndegenousPeoplesTopicState extends State<IndegenousPeoplesTopic> {
           Container(
             padding: EdgeInsets.all(12.0),
             child: Card(
-              child: RichText(
-                text:  TextSpan(
-                  children: [
-                    TextSpan(text: '1.\tHas 617 different communities that are spread across 6 regions (Facing History & Ourselves). \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                    TextSpan(text: '2.\t Though, even within these regions, “there is a richness and diversity of identity, culture, and customs, although the communities share…similar characteristics, languages, stories, and outlooks” (Facing History & Ourselves).  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))] ),
-                  ],
-                ),
+              child:
+              ExpandableText(
+                  '1.\tHas 617 different communities that are spread across 6 regions (Facing History & Ourselves). \n\n'
+                      '2.\t Though, even within these regions, “there is a richness and diversity of identity, culture, and customs, although the communities share…similar characteristics, languages, stories, and outlooks” (Facing History & Ourselves).  \n'
+                      ''
+                      '',
+
+
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
               ),
+
+
             ),
           ),
 
@@ -128,15 +135,21 @@ class _IndegenousPeoplesTopicState extends State<IndegenousPeoplesTopic> {
           Container(
             padding: EdgeInsets.all(12.0),
             child: Card(
-              child: RichText(
-                text:  TextSpan(
-                  children: [
-                    TextSpan(text: '1.\t“refers…to the Artic indigenous population” (Facing History & Ourselves).  They live in Alaska, Canada, and Greenland (Facing History & Ourselves). )\n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                    TextSpan(text: '2.\t The word “Inuit” means “people,” and the language they speak is Inuktitut, “though there are regional dialects that are known by slightly different names” (Facing History & Ourselves).  \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))] ),
-                    TextSpan(text: '3.\tCurrently the Inuit communities in “Canada live in the Nunangat—loosely defined as ‘Inuit homeland,” a land that is divided into 4 regions (Facing History & Ourselves).   \n', style: TextStyle(color: Colors.black,fontSize: 16)),
-                  ],
-                ),
+              child:
+
+              ExpandableText(
+                  ' 1.\t“refers…to the Artic indigenous population” (Facing History & Ourselves).  They live in Alaska, Canada, and Greenland (Facing History & Ourselves). )\n\n'
+                      '2.\t The word “Inuit” means “people,” and the language they speak is Inuktitut, “though there are regional dialects that are known by slightly different names” (Facing History & Ourselves).  \n\n'
+                      '3.\tCurrently the Inuit communities in “Canada live in the Nunangat—loosely defined as ‘Inuit homeland,” a land that is divided into 4 regions (Facing History & Ourselves).   \n\n'
+                      '',
+
+
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
               ),
+
+
             ),
           ),
 
@@ -148,16 +161,20 @@ class _IndegenousPeoplesTopicState extends State<IndegenousPeoplesTopic> {
           Container(
             padding: EdgeInsets.all(12.0),
             child: Card(
-              child: RichText(
-                text:  TextSpan(
-                  children: [
-                    TextSpan(text: '1.\tMétis” is a term that does not completely encompass the “large and diverse group” that it represents (Facing History & Ourselves). “Métis,” which is a French word means “mixed.”   \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                    TextSpan(text: "2.\t“The terms describes descendants of both Europeans and First nations people” (Facing History & Ourselves). \n",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18,color: Colors.black)),
-                    TextSpan(text: "3.\t“The history of the Métis reflects the intermingling of the French and First Nations ways of life” (Facing History & Ourselves).  \n",style: TextStyle(fontSize: 16,color: Colors.black),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                    TextSpan(text: '4.\t “As time passed, the people from this community created their own distinct traditions from the First Nations and European Canadians, thus creating a new thread of Indigenous peoples, the Métis. \n', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))] ),
-                  ],
-                ),
+              child:
+              ExpandableText(
+                  '1.\tMétis” is a term that does not completely encompass the “large and diverse group” that it represents (Facing History & Ourselves). “Métis,” which is a French word means “mixed.”   \n\n '
+                      '2.\t“The terms describes descendants of both Europeans and First nations people” (Facing History & Ourselves). \n\n'
+                      '3.\t“The history of the Métis reflects the intermingling of the French and First Nations ways of life” (Facing History & Ourselves).  \n\n'
+                      '4.\t “As time passed, the people from this community created their own distinct traditions from the First Nations and European Canadians, thus creating a new thread of Indigenous peoples, the Métis. \n',
+
+
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
               ),
+
+
             ),
           ),
 

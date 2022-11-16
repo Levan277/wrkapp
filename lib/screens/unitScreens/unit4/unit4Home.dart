@@ -1,3 +1,4 @@
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +23,22 @@ class Unit4Home extends StatefulWidget {
 
 class _Unit4HomeState extends State<Unit4Home> {
   var _currentIndex = 0;
+  late FlickManager flickManager;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u4_intro.mp4'));
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    flickManager.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -125,12 +142,13 @@ class _Unit4HomeState extends State<Unit4Home> {
 
               // second column of bezel
               Container(
-                height: 400,
-                width: double.infinity,
-                child: Lottie.asset('assets/lottie/privil.json'),
-                // child:Expanded(child: AssetPlayerWidget()),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+                ),
+                child:FlickVideoPlayer(
+                  flickManager: flickManager,
+                ) ,
               ),
-
               Container(
                 child: ElevatedButton(
                   style: ButtonStyle(

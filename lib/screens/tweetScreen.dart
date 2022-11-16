@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:wrkapp/TutorialScreens/items.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
 import 'package:wrkapp/screens/login_screen.dart';
 import 'package:wrkapp/screens/tweetScreens/add_tweet.dart';
@@ -40,7 +41,7 @@ class _HomeForumState extends State<HomeForum> {
           children: [
             Text(
               "The three horizontal lined button will display the ability to delete your account, View your posts in the profile section and Explain why a black screen may be seen ",
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: Colors.red, fontSize: 20),
             ),
             SizedBox(
               height: 100,
@@ -62,7 +63,7 @@ class _HomeForumState extends State<HomeForum> {
         children: [
           Text(
             "Add a Post",
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: TextStyle(color: Colors.red, fontSize: 20),
           ),
           SizedBox(
             height: 100,
@@ -84,12 +85,12 @@ class _HomeForumState extends State<HomeForum> {
         left: 50,
         children: [
           Text(
-            "Navigates back to the Main Home Screen",
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            "Navigates back to the Forum Home Screen, Search for users, and Main Home Screen Respectively",
+            style: TextStyle(color: Colors.red, fontSize: 18),
           ),
           SizedBox(
             height: 10,
-          )
+          ),
         ],
         widgetNext: Text(
           "Tap to Continue",
@@ -106,6 +107,12 @@ class _HomeForumState extends State<HomeForum> {
       Tutorial.showTutorial(context, itens);
     });
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    TutorialItem();
+    super.dispose();
   }
   final FirebaseAuth _auth = FirebaseAuth.instance;
   int _currentIndex = 0;
@@ -132,7 +139,7 @@ class _HomeForumState extends State<HomeForum> {
         key: keyMenu,
 
         backgroundColor:  Color(0xffFF8201),
-        title: Text('Home'),
+        title: Text('Forum Home'),
 
       ),
       floatingActionButton: FloatingActionButton(
@@ -225,7 +232,7 @@ SizedBox(height: 100,),
 
         BottomNavigationBarItem(icon: Icon(Icons.home),label: ''),
         BottomNavigationBarItem(icon: Icon(Icons.search),label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.home_max_sharp),label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.holiday_village),label: ''),
     ],
     ),
 

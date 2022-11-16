@@ -90,7 +90,7 @@ class _EquityTopicState extends State<EquityTopic> {
         ),
       ),
       appBar: AppBar(
-        title: Text("More About Colonization"),
+        title: Text("More About Equity"),
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
       ),
