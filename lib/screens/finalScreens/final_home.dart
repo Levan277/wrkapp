@@ -46,7 +46,7 @@ class _FinalHomeState extends State<FinalHome> {
     return Scaffold(
     appBar: AppBar(
       title: Center(child: Text("Welcome to AR4YT",style: TextStyle(fontSize: 20,color: Colors.black),)),
-      backgroundColor: Color(0xffFF8201),
+      backgroundColor: Colors.lightBlueAccent,
       actions: [
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -69,7 +69,7 @@ class _FinalHomeState extends State<FinalHome> {
 
             Container(
 
-              color: Color(0xffFF8201),
+              color: Color(0xff89CFF0),
               height: 400,
               width: double.infinity,
               child: Column(
@@ -96,72 +96,109 @@ class _FinalHomeState extends State<FinalHome> {
                       borderRadius: BorderRadius.circular(500),
                     ),
                     height: 300,
-                    child: ListView(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      children: [
+                    child: RawScrollbar(
+                      thumbColor: Colors.black87,
+                       thumbVisibility: true,
+                      child: ListView(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        children: [
 SizedBox(width: 15,),
-                        //card 1
-                        InkWell(
-                          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit1Home()));},
-                          child: Container(
-                            child: Image.asset('assets/images/u1.png'),
-                          ),
-                        ),
+                         // card 1
+                          InkWell(
+                            onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit1Home()));},
+                            child: Container(
+                              decoration:BoxDecoration(
 
-                        //card 2
-                        SizedBox(width: 15,),
-                        InkWell(
-                          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Home()));},
-                          child: Container(
-                            child: Image.asset('assets/images/u2.png'),
+                              ),
+                              child: Image.asset('assets/images/u1_s.png'),
+                            ),
                           ),
-                        ),
 
-                        //card 3
+                          // Column(
+                          //   children: [
+                          //     Container(
+                          //       child: Image.asset('assets/images/u5_s1.png'),
+                          //       width: 200,
+                          //     ),
+                          //     Container(
+                          //       height: 100,
+                          //       width: 200,
+                          //       color: Colors.white,
+                          //       child: Column(
+                          //         children: [
+                          //           Padding(
+                          //             padding: const EdgeInsets.all(8.0),
+                          //             child: Center(child: Text('Unit 5',style: TextStyle(fontSize: 18),),
+                          //
+                          //             ),
+                          //           ),
+                          //            SizedBox(height: 0,),
+                          //           Padding(
+                          //             padding: const EdgeInsets.all(8.0),
+                          //             child: Text("Take Action",style: TextStyle(fontSize: 16),),
+                          //           ),
+                          //
+                          //         ],
+                          //       ),
+                          //     )
+                          //   ],
+                          // ),
 
-                        SizedBox(width: 15,),
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit3Home()));
-                          },
-                          child: Container(
-                            child: Image.asset('assets/images/U3.png'),
+                          //card 2
+                          SizedBox(width: 15,),
+                          InkWell(
+                            onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Home()));},
+                            child: Container(
+                              child: Image.asset('assets/images/u2_s.png'),
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 15,),
-                        //card 4
 
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4Home()));
-                          },
-                          child: Container(
-                            child: Image.asset('assets/images/U4.png'),
+                          //card 3
+
+                          SizedBox(width: 15,),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit3Home()));
+                            },
+                            child: Container(
+                              child: Image.asset('assets/images/u3_s.png'),
+                            ),
                           ),
-                        ),
+                          SizedBox(width: 15,),
+                          //card 4
+
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4Home()));
+                            },
+                            child: Container(
+                              child: Image.asset('assets/images/u4_s.png'),
+                            ),
+                          ),
 SizedBox(width: 15,),
 //card 5
-                        InkWell(
-                          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit5Home()));},
-                          child: Container(
-                            child: Image.asset('assets/images/U5.png'),
+                          InkWell(
+                            onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit5Home()));},
+                            child: Container(
+                              child: Image.asset('assets/images/u5_s.png'),
+                            ),
                           ),
-                        ),
 
 
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                  
+
                 ],
               ),
             ),
-            
+
             Container(
               width: double.infinity,
               height: 250,
-              color: Color(0xffFF8201),
+              color: Color(0xff89CFF0),
               child: Column(
                 children: [
                   Align(
@@ -186,178 +223,181 @@ SizedBox(width: 15,),
                   Container(
                     width: double.infinity,
                     height:150,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      children: [
+                    child: RawScrollbar(
+                       thumbColor: Colors.black87,
+                      thumbVisibility: true,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        children: [
 
 
 
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>WhitePrivilegeTopic()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("White Privilege"),
-                            ),
-                          ),
-                        ),
-
-
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
+                          InkWell(
                             onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const OppresionTopicPage()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>WhitePrivilegeTopic()));
                             },
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("Oppression"),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("White Privilege"),
+                              ),
                             ),
                           ),
-                        ),
 
 
-
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>IndegenousPeoplesTopic()));
-                          },
-                          child: Padding(
+                          Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("Indigenous Peoples",textAlign: TextAlign.center,),
+                            child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const OppresionTopicPage()));
+                              },
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("Oppression"),
+                              ),
                             ),
                           ),
-                        ),
 
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ColonizationTopic()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("Colonization/Decolonization",textAlign: TextAlign.center,),
+
+
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>IndegenousPeoplesTopic()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("Indigenous Peoples",textAlign: TextAlign.center,),
+                              ),
                             ),
                           ),
-                        ),
 
-
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>EquityTopic()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("Equity",textAlign: TextAlign.center,),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>ColonizationTopic()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("Colonization/Decolonization",textAlign: TextAlign.center,),
+                              ),
                             ),
                           ),
-                        ),
 
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>PolicyTopic()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("Policy"),
+
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>EquityTopic()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("Equity",textAlign: TextAlign.center,),
+                              ),
                             ),
                           ),
-                        ),
 
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RacializationTopic()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("Racialization",textAlign: TextAlign.center,),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>PolicyTopic()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("Policy"),
+                              ),
                             ),
                           ),
-                        ),
 
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RacializationTopic()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("Racialization",textAlign: TextAlign.center,),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>RacializationTopic()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("Racialization",textAlign: TextAlign.center,),
+                              ),
                             ),
                           ),
-                        ),
 
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>WhiteSupremacyTopic()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("White Supremacy",textAlign: TextAlign.center,),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>RacializationTopic()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("Racialization",textAlign: TextAlign.center,),
+                              ),
                             ),
                           ),
-                        ),
-
-                        InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>XenophobiaTopic()));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.black,
-                              // backgroundImage:AssetImage('assets/images/laptop.jpg'),
-                              radius: 60,
-                              foregroundColor: Colors.orange,
-                              child: Text("Xenophobia",textAlign: TextAlign.center,),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>WhiteSupremacyTopic()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("White Supremacy",textAlign: TextAlign.center,),
+                              ),
                             ),
                           ),
-                        ),
 
-                      ],
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>XenophobiaTopic()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                // backgroundImage:AssetImage('assets/images/laptop.jpg'),
+                                radius: 60,
+                                foregroundColor: Colors.orange,
+                                child: Text("Xenophobia",textAlign: TextAlign.center,),
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
                     ),
                   ),
                 ],
