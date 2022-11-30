@@ -19,6 +19,7 @@ class _ForumTutorialScreenState extends State<ForumTutorialScreen> {
         child: Expanded(
           child: Column(
             children: <Widget>[
+
               Flexible(
                 flex: 1,
                 fit: FlexFit.tight,
@@ -61,6 +62,8 @@ class _ForumTutorialScreenState extends State<ForumTutorialScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: Button(),
                       ),
+                      Text("Swipe"),
+                      Icon(Icons.arrow_right,color: Colors.black,),
                     ],
                   ),
                 ),
@@ -134,7 +137,7 @@ class Button extends StatelessWidget {
       child: ElevatedButton(onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
 
-      }, child: Text("Skip to Forum Pag")),
+      }, child: Text("Skip to Forum Page")),
     );
   }
 }

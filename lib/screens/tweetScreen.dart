@@ -25,95 +25,90 @@ class HomeForum extends StatefulWidget {
 
 class _HomeForumState extends State<HomeForum> {
 
+  //
+  // var keyMenu = GlobalKey();
+  // var keyButton = GlobalKey();
+  // var keyHome = GlobalKey();
+  // List<TutorialItem> itens = [];
+  // @override
+  // void initState() {
+  //   itens.addAll({
+  //     TutorialItem(
+  //         globalKey: keyMenu,
+  //         touchScreen: true,
+  //         top: 200,
+  //         left: 50,
+  //         children: [
+  //           Text(
+  //             "The three horizontal lined button will display the ability to delete your account, View your posts in the profile section and Explain why a black screen may be seen ",
+  //             style: TextStyle(color: Colors.red, fontSize: 20),
+  //           ),
+  //           SizedBox(
+  //             height: 100,
+  //           )
+  //         ],
+  //         widgetNext: Text(
+  //           "Tap to Continue",
+  //           style: TextStyle(
+  //             color: Colors.purple,
+  //             fontWeight: FontWeight.bold,
+  //           ),
+  //         ),
+  //         shapeFocus: ShapeFocus.oval),
+  //     TutorialItem(
+  //       globalKey: keyButton,
+  //       touchScreen: true,
+  //       top: 200,
+  //       left: 50,
+  //       children: [
+  //         Text(
+  //           "Add a Post",
+  //           style: TextStyle(color: Colors.red, fontSize: 20),
+  //         ),
+  //         SizedBox(
+  //           height: 100,
+  //         )
+  //       ],
+  //       widgetNext: Text(
+  //         "Tap to Continue",
+  //         style: TextStyle(
+  //           color: Colors.purple,
+  //           fontWeight: FontWeight.bold,
+  //         ),
+  //       ),
+  //       shapeFocus: ShapeFocus.oval,
+  //     ),
+  //     TutorialItem(
+  //       globalKey: keyHome,
+  //       touchScreen: true,
+  //       bottom: 50,
+  //       left: 50,
+  //       children: [
+  //         Text(
+  //           "Navigates back to the Forum Home Screen, Search for users, and Main Home Screen Respectively",
+  //           style: TextStyle(color: Colors.red, fontSize: 18),
+  //         ),
+  //         SizedBox(
+  //           height: 10,
+  //         ),
+  //       ],
+  //       widgetNext: Text(
+  //         "Tap to Continue",
+  //         style: TextStyle(
+  //           color: Colors.purple,
+  //           fontWeight: FontWeight.bold,
+  //         ),
+  //       ),
+  //       shapeFocus: ShapeFocus.square,
+  //     ),
+  //   });
+  //
+  //   Future.delayed(Duration(microseconds: 200)).then((value) {
+  //
+  //   });
+  //   super.initState();
+  // }
 
-  var keyMenu = GlobalKey();
-  var keyButton = GlobalKey();
-  var keyHome = GlobalKey();
-  List<TutorialItem> itens = [];
-  @override
-  void initState() {
-    itens.addAll({
-      TutorialItem(
-          globalKey: keyMenu,
-          touchScreen: true,
-          top: 200,
-          left: 50,
-          children: [
-            Text(
-              "The three horizontal lined button will display the ability to delete your account, View your posts in the profile section and Explain why a black screen may be seen ",
-              style: TextStyle(color: Colors.red, fontSize: 20),
-            ),
-            SizedBox(
-              height: 100,
-            )
-          ],
-          widgetNext: Text(
-            "Tap to Continue",
-            style: TextStyle(
-              color: Colors.purple,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          shapeFocus: ShapeFocus.oval),
-      TutorialItem(
-        globalKey: keyButton,
-        touchScreen: true,
-        top: 200,
-        left: 50,
-        children: [
-          Text(
-            "Add a Post",
-            style: TextStyle(color: Colors.red, fontSize: 20),
-          ),
-          SizedBox(
-            height: 100,
-          )
-        ],
-        widgetNext: Text(
-          "Tap to Continue",
-          style: TextStyle(
-            color: Colors.purple,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        shapeFocus: ShapeFocus.oval,
-      ),
-      TutorialItem(
-        globalKey: keyHome,
-        touchScreen: true,
-        bottom: 50,
-        left: 50,
-        children: [
-          Text(
-            "Navigates back to the Forum Home Screen, Search for users, and Main Home Screen Respectively",
-            style: TextStyle(color: Colors.red, fontSize: 18),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-        ],
-        widgetNext: Text(
-          "Tap to Continue",
-          style: TextStyle(
-            color: Colors.purple,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        shapeFocus: ShapeFocus.square,
-      ),
-    });
-
-    Future.delayed(Duration(microseconds: 200)).then((value) {
-      Tutorial.showTutorial(context, itens);
-    });
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    TutorialItem();
-    super.dispose();
-  }
   final FirebaseAuth _auth = FirebaseAuth.instance;
   int _currentIndex = 0;
   final List<Widget> _children = [Feed(), Search(),FinalHome()];
@@ -136,14 +131,14 @@ class _HomeForumState extends State<HomeForum> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        key: keyMenu,
+
 
         backgroundColor:  Color(0xffFF8201),
         title: Text('Forum Home'),
 
       ),
       floatingActionButton: FloatingActionButton(
-        key: keyButton,
+
         onPressed: (){
           Navigator.of(context).push(MaterialPageRoute(builder: (context) => Add()));
         },
@@ -222,7 +217,7 @@ SizedBox(height: 100,),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        key: keyHome,
+
         backgroundColor:  Color(0xffFF8201),
         onTap: onTabPressed,
         currentIndex: _currentIndex,
