@@ -8,12 +8,6 @@
 	<string>com.googleusercontent.apps.153617040200-9qcv49ip25jhae0fhcv59ae74kq1vjmh</string>
 	<key>API_KEY</key>
 	<string>AIzaSyA-GHw6Ui4XC6yqgekG0T4KuNlKvSAd42U</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>photo Library Access Warning</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Camera Access Warning</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Microphone Access Warning</string>
 	<key>GCM_SENDER_ID</key>
 	<string>153617040200</string>
 	<key>PLIST_VERSION</key>
