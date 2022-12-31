@@ -89,7 +89,7 @@ class _Unit4HomeState extends State<Unit4Home> {
           ),
         ),
         appBar: AppBar(backgroundColor: Colors.black,),
-        backgroundColor:  Color(0xffFF8201),
+        backgroundColor:  Colors.black,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -152,14 +152,16 @@ class _Unit4HomeState extends State<Unit4Home> {
               Container(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor:MaterialStateProperty.all(Colors.black),
+                    backgroundColor:MaterialStateProperty.all(Colors.grey),
                   ),
                   onPressed: (){
+                    flickManager.flickControlManager?.pause();
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit4Main()));
                   },
-                  child: Text("Explore",style: TextStyle(color: Colors.white),),
+                  child: Text("Explore",style: TextStyle(color: Colors.black),),
                 ),
               )
+
 
 
             ],

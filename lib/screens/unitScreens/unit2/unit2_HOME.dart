@@ -29,7 +29,7 @@ class _Unit2HomeState extends State<Unit2Home> {
 
     super.initState();
 
-    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u2_intro.mp4'));
+      flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u2_intro.mp4'));
   }
   @override
   void dispose() {
@@ -45,7 +45,7 @@ class _Unit2HomeState extends State<Unit2Home> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(backgroundColor: Colors.black,),
-        backgroundColor: Color(0xffFF8201),
+        backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -84,12 +84,7 @@ class _Unit2HomeState extends State<Unit2Home> {
 
                       width: size.width,
                       height: size.height * 0.4,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: [Color(0xff414141), Color(0xff000000)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight),
-                      ),
+
                     ),
                   ),
 
@@ -109,12 +104,13 @@ class _Unit2HomeState extends State<Unit2Home> {
               Container(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor:MaterialStateProperty.all(Colors.black),
+                    backgroundColor:MaterialStateProperty.all(Colors.grey),
                   ),
                   onPressed: (){
+                    flickManager.flickControlManager?.pause();
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Main()));
                   },
-                  child: Text("Explore",style: TextStyle(color: Colors.white),),
+                  child: Text("Explore",style: TextStyle(color: Colors.black),),
                 ),
               )
 

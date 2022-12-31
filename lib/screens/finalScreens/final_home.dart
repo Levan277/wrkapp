@@ -27,6 +27,7 @@ import 'package:wrkapp/screens/unitScreens/unit3/unit3home.dart';
 import 'package:wrkapp/screens/unitScreens/unit4/unit4Home.dart';
 import 'package:wrkapp/screens/unitScreens/unit4/unit4Main.dart';
 import 'package:wrkapp/screens/unitScreens/unit5/unit5_home.dart';
+import '../../TutorialScreens/onBoarding_screen.dart';
 import '../TopicScreens/indigenous peoples_topic_page.dart';
 import '../support_screens/support_home_screen.dart';
 import '../tweetScreen.dart';
@@ -77,15 +78,7 @@ class _FinalHomeState extends State<FinalHome> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: AnimatedTextKit(isRepeatingAnimation:true,animatedTexts: [
-
-                      TypewriterAnimatedText("Explore Units",textStyle: TextStyle(color: Colors.white,fontSize: 42,fontWeight: FontWeight.w500),
-                      speed: Duration(milliseconds: 100),
-
-                      ),
-
-
-                    ]),
+                    child: Text("Explore Topics",style: TextStyle(color: Colors.black,fontSize: 42,fontWeight: FontWeight.w500),),
                   ),
                   // Text("Explore Units",style: TextStyle(color: Colors.white,fontSize: 42,fontWeight: FontWeight.w500),),
 
@@ -114,36 +107,6 @@ SizedBox(width: 15,),
                               child: Image.asset('assets/images/u1_s.png'),
                             ),
                           ),
-
-                          // Column(
-                          //   children: [
-                          //     Container(
-                          //       child: Image.asset('assets/images/u5_s1.png'),
-                          //       width: 200,
-                          //     ),
-                          //     Container(
-                          //       height: 100,
-                          //       width: 200,
-                          //       color: Colors.white,
-                          //       child: Column(
-                          //         children: [
-                          //           Padding(
-                          //             padding: const EdgeInsets.all(8.0),
-                          //             child: Center(child: Text('Unit 5',style: TextStyle(fontSize: 18),),
-                          //
-                          //             ),
-                          //           ),
-                          //            SizedBox(height: 0,),
-                          //           Padding(
-                          //             padding: const EdgeInsets.all(8.0),
-                          //             child: Text("Take Action",style: TextStyle(fontSize: 16),),
-                          //           ),
-                          //
-                          //         ],
-                          //       ),
-                          //     )
-                          //   ],
-                          // ),
 
                           //card 2
                           SizedBox(width: 15,),
@@ -204,13 +167,7 @@ SizedBox(width: 15,),
                   Align(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: AnimatedTextKit(isRepeatingAnimation:true,animatedTexts: [
-                          TypewriterAnimatedText("Topics In Depth",textStyle: TextStyle(color: Colors.white,fontSize: 42,fontWeight: FontWeight.w500),
-                            speed: Duration(milliseconds: 100),
-
-                          ),
-
-                        ]),
+                        child: Text("Explore Topics",style: TextStyle(color: Colors.black,fontSize: 42,fontWeight: FontWeight.w500),),
                       ),
                   alignment: Alignment.center,
                   ),
@@ -407,28 +364,6 @@ SizedBox(width: 15,),
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: currentIndex,
-      //   onTap: (index)=> setState(()=>currentIndex=index),
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //       backgroundColor: Colors.red
-      //
-      //     ), BottomNavigationBarItem(
-      //       icon: Icon(Icons.message),
-      //       label: 'Forum',
-      //         backgroundColor: Colors.red
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.support_agent_outlined),
-      //       label: 'Support',
-      //         backgroundColor: Colors.red,
-      //     ),
-      //   ],
-      // )
-
 
       bottomNavigationBar:  Container(
         color: Colors.white,
@@ -442,7 +377,7 @@ SizedBox(width: 15,),
               Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
             }
             else if(_currentIndex == 1){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ForumTutorialScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingScreen()));
             }
             else if(_currentIndex == 2){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));

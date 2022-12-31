@@ -96,23 +96,43 @@ class _RacializationTopicState extends State<RacializationTopic> {
         centerTitle: true,
 
       ),
-      body: ListView(
-        children: [
-          Column(
-            children: [
-              AssetPlayerWidget(asset: 'assets/u1_sec1_racialization.mp3', description: 'Racialization Example')
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: ListView(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Center(
+                child: Container(
+                  width: 200,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Center(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Racialization Example",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                  ),),
+                ),
+              ),
+            ),
+            Column(
+              children: [
+                AssetPlayerWidget(asset: 'assets/u1_sec1_racialization.mp3', description: '')
 
 
-            ],
+              ],
 
 
-          ),
+            ),
 
 
 
 
-        ],
+          ],
 
+        ),
       ),
     ),
     );

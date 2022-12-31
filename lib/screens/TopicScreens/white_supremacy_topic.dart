@@ -97,7 +97,24 @@ class _WhiteSupremacyTopicState extends State<WhiteSupremacyTopic> {
         children: [
           Column(
             children: [
-              AssetPlayerWidget(asset: 'assets/u1_sec1_white_supremacy.mp3', description: 'White Supremacy Example'),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.pink,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("White Supremacy Example",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
+              AssetPlayerWidget(asset: 'assets/u1_sec1_white_supremacy.mp3', description: ''),
 
 
             ],

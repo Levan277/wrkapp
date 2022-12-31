@@ -42,7 +42,7 @@ class _Unit3HomeState extends State<Unit3Home> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(backgroundColor: Colors.black,),
-        backgroundColor:  Color(0xffFF8201),
+        backgroundColor:  Colors.black,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -81,12 +81,7 @@ class _Unit3HomeState extends State<Unit3Home> {
 
                       width: size.width,
                       height: size.height * 0.4,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: [Color(0xff414141), Color(0xff000000)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight),
-                      ),
+
                     ),
                   ),
 
@@ -105,14 +100,16 @@ class _Unit3HomeState extends State<Unit3Home> {
               Container(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor:MaterialStateProperty.all(Colors.black),
+                    backgroundColor:MaterialStateProperty.all(Colors.grey),
                   ),
                   onPressed: (){
+                    flickManager.flickControlManager?.pause();
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit3Main()));
                   },
-                  child: Text("Explore",style: TextStyle(color: Colors.white),),
+                  child: Text("Explore",style: TextStyle(color: Colors.black),),
                 ),
               )
+
 
 
             ],

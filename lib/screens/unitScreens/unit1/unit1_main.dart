@@ -138,8 +138,8 @@ class _UnitsPageState extends State<UnitsPage> {
              Padding(
                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                child: Container(
-                 width: 100,
-                 height: 50,
+                 width: 140,
+                 height: 70,
                  decoration: BoxDecoration(
                    color: Colors.pink,
                    borderRadius: BorderRadius.circular(40),
@@ -147,7 +147,7 @@ class _UnitsPageState extends State<UnitsPage> {
                  //definition 1
                  child: Center(child: Padding(
                    padding: const EdgeInsets.all(8.0),
-                   child: Text("Race",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),),
+                   child: Text("Race vs. Ethnicity",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
                  ),),
                ),
              ),
@@ -160,14 +160,10 @@ class _UnitsPageState extends State<UnitsPage> {
 
 
 
-               Card(
-                 child:ExpandableText(
-                   'defined as a group of people that share “certain distinctive physical traits” (Blakemore).  “’Race’ is usually associated with biology and linked with physical characteristics such as skin color or hair texture” (Blakemore). \nExample -  When someone is describing their friend groups, they might say, “Jim is White, Kevin is Black, Iko is Japanese, and Juno is Latina.”  ',
-                   expandText: 'show more',
-                   collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-
-                 ),
-
+               ExpandableText(
+                 'Defined as a group of people that share “certain distinctive physical traits” (Blakemore).  “’Race’ is usually associated with biology and linked with physical characteristics such as skin color or hair texture” (Blakemore). \nExample -  When someone is describing their friend groups, they might say, “Jim is White, Kevin is Black, Iko is Japanese, and Juno is Latina.”  ',
+                 expandText: 'show more',
+                 collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
 
                ),
 
@@ -216,12 +212,10 @@ class _UnitsPageState extends State<UnitsPage> {
 
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child: ExpandableText(
-                    'is defined as “prejudice, antagonism [definition] or discrimination…against someone of a different race based on the belief that one’s own race is superior” (McWhorter).',
-                    expandText: 'show more',
-                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
+                child: ExpandableText(
+                  'Is defined as “prejudice, antagonism or discrimination…against someone of a different race based on the belief that one’s own race is superior” (McWhorter).',
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -263,14 +257,10 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:ExpandableText(
-                    'when we say “power” in this curriculum, we are referring to institutional power which is the “ability or official authority to decide what is best for others. The ability to decide who will have access to resources. The capacity to exercise control over others” (Vanderbilt University). ',
-                    expandText: 'show more',
-                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                  'when we say “power” in this curriculum, we are referring to institutional power which is the “ability or official authority to decide what is best for others. The ability to decide who will have access to resources. The capacity to exercise control over others” (Vanderbilt University). ',
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -311,17 +301,10 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child: ExpandableText(
-                    'is the act of giving a racial character to someone or something. (Canadian Race Relations Foundation). Also, due to generalization, many people find this term too generic, and therefore do not use it. ',
-                    expandText: 'show more',
-                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
-
-
-
+                child: ExpandableText(
+                  'is the act of giving a racial character to someone or something. (Canadian Race Relations Foundation) ',
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -348,7 +331,7 @@ class _UnitsPageState extends State<UnitsPage> {
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                 child: Container(
-                  width: 180,
+                  width: 250,
                   height: 60,
                   decoration: BoxDecoration(
                     color: Colors.pink,
@@ -356,22 +339,16 @@ class _UnitsPageState extends State<UnitsPage> {
                   ),
                   child: Center(child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("People of Colour",style: TextStyle(color: Colors.white,fontSize: 20),),
+                    child: Text("'POC' - People of Colour",style: TextStyle(color: Colors.white,fontSize: 20),),
                   ),),
                 ),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:ExpandableText(
-                    'A term used to describe people who are not White. However, this term is not used to describe Indigenous peoples.',
-                    expandText: 'show more',
-                    collapseText: 'show less',
-                  ),
-
-
-
-
+                child: ExpandableText(
+                  'Is a term used to describe people who are not White. However, this term is not used to describe Indigenous peoples.  Also, due to generalization, many people find this term too generic, and therefore do not use it.',
+                  expandText: 'show more',
+                  collapseText: 'show less',
                 ),
               ),
               Row(
@@ -412,16 +389,10 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                    'is a law put into place by an organization (ex. the government) that is agreed to by those in/participating in that organization. ',
-                    expandText: 'show more',
-                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
-
+                child: ExpandableText(
+                  'is a law put into place by an organization (ex. the government) that is agreed to by those in/participating in that organization. ',
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -450,7 +421,7 @@ class _UnitsPageState extends State<UnitsPage> {
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                 child: Container(
-                  width: 180,
+                  width: 220,
                   height: 60,
                   decoration: BoxDecoration(
                     color: Colors.pink,
@@ -464,16 +435,10 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                    'Equality –  “means providing everyone with the same amount of resources regardless of whether everyone needs them” (Mlaba).\n\n Equity – “is when resources are shared based on what each person needs in order to…level the playing field” (Mlaba). ',
-                    expandText: 'show more',
-                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
-
+                child: ExpandableText(
+                  'Equality –  “means providing everyone with the same amount of resources regardless of whether everyone needs them” (Mlaba).\n\nEquity – “is when resources are shared based on what each person needs in order to…level the playing field” (Mlaba). ',
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
 
@@ -511,16 +476,10 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                    'Privilege –  “A right or benefit that is given to some people “and not others”.\n\n White privilege – “white privilege is when White people “[have] greater access to power and resources than people of colour [in the same situation] do” (Collins). ',
-                    expandText: 'show more',
-                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                  'Privilege –  A right or benefit that is given to some people and not others.\n\nWhite privilege – “white privilege is when White people have greater access to power and resources than people of colour [in the same situation] do” (Collins). ',
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -562,16 +521,10 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                    '“In very simplistic terms, Xenophobia is a fear of people or ideas that are foreign or different from those in a particular society It is “a deep-rooted, irrational (illogical or senseless) hatred towards or fear of foreigners (people who are not from that area), or of ideas or beliefs that are perceived as strange or outside the norm” (White). ',
-                    expandText: 'show more',
-                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                  'In very simplistic terms, Xenophobia is a fear of people or ideas that are foreign or different from those in a particular society. It is “a deep-rooted, irrational (illogical or senseless) hatred towards or fear of foreigners (people who are not from that area), or of ideas or beliefs that are perceived as strange or outside the norm" (White). ',
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -614,16 +567,11 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                    'Is when people from minority groups are “given benefits at the expense of” White people “who, apart from race, would have had a superior claim to enjoy them” (Newkirk II). ',
-                    expandText: 'show more',
-                    collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                  'Is when people from minority groups are “given benefits at the expense of” White people “who, apart from race, would have had a superior claim to enjoy them” (Newkirk II). ',
+                  expandText: 'show more',
+                  collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -664,16 +612,10 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                    'Colonization – The act of taking control of an area or a country that is not your own, especially using force, and sending people from your own country to live there” (Oxford Learner’s Dictionary). \n\nDecolonization – “The process of a colony or colonies becoming independent” (Oxford Learner’s Dictionary). ',
-                    expandText: 'show more',
-                    collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                  'Colonization – The act of taking control of an area or a country that is not your own, especially using force, and sending people from your own country to live there” (Oxford Learner’s Dictionary). \n\nDecolonization – “The process of a colony or colonies becoming independent” (Oxford Learner’s Dictionary). ',
+                  expandText: 'show more',
+                  collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -714,17 +656,11 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                    'The treatment of a person/group of people as insignificant and/or powerless. ',
-                    expandText: 'show more',
-                    collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                  'The treatment of a person/group of people as insignificant and/or powerless. ',
+                  expandText: 'show more',
+                  collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -764,16 +700,11 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                    'The exercise of authority or power in a cruel or unjust manner. ',
-                    expandText: 'show more',
-                    collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                  'The exercise of authority or power in a cruel or unjust manner. ',
+                  expandText: 'show more',
+                  collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -814,16 +745,11 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                    '“The belief that the white race is inherently superior to other races and that white people should have control over people of other races (Merriam-Webster Dictionary).',
-                    expandText: 'show more',
-                    collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                  '“The belief that the white race is inherently superior to other races and that white people should have control over people of other races (Merriam-Webster Dictionary).',
+                  expandText: 'show more',
+                  collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -867,7 +793,7 @@ class _UnitsPageState extends State<UnitsPage> {
                 child: Card(
                   child:
                   ExpandableText(
-                    'Systemic racism – Is racism that exists across a society. \n\n Institutional racism – is a racial discrimination that has become established as normal behaviour within a society or organization. ',
+                    'Systemic racism – Is racism that exists across a society. \n\nInstitutional racism – is a racial discrimination that has become established as normal behaviour within a society or organization. ',
                     expandText: 'show more',
                     collapseText: 'show less',
                       style: TextStyle(color: Colors.black,fontSize: 16)
@@ -914,16 +840,11 @@ class _UnitsPageState extends State<UnitsPage> {
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                    'refers to the representations…and stories conveying the idea that behaviours and values associated with ‘whiteness’…are automatically ‘better’ or more ‘normal’ than those associated with other racially defined groups” (Racial Equity Tools).',
-                    expandText: 'show more',
-                    collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                  '"refers to the representations and stories conveying the idea that behaviours and values associated with ‘whiteness’ are automatically ‘better’ or more ‘normal’ than those associated with other racially defined groups” (Racial Equity Tools).',
+                  expandText: 'show more',
+                  collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(

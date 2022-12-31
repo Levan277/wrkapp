@@ -46,7 +46,7 @@ class _Section3WCBRState extends State<Section3WCBR> {
 
       appBar: AppBar(
         title:  Text('Unit 2: Power & Oppresion'),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.blue,
         centerTitle: true,
         actions: [Icon(Icons.support_agent_rounded)],
       ),
@@ -58,7 +58,7 @@ class _Section3WCBRState extends State<Section3WCBR> {
               Container(
                 width: double.infinity,
                 height: 100,
-                color: Colors.pinkAccent,
+                color: Colors.blue,
                 child: Column(
                   children: [
                     Expanded(
@@ -114,18 +114,103 @@ class _Section3WCBRState extends State<Section3WCBR> {
            ),
               SizedBox(height: 15,),
               // SizedBox(height:700, width:double.infinity,child: WhoCanBeRacistA()),
-              AssetPlayerWidget(asset: 'assets/u2_s3_whocanberacist.mp3', description: 'Who Can Be Racist? PT:1'),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Who Can Be Racist? PT:1",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
+              AssetPlayerWidget(asset: 'assets/u2_s3_whocanberacist.mp3', description: ''),
               SizedBox(height: 25,),
-              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist2.mp3', description: 'Who Can Be Racist: PT:2 '),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Who Can Be Racist: PT:2 ",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist2.mp3', description: ''),
               SizedBox(height: 25,),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Who Can Be Racist: PT:3",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
               // SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist3A()),
-              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist3.mp3', description: 'Who Can Be Racist: PT:3'),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist3.mp3', description: ''),
               SizedBox(height: 25,),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Who Can Be Racist: PT:4",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
               // SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist4A()),
-              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist4.mp3', description: 'Who Can Be Racist: PT:4'),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist4.mp3', description: ''),
               SizedBox(height: 25,),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Who can Be Racist: PT:5",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
               // SizedBox(height:700, width:double.infinity,child:   WhoCanBeRacist5A()),
-              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist5.mp3', description: 'Who can Be Racist: PT:5'),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_whocanberacist5.mp3', description: ''),
 
               SizedBox(height: 20,),
               Row(
@@ -134,89 +219,110 @@ class _Section3WCBRState extends State<Section3WCBR> {
                 children: [
 
                 ],),
-
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Scenerio Activity",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.all(10),
-                child: Text("Scenerio Activity",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
+                child: Text("",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
               ),
               SizedBox(height: 20,),
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("Considering the information above, read the scenario below. ",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                child: Text("Considering the information above, read/listen to the scenario below. ",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:     ExpandableText(
-                      'Jordan, who is a black girl, is dating David, who is a white boy. When David asks to go over to Jordan’s house to hang out, Jordan gets nervous and usually makes up excuses about why he cannot come over. One day David finally persuades Jordan to let him go over to her house so he can meet her family. Though, Jordan sets one condition; David is not allowed to introduce himself as her boyfriend. David asks why not, and Jordan replies saying, “My parents have made it very clear that I am not allowed to date a white person.” Shocked, David asks why not, and Jordan answers, “They do not want to ruin our bloodline. They want to keep it Black.” David does not ask Jordan any other follow-up questions, though feels very uncomfortable when he does eventually meet Jordan’s family as Jordan’s “friend.” ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
-
+                child: ExpandableText(
+                    'Jordan, who is a black girl, is dating David, who is a white boy. When David asks to go over to Jordan’s house to hang out, Jordan gets nervous and usually makes up excuses about why he cannot come over. One day David finally persuades Jordan to let him go over to her house so he can meet her family. Though, Jordan sets one condition; David is not allowed to introduce himself as her boyfriend. David asks why not, and Jordan replies saying, “My parents have made it very clear that I am not allowed to date a white person.” Shocked, David asks why not, and Jordan answers, “They do not want to ruin our bloodline. They want to keep it Black.” David does not ask Jordan any other follow-up questions, though feels very uncomfortable when he does eventually meet Jordan’s family as Jordan’s “friend.” ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               SizedBox(height: 15,),
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("Reflection",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold,decoration: TextDecoration.underline),),
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("The Scenario",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
               ),
-              // SizedBox(height:600, width:double.infinity,child: ReflectionScenarioU2()),
-              AssetPlayerWidget(asset: 'assets/u2_sec3_scenario_activ.mp3', description: 'The Scenario'),
+              AssetPlayerWidget(asset: 'assets/u2_sec3_scenario_activ.mp3', description: ''),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Reflection",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
+
+
               SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:   Text('1. Consider the scenario and have a discussion about the following questions. ', style: TextStyle(color: Colors.black,fontSize: 16,height: 1.5,fontWeight: FontWeight.bold),),
-                ),
+                child: Text('1. Consider the scenario and have a discussion about the following questions. ', style: TextStyle(color: Colors.black,fontSize: 16,height: 1.5,fontWeight: FontWeight.bold),),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                      '\t a. Why do you think is the underlying reason why Jordan’s parents are against Jordan being in a relationship with a white person? Where do you think this rule of keeping the bloodline intact came from?\n\n \t b. Would you consider Jordan’s parents to be racist? Why or why not? ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
+                child: ExpandableText(
+                    '\t a. Why do you think is the underlying reason why Jordan’s parents are against Jordan being in a relationship with a white person? Where do you think this rule of keeping the bloodline intact came from?\n\n \t b. Would you consider Jordan’s parents to be racist? Why or why not? ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
 
 
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:   Text('2. Now reverse the situation. Imagine that David’s family does not want to ruin the bloodline and Jordan must introduce herself as David’s friend instead of his girlfriend.  . ', style: TextStyle(color: Colors.black,fontSize: 16,height: 1.5,fontWeight: FontWeight.bold),),
-                ),
+                child: Text('2. Now reverse the situation. Imagine that David’s family does not want to ruin the bloodline and Jordan must introduce herself as David’s friend instead of his girlfriend.  . ', style: TextStyle(color: Colors.black,fontSize: 16,height: 1.5,fontWeight: FontWeight.bold),),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                      '\t a. Do you think that David’s parents are racist?\n\n \t b. What do you think is the underlying reason why David’s parents are against David being in a relationship with a Black person? Is their reasoning different to Jordan’s parents’ reasoning? Why or why not? ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                    '\t a. Do you think that David’s parents are racist?\n\n \t b. What do you think is the underlying reason why David’s parents are against David being in a relationship with a Black person? Is their reasoning different to Jordan’s parents’ reasoning? Why or why not? ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               //definition 2
               SizedBox(height: 40,),
-
-
-
-
-
-
-
 
 
             ],

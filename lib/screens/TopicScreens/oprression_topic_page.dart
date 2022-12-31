@@ -92,52 +92,77 @@ class _OppresionTopicPageState extends State<OppresionTopicPage> {
         centerTitle: true,
 
       ),
-      body: ListView(
-        children: [
-          Column(
-            children: [
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: ListView(
+          children: [
+            Column(
+              children: [
 
 
-            ],
+              ],
 
 
-          ),
-          //column 2
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AssetPlayerWidget(asset: 'assets/u2_sec2_personaloppr.mp3', description: 'Personal'),
-              // SizedBox(height:600, width:double.infinity,child: PersonalAT()),
+            ),
+            //column 2
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+              child: Container(
+                width: 200,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.pink,
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: Center(child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Personal ",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                ),),
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AssetPlayerWidget(asset: 'assets/u2_sec2_personaloppr.mp3', description: ''),
+                // SizedBox(height:600, width:double.infinity,child: PersonalAT()),
+                  Center(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                   child: ExpandableText(
+                       ' What are some beliefs you have developed over the years that would be considered as personal oppression?'
+                           ''
+                           ''
+                           '',
+
+
+                       expandText: 'show more',
+                       collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
+
+                   ),
+
+                  )),
+                Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Center(
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Center(child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Interpersonal",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                      ),),
+                    ),
+                  ),
+                ),
+               SizedBox(height: 10,),
+                AssetPlayerWidget(asset: 'assets/u2_sec2_interpersonaloppr.mp3', description: ''),
+                // SizedBox(height:600, width:double.infinity,child:InterpersonalAT()),
                 Center(child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                 child: Card(
-                    child:
-
-                    ExpandableText(
-                        ' What are some beliefs you have developed over the years that would be considered as personal oppression?'
-                            ''
-                            ''
-                            '',
-
-
-                        expandText: 'show more',
-                        collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
-
-                    ),
-
-
-                  ),
-
-                )),
-             SizedBox(height: 10,),
-              AssetPlayerWidget(asset: 'assets/u2_sec2_interpersonaloppr.mp3', description: 'Interpersonal'),
-              // SizedBox(height:600, width:double.infinity,child:InterpersonalAT()),
-              Center(child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
+                  child: ExpandableText(
                       ' Brainstorm some situations where either you or someone else has taken their personal beliefs and used them against others?'
                           ''
                           ''
@@ -148,19 +173,31 @@ class _OppresionTopicPageState extends State<OppresionTopicPage> {
                       collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
 
                   ),
-
-
+                 ),
                 ),
-               ),
-              ),
-              SizedBox(height: 10,),
-              AssetPlayerWidget(asset: 'assets/u2_sec2_institutionaloppr.mp3', description: 'Institutional'),
-              // SizedBox(height:600, width:double.infinity,child:InstitutionalAT()),
-              Center(child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child:  Card(
-                  child:
-                  ExpandableText(
+                Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Center(
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Center(child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Institutional",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                      ),),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10,),
+                AssetPlayerWidget(asset: 'assets/u2_sec2_institutionaloppr.mp3', description: ''),
+                // SizedBox(height:600, width:double.infinity,child:InstitutionalAT()),
+                Center(child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child:  ExpandableText(
                       'Can you think of an example of institutional oppression? Possibly in the education system or policing system, for example?  '
                           ''
                           ''
@@ -172,19 +209,31 @@ class _OppresionTopicPageState extends State<OppresionTopicPage> {
 
                   ),
 
+                )),
+                Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Center(
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Center(child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Cultural",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                      ),),
+                    ),
+                  ),
                 ),
+                SizedBox(height: 10,),
 
-              )),
-              SizedBox(height: 10,),
-
-              AssetPlayerWidget(asset: 'assets/u2_sec2_cultoppr.mp3', description: 'Cultural'),
-              // SizedBox(height:600, width:double.infinity,child:CulturalAT()),
-              Center(child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
+                AssetPlayerWidget(asset: 'assets/u2_sec2_cultoppr.mp3', description: ''),
+                // SizedBox(height:600, width:double.infinity,child:CulturalAT()),
+                Center(child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ExpandableText(
                       'What examples of oppression at the cultural level can you think of? Possibly things you have personally experienced. '
                           ''
                           ''
@@ -195,14 +244,13 @@ class _OppresionTopicPageState extends State<OppresionTopicPage> {
                       collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
 
                   ),
+                )),
 
-                ),
-              )),
+              ],
+            ),
+          ],
 
-            ],
-          ),
-        ],
-
+        ),
       ),
     ),
     );

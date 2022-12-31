@@ -16,9 +16,17 @@ class _LiveSupportHomeState extends State<LiveSupportHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.orange,),
-      bottomNavigationBar:Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+
+
+
+
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Center(
+            child:Text("Welcome To Live Chat Support ",style: GoogleFonts.lato(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.black),),
+          ),
+          SizedBox(height: 15,),
           IconButton(onPressed:(){
             // Navigator.pushNamed(context,route.liveChat);
             Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveChat()));
@@ -30,10 +38,6 @@ class _LiveSupportHomeState extends State<LiveSupportHome> {
       ),
 
 
-
-      body: Center(
-        child:Text("Welcome To Live Chat Support ",style: GoogleFonts.lato(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.black),),
-      ),
     );
   }
 }

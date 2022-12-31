@@ -2,6 +2,7 @@ import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
@@ -86,10 +87,10 @@ class _Unit3MainState extends State<Unit3Main> {
    ),
  ),
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent,
-        title: Text('Unit 3 | Racism in Canada, The Past & The Present '),
+        backgroundColor: Colors.yellow,
+        title: Text('Unit 3 | Racism in Canada',style: TextStyle(color: Colors.black),),
         centerTitle: true,
-        actions: [Icon(Icons.support_agent_rounded)],
+
       ),
       body: ListView(
         children: [
@@ -104,7 +105,7 @@ class _Unit3MainState extends State<Unit3Main> {
               Container(
                 width: double.infinity,
                 height: 100,
-                color: Colors.pinkAccent,
+                color: Colors.yellow,
                 child: Column(
                   children: [
 
@@ -124,7 +125,7 @@ class _Unit3MainState extends State<Unit3Main> {
                                   },
                                 ),
                                 ElevatedButton(
-                                  child: Text('Section 2: Contempory Racism',style: TextStyle(fontSize: 15)),
+                                  child: Text('Section 2: Contemporary Racism',style: TextStyle(fontSize: 15)),
                                   onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context)=>ContempRacism()));
                                   },
@@ -151,17 +152,6 @@ class _Unit3MainState extends State<Unit3Main> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              // SizedBox(height:600, width:double.infinity,child: Summary1U3()),
-              AssetPlayerWidget(asset: 'assets/u3_sec1_summary1.mp3', description: 'Summary PT:1'),
-              SizedBox(height: 25,),
-              // SizedBox(height:600, width:double.infinity,child: Summary2U3()),
-              AssetPlayerWidget(asset: 'assets/u3_sec1_summary2.mp3', description: 'Summary PT:2'),
-              SizedBox(height: 25,),
-              // SizedBox(height:600, width:double.infinity,child: Summary3U3()),
-              AssetPlayerWidget(asset: 'assets/u3_sec1_summary3.mp3', description: 'Summary PT:3'),
-              SizedBox(height: 25,),
-              AssetPlayerWidget(asset: 'assets/u3_sec1_summary4.mp3', description: 'Summary PT:4'),
-              // SizedBox(height:600, width:double.infinity,child: Summary4U3()),
 
 SizedBox(height: 20,),
 
@@ -173,88 +163,124 @@ SizedBox(height: 20,),
                 ],),
 
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("Indigenous Peoples",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Indigenous Peoples",style: GoogleFonts.montserrat(color: Colors.black,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
               ),
+
               SizedBox(height: 20,),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                      'Indigenous Ethnocultural Groups: Keep in mind, there are many diverse groups of people within these three ethnocultural groups\n\t1. They are the indigenous (native) people of Canada; the first people to live on this land. \n\t2. The community is comprised of the:  \n\t\t\t\ta. First Nations \n\t\t\t\tb. Metis \n\t\t\t\tc. Inuit peoples (check the “Indigenous Peoples” topic page for more info about each group!) \n',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                    'Indigenous Ethnocultural Groups: Keep in mind, there are many diverse groups of people within these three ethnocultural groups\n\t1. They are the indigenous (native) people of Canada; the first people to live on this land. \n\t2. The community is comprised of the:  \n\t\t\t\ta. First Nations \n\t\t\t\tb. Metis \n\t\t\t\tc. Inuit peoples (check the “Indigenous Peoples” topic page for more info about each group!) \n',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
 
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("Black People",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Black People",style: GoogleFonts.montserrat(color: Colors.black,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
               ),
+
               SizedBox(height: 20,),
+
+
+
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                      'Black Ethnocultural Groups: Keep in mind, this is not an extensive list. These are just some of the predominant Black ethnocultural groups in Canada.\n\t\t1. Caribbean  \n\t\t2. Jamaican  \n\t\t3. Ethiopian  \n\t\t4. Trinidadian  \n',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
+                child: ExpandableText(
+                    'Black Ethnocultural Groups: Keep in mind, this is not an extensive list. These are just some of the predominant Black ethnocultural groups in Canada.\n\t\t1. Caribbean  \n\t\t2. Jamaican  \n\t\t3. Ethiopian  \n\t\t4. Trinidadian  \n',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
 
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("People of South Asian Decent",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
-              ),
-              SizedBox(height: 20,),
-              Container(
-                padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                      'South Asian Ethnocultural Groups: Keep in mind, this is not an extensive list. These are just some of the predominant South Asian ethnocultural groups in Canada. \n\t\t1. Indian  \n\t\t2. Pakistani \n\t\t3. Bangladeshis   \n\t\t4. Sri Lankan  \n',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("People of South Asian Decent",style: GoogleFonts.montserrat(color: Colors.black,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
                   ),
-
-
                 ),
               ),
 
+              SizedBox(height: 20,),
+              Container(
+                padding: EdgeInsets.all(12.0),
+                child: ExpandableText(
+                    'South Asian Ethnocultural Groups: Keep in mind, this is not an extensive list. These are just some of the predominant South Asian ethnocultural groups in Canada. \n\t\t1. Indian  \n\t\t2. Pakistani \n\t\t3. Bangladeshis   \n\t\t4. Sri Lankan  \n',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
+                ),
+              ),
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("People of East Asian Decent",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
-              ),
-              SizedBox(height: 20,),
-              Container(
-                padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                      'East Asian Ethnocultural Groups: Keep in mind, this is not an extensive list. These are just some of the predominant East Asian ethnocultural groups in Canada. \n\t\t1. Chinese  \n\t\t2. Japanese \n\t\t3. South Korean   \n\t\t4. North Korean \n',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("People of East Asian Decent",style: GoogleFonts.montserrat(color: Colors.black,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
                   ),
-
-
                 ),
               ),
 
-              Container(child: Center(child: Text("Click Below To Explore TimeLines",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,),textAlign: TextAlign.center,)),),
+              SizedBox(height: 20,),
+              Container(
+                padding: EdgeInsets.all(12.0),
+                child: ExpandableText(
+                    'East Asian Ethnocultural Groups: Keep in mind, this is not an extensive list. These are just some of the predominant East Asian ethnocultural groups in Canada. \n\t\t1. Chinese  \n\t\t2. Japanese \n\t\t3. South Korean   \n\t\t4. North Korean \n',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
+                ),
+              ),
+
+              Container(child: Center(child: Text("Click Below To Explore Timelines",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,),textAlign: TextAlign.center,)),),
 SizedBox(height: 30,),
 
 
@@ -268,13 +294,13 @@ SizedBox(height: 30,),
                     width: 500,
                     height: 90,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.yellow,
                       borderRadius: BorderRadius.circular(40),
                     ),
                     //definition 1
                     child: Center(child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("Timeline of Racism Against Indigenous Peoples in Canada ",style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                      child: Text("Timeline of Racism Against Indigenous Peoples in Canada ",style: TextStyle(color: Colors.black,fontSize: 20),textAlign: TextAlign.center,),
                     ),),
                   ),
                 ),
@@ -291,13 +317,13 @@ SizedBox(height: 30,),
                     width: 500,
                     height: 90,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.yellow,
                       borderRadius: BorderRadius.circular(40),
                     ),
                     //definition 1
                     child: Center(child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("Timeline of Racism Against Black People in Canada ",style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                      child: Text("Timeline of Racism Against Black People in Canada ",style: TextStyle(color: Colors.black,fontSize: 20),textAlign: TextAlign.center,),
                     ),),
                   ),
                 ),
@@ -314,13 +340,13 @@ SizedBox(height: 30,),
                     width: 500,
                     height: 90,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.yellow,
                       borderRadius: BorderRadius.circular(40),
                     ),
                     //definition 1
                     child: Center(child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text("Timeline of South Asian People in Canada ",style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                      child: Text("Timeline of South Asian People in Canada ",style: TextStyle(color: Colors.black,fontSize: 20),textAlign: TextAlign.center,),
                     ),),
                   ),
                 ),
@@ -338,13 +364,13 @@ SizedBox(height: 30,),
                       width: 500,
                       height: 90,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Colors.yellow,
                         borderRadius: BorderRadius.circular(40),
                       ),
                       //definition 1
                       child: Center(child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text("Timeline of East Asian people in Canada ",style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                        child: Text("Timeline of East Asian people in Canada ",style: TextStyle(color: Colors.black,fontSize: 20),textAlign: TextAlign.center,),
                       ),),
                     ),
                   ),

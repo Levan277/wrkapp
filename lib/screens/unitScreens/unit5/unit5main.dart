@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/materiaL.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:wrkapp/Audio/unit5_audio/summary_unit5.dart';
 import 'package:wrkapp/screens/finalScreens/final_home.dart';
@@ -76,38 +77,96 @@ class _Unit5MainState extends State<Unit5Main> {
       ),
       body: ListView(
         children: [
+          Column(
 
+
+
+
+
+            children: [
+
+              Container(
+                width: double.infinity,
+                height: 100,
+                color: Colors.orange,
+                child: Column(
+                  children: [
+
+                    Expanded(
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          ElevatedButtonTheme(
+                            data: ElevatedButtonThemeData(style: ElevatedButton.styleFrom(minimumSize: Size(120,60),primary: Colors.black),) ,
+                            child: ButtonBar(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                ElevatedButton(
+                                  child: Text('Section 1: Take Action',style: TextStyle(fontSize: 15),),
+                                  onPressed: () {
+
+                                  },
+                                ),
+
+
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                  ],
+                ),
+
+              ),
+
+            ],
+
+
+          ),
           //column 2
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AssetPlayerWidget(asset: 'assets/u5_summ.m4a', description: 'Summary of Unit '),
-              // SizedBox(height:700, width:double.infinity,child: Unit5SummaryA()),
-              Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("What makes a good ally? ",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
-              ),
 
+
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.deepOrangeAccent,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("What makes a good ally?",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
+          
               Container(
 
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                        children: [
-                          TextSpan(text: 'Try starting with these: \n', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '\t\t\t1. Educate yourself\n ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '\t\t\t2. Confront your own racist beliefs/ideas\n', style: TextStyle(color: Colors.black, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '\t\t\t3. Don’t rely on racialized people for all answers\n ', style: TextStyle(color: Colors.black, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '\t\t\t4. Follow the lead of racialized people\n   ', style: TextStyle(color: Colors.black, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '\t\t\t5. Hold your friends/family accountable (E.A.R.S) \n ', style: TextStyle(color: Colors.black, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '\t\t\t6. Have intentional conversations with people about racism\n    ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '\t\t\t7. Stop saying “I’m not racist”\n  ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
-                          TextSpan(text: '\t\t\t8. Don’t forget self-care (so you don’t get burnt out)\n   ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                child: RichText(
+                  text:  TextSpan(
+                      children: [
+                        TextSpan(text: 'Try starting with these: \n', style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                        TextSpan(text: '\t\t\t1. Educate yourself\n ', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                        TextSpan(text: '\t\t\t2. Confront your own racist beliefs/ideas\n', style: TextStyle(color: Colors.black, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                        TextSpan(text: '\t\t\t3. Don’t rely on racialized people for all answers\n ', style: TextStyle(color: Colors.black, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                        TextSpan(text: '\t\t\t4. Follow the lead of racialized people\n   ', style: TextStyle(color: Colors.black, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                        TextSpan(text: '\t\t\t5. Hold your friends/family accountable (E.A.R.S) \n ', style: TextStyle(color: Colors.black, fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                        TextSpan(text: '\t\t\t6. Have intentional conversations with people about racism\n    ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                        TextSpan(text: '\t\t\t7. Stop saying “I’m not racist”\n  ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
+                        TextSpan(text: '\t\t\t8. Don’t forget self-care (so you don’t get burnt out)\n   ', style: TextStyle(color: Colors.black,fontSize: 16),children: [WidgetSpan(child: SizedBox(height: 30,))]),
 
 
-                        ]
-                    ),
+                      ]
                   ),
                 ),
               ),
@@ -115,28 +174,41 @@ class _Unit5MainState extends State<Unit5Main> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Text("Want more info? Click Below",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                            Center(child: HyperLinkText(text: 'Mashable', urlText: 'https://mashable.com/article/how-to-be-antiracist',)),
-                            Center(child: HyperLinkText(text: 'University of Michigan’s ', urlText: 'https://mesa.umich.edu/article/10-ways-be-anti-racist',)),
-                          ],
-                        ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Text("Want more info? Click Below",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                          Center(child: HyperLinkText(text: 'Mashable', urlText: 'https://mashable.com/article/how-to-be-antiracist',)),
+                          Center(child: HyperLinkText(text: 'University of Michigan’s ', urlText: 'https://mesa.umich.edu/article/10-ways-be-anti-racist',)),
+                        ],
                       ),
                     ),
                   )
                 ],
               ),
               ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("What interests you?  ",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
-              ),
 
-              Card(child: Text("Explore the topics that you are most passionate about & want to explore. ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.deepOrangeAccent,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("What interests you? ",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
+           
+
+              Text("Explore the topics that you are most passionate about & want to explore. ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
 
            ExpansionPanelList.radio(
 

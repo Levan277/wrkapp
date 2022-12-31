@@ -94,23 +94,43 @@ class _EquityTopicState extends State<EquityTopic> {
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
       ),
-      body: ListView(
-        children: [
-          Column(
-            children: [
-              AssetPlayerWidget(asset: 'assets/u1_sec1_equity.mp3', description: 'Equity Example'),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Center(
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Center(child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Equity Example",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                      ),),
+                    ),
+                  ),
+                ),
+                AssetPlayerWidget(asset: 'assets/u1_sec1_equity.mp3', description: ''),
 
 
-            ],
+              ],
 
 
-          ),
+            ),
 
 
 
 
-        ],
+          ],
 
+        ),
       ),
     ),
     );

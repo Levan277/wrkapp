@@ -91,26 +91,41 @@ class _IndegenousPeoplesTopicState extends State<IndegenousPeoplesTopic> {
         centerTitle: true,
 
       ),
-      body: ListView(
-        children: [
-          Column(
-            children: [
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: ListView(
+          children: [
+            Column(
+              children: [
 
 
-            ],
+              ],
 
 
-          ),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-            child: Center(child: Text("First Nations ",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),)),
-          ),
-          SizedBox(height: 20,),
-          Container(
-            padding: EdgeInsets.all(12.0),
-            child: Card(
-              child:
-              ExpandableText(
+            ),
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Center(
+                child: Container(
+                  width: 200,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Center(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("First Nations ",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                  ),),
+                ),
+              ),
+            ),
+
+
+            SizedBox(height: 20,),
+            Container(
+              padding: EdgeInsets.all(12.0),
+              child: ExpandableText(
                   '1.\tHas 617 different communities that are spread across 6 regions (Facing History & Ourselves). \n\n'
                       '2.\t Though, even within these regions, “there is a richness and diversity of identity, culture, and customs, although the communities share…similar characteristics, languages, stories, and outlooks” (Facing History & Ourselves).  \n'
                       ''
@@ -121,23 +136,30 @@ class _IndegenousPeoplesTopicState extends State<IndegenousPeoplesTopic> {
                   collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
 
               ),
-
-
             ),
-          ),
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Center(
+                child: Container(
+                  width: 200,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Center(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Inuit",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                  ),),
+                ),
+              ),
+            ),
 
 
-          const Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-            child: Center(child: Text("Inuit",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),)),
-          ),
-          SizedBox(height: 20,),
-          Container(
-            padding: EdgeInsets.all(12.0),
-            child: Card(
-              child:
-
-              ExpandableText(
+            SizedBox(height: 20,),
+            Container(
+              padding: EdgeInsets.all(12.0),
+              child: ExpandableText(
                   ' 1.\t“refers…to the Artic indigenous population” (Facing History & Ourselves).  They live in Alaska, Canada, and Greenland (Facing History & Ourselves). )\n\n'
                       '2.\t The word “Inuit” means “people,” and the language they speak is Inuktitut, “though there are regional dialects that are known by slightly different names” (Facing History & Ourselves).  \n\n'
                       '3.\tCurrently the Inuit communities in “Canada live in the Nunangat—loosely defined as ‘Inuit homeland,” a land that is divided into 4 regions (Facing History & Ourselves).   \n\n'
@@ -148,21 +170,29 @@ class _IndegenousPeoplesTopicState extends State<IndegenousPeoplesTopic> {
                   collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
 
               ),
-
-
             ),
-          ),
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Center(
+                child: Container(
+                  width: 200,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Center(child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("Metis",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                  ),),
+                ),
+              ),
+            ),
 
-          const Padding(
-            padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-            child: Center(child: Text("Métis ",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),)),
-          ),
-          SizedBox(height: 20,),
-          Container(
-            padding: EdgeInsets.all(12.0),
-            child: Card(
-              child:
-              ExpandableText(
+            SizedBox(height: 20,),
+            Container(
+              padding: EdgeInsets.all(12.0),
+              child: ExpandableText(
                   '1.\tMétis” is a term that does not completely encompass the “large and diverse group” that it represents (Facing History & Ourselves). “Métis,” which is a French word means “mixed.”   \n\n '
                       '2.\t“The terms describes descendants of both Europeans and First nations people” (Facing History & Ourselves). \n\n'
                       '3.\t“The history of the Métis reflects the intermingling of the French and First Nations ways of life” (Facing History & Ourselves).  \n\n'
@@ -173,16 +203,14 @@ class _IndegenousPeoplesTopicState extends State<IndegenousPeoplesTopic> {
                   collapseText: 'show less',style: TextStyle(color: Colors.black,fontSize: 16)
 
               ),
-
-
             ),
-          ),
 
 
 
 
-        ],
+          ],
 
+        ),
       ),
     ),
     );

@@ -1,10 +1,12 @@
 
 import 'package:expandable_text/expandable_text.dart';
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:video_player/video_player.dart';
 import 'package:wrkapp/Audio/summary_of_units.dart';
 import 'package:wrkapp/Audio/summary_of_units_sec2_u2.dart';
 import 'package:wrkapp/Audio/unit2_audio/ex_of_individial_pwr_auidio.dart';
@@ -32,6 +34,22 @@ class Section2Oppresion extends StatefulWidget {
 
 class _Section2OppresionState extends State<Section2Oppresion> {
   var _currentIndex = 0;
+  late FlickManager flickManager;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u2s2op.mp4'));
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    flickManager.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery. of(context). size. width ;
@@ -46,12 +64,15 @@ class _Section2OppresionState extends State<Section2Oppresion> {
               _currentIndex = i;
             });
             if(_currentIndex == 0){
+              flickManager.flickControlManager?.pause();
               Navigator.push(context, MaterialPageRoute(builder: (context)=>FinalHome()));
             }
             else if(_currentIndex == 1){
+              flickManager.flickControlManager?.pause();
               Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeForum()));
             }
             else if(_currentIndex == 2){
+              flickManager.flickControlManager?.pause();
               Navigator.push(context, MaterialPageRoute(builder: (context)=>LiveSupportHome()));
             }
           },
@@ -83,19 +104,21 @@ class _Section2OppresionState extends State<Section2Oppresion> {
       ),
       appBar: AppBar(
         title:  Text('Unit 2: Power & Oppresion'),
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.blue,
         centerTitle: true,
-        actions: [Icon(Icons.support_agent_rounded)],
+
       ),
       body: ListView(
         children: [
           Column(
             children: [
 
+
+
               Container(
                 width: double.infinity,
                 height: 100,
-                color: Colors.pinkAccent,
+                color: Colors.blue,
                 child: Column(
                   children: [
                     Expanded(
@@ -109,17 +132,22 @@ class _Section2OppresionState extends State<Section2Oppresion> {
                               children: [
                                 ElevatedButton(
                                   child: Text('Section 1: Types of Power',style: GoogleFonts.montserrat(fontSize: 15),),
-                                  onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Main()));
+                                  onPressed: () {
+                                    flickManager.flickControlManager?.pause();
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit2Main()));
 
                                     },
                                 ),
                                 ElevatedButton(
-                                  child: Text('Section 2: Oprresion',style: GoogleFonts.montserrat(fontSize: 15)),
-                                  onPressed: () {},
+                                  child: Text('Section 2: Oprression',style: GoogleFonts.montserrat(fontSize: 15)),
+                                  onPressed: () {
+                                    flickManager.flickControlManager?.pause();
+                                  },
                                 ),
                                 ElevatedButton(
                                   child: Text('Section 3: Who Can Be Racist?',style: GoogleFonts.montserrat(fontSize: 15)),
                                   onPressed: () {
+                                    flickManager.flickControlManager?.pause();
                                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Section3WCBR()));
                                   },
                                 ),
@@ -140,12 +168,20 @@ class _Section2OppresionState extends State<Section2Oppresion> {
 
           ),
           //column 2
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+            ),
+            child:FlickVideoPlayer(
+              flickManager: flickManager,
+            ),
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
 
-SizedBox(height: 25,),
+
               Row(
 
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -155,7 +191,7 @@ SizedBox(height: 25,),
 
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("The 4 Levels of Oppresion",style: GoogleFonts.montserrat(fontSize: 32,fontWeight: FontWeight.bold),),
+                child: Text("The 4 Levels of Oppression",style: GoogleFonts.montserrat(fontSize: 32,fontWeight: FontWeight.bold),),
               ),
               SizedBox(height: 20,),
               Padding(
@@ -164,7 +200,7 @@ SizedBox(height: 25,),
                   width: 200,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Colors.pink,
+                    color: Colors.blue,
                     borderRadius: BorderRadius.circular(40),
                   ),
                   //definition 1
@@ -176,16 +212,11 @@ SizedBox(height: 25,),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                      'Is “associated with our values, beliefs and feelings about individuals different from us” (Pizaña) \n Example - Racism: believing that one racial group is smarter than another.',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                    'Is “associated with our values, beliefs and feelings about individuals different from us” (Pizaña) \n Example - Racism: believing that one racial group is smarter than another.',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -214,7 +245,7 @@ SizedBox(height: 25,),
                   width: 200,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Colors.pink,
+                    color: Colors.blue,
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Center(child: Padding(
@@ -225,17 +256,11 @@ SizedBox(height: 25,),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                      'Interpersonal means “relating to relationships or communication between people” (Oxford Dictionaries). \n “So, interpersonal oppression focuses on “our actions, behaviour and language as we interact with individuals different from us” \n Example -  Racism: racist jokes, use of racial slurs, harassment, stereotyping',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                    'Interpersonal means “relating to relationships or communication between people” (Oxford Dictionaries). \n So, interpersonal oppression focuses on “our actions, behaviour and language as we interact with individuals different from us” \n Example -  Racism: racist jokes, use of racial slurs, harassment, stereotyping',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -263,7 +288,7 @@ SizedBox(height: 25,),
                   width: 200,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Colors.pink,
+                    color: Colors.blue,
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Center(child: Padding(
@@ -274,15 +299,11 @@ SizedBox(height: 25,),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                      'Includes “the rules, policies, procedures and practices within an institution that define who…can fully participate or those that may be excluded” (Pizaña).\n Example - Racism: A company refusing to hire someone because of their hairstyle or religious clothing ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
+                child: ExpandableText(
+                    'Includes “the rules, policies, procedures and practices within an institution that define who…can fully participate or those that may be excluded” (Pizaña).\n Example - Racism: A company refusing to hire someone because of their hairstyle or religious clothing ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -311,7 +332,7 @@ SizedBox(height: 25,),
                   width: 200,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Colors.pink,
+                    color: Colors.blue,
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Center(child: Padding(
@@ -322,19 +343,11 @@ SizedBox(height: 25,),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-
-                  ExpandableText(
-                      'Is “how we define what is right, normal, the truth or beautiful” \n  Example - Racism: “The cultural narrative that White folks are safer, less violent, and better citizens” ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
-
+                child: ExpandableText(
+                    'Is “how we define what is right, normal, the truth or beautiful” \n  Example - Racism: “The cultural narrative that White folks are safer, less violent, and better citizens” ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -371,7 +384,7 @@ SizedBox(height: 25,),
                   width: 200,
                   height: 70,
                   decoration: BoxDecoration(
-                    color: Colors.pink,
+                    color: Colors.blue,
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Padding(
@@ -382,17 +395,11 @@ SizedBox(height: 25,),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-
-                  ExpandableText(
-                      '“Are members of the dominant social groups” that are privileged [in comparison to targets of oppression]”.(Vanderbilt University)\n Example-  A White person going through customs without having to worry about being racially profiled and stopped at the boarder because of their race.”',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
+                child: ExpandableText(
+                    '“Are members of the dominant social groups” that are privileged [in comparison to targets of oppression]”.(Vanderbilt University)\n Example-  A White person going through customs without having to worry about being racially profiled and stopped at the boarder because of their race.”',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -422,7 +429,7 @@ SizedBox(height: 10,),
                   width: 180,
                   height: 80,
                   decoration: BoxDecoration(
-                    color: Colors.pink,
+                    color: Colors.blue,
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Center(child: Padding(
@@ -433,14 +440,11 @@ SizedBox(height: 10,),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                      '“Are members of social identity groups that are” denied the right to vote, “exploited, and victimized, by agents of oppression” (Vanderbilt University).\n Example- Racialized groups like Black and Indigenous people are more likely to be incarcerated. ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
+                child: ExpandableText(
+                    '“Are members of social identity groups that are” denied the right to vote, “exploited, and victimized, by agents of oppression” (Vanderbilt University).\n Example- Racialized groups like Black and Indigenous people are more likely to be incarcerated. ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -468,7 +472,7 @@ SizedBox(height: 10,),
                   width: 180,
                   height: 70,
                   decoration: BoxDecoration(
-                    color: Colors.pink,
+                    color: Colors.blue,
                     borderRadius: BorderRadius.circular(40),
                   ),
                   child: Center(child: Padding(
@@ -479,17 +483,11 @@ SizedBox(height: 10,),
               ),
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                      'Is the process in which “people in the target group make oppression…personal” by believing the “lies, prejudices, and stereotypes” to be the truth.(Vanderbilt University).\nEffects of internalized oppression include low self-esteem, Self-doubt, Self-loathing ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
+                child: ExpandableText(
+                    'Is the process in which “people in the target group make oppression…personal” by believing the “lies, prejudices, and stereotypes” to be the truth.(Vanderbilt University).\nEffects of internalized oppression include low self-esteem, Self-doubt, Self-loathing ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -509,7 +507,7 @@ SizedBox(height: 10,),
                 ],
               ),
 SizedBox(height: 25,),
-              AssetPlayerWidget(asset: 'assets/u2_sec2_summary.mp3', description: 'Section Summary'),
+
               // SizedBox(height:700, width:double.infinity,child: SectionSummary2()),
 
 

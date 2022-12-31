@@ -96,25 +96,62 @@ class _ColonizationTopicState extends State<ColonizationTopic> {
         centerTitle: true,
 
       ),
-      body: ListView(
-        children: [
-          Column(
-            children: [
-              AssetPlayerWidget(asset: 'assets/u1_sec1_colonization.mp3', description: 'Colonization Example'),
-              // SizedBox(height:700, width:double.infinity,child: ColonizationAT()),
-              SizedBox(height: 25,),
-              AssetPlayerWidget(asset: 'assets/u1_sec1_decolonization.mp3', description: 'Decolonization Example'),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Center(
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Center(child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Colonization Example",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                      ),),
+                    ),
+                  ),
+                ),
+                AssetPlayerWidget(asset: 'assets/u1_sec1_colonization.mp3', description: ''),
+                Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Center(
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Center(child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Decolonization Example",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                      ),),
+                    ),
+                  ),
+                ),
+                // SizedBox(height:700, width:double.infinity,child: ColonizationAT()),
+                SizedBox(height: 25,),
+                AssetPlayerWidget(asset: 'assets/u1_sec1_decolonization.mp3', description: ''),
 
-              // SizedBox(height:700, width:double.infinity,child: DecolonizationAT()),
-            ],
+                // SizedBox(height:700, width:double.infinity,child: DecolonizationAT()),
+              ],
 
 
-          ),
+            ),
 
 
 
-        ],
+          ],
 
+        ),
       ),
     ),
     );

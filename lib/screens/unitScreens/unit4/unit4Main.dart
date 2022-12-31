@@ -4,6 +4,7 @@ import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/materiaL.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:wrkapp/Audio/TopicAudios/whitePrivilegeT/power_accumulated.dart';
 import 'package:wrkapp/Audio/summary_of_units.dart';
@@ -83,13 +84,59 @@ class _Unit4MainState extends State<Unit4Main> {
 
 
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.purple,
         title: Text("Unit 4: White Privilege"),
         centerTitle: true,
         actions: [Icon(Icons.support_agent_rounded)],
       ),
       body: ListView(
         children: [
+          Column(
+
+
+
+
+
+            children: [
+
+              Container(
+                width: double.infinity,
+                height: 100,
+                color: Colors.purple,
+                child: Column(
+                  children: [
+
+                    Expanded(
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          ElevatedButtonTheme(
+                            data: ElevatedButtonThemeData(style: ElevatedButton.styleFrom(minimumSize: Size(120,60),primary: Colors.black),) ,
+                            child: ButtonBar(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                ElevatedButton(
+                                  child: Text('Section 1: White Privilege',style: TextStyle(fontSize: 15),),
+                                  onPressed: () {
+
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                  ],
+                ),
+
+              ),
+
+            ],
+
+
+          ),
           //column 2
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,51 +145,65 @@ class _Unit4MainState extends State<Unit4Main> {
 
 
 
-
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("What Isn’t White Privilege? ",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.purpleAccent,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("What Isn’t White Privilege? ",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
               ),
+
               SizedBox(height: 20,),
 
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
+                child: ExpandableText(
+                    '\t1. White privilege is not “the suggestion that white people have never struggled” (Collins).\n \n\t2. White privilege is not “the assumption that everything a white person has accomplished is unearned” (Collins).',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
+                ),
+              ),
 
-                  ExpandableText(
-                      '\t1. White privilege is not “the suggestion that white people have never struggled” (Collins).\n \n\t2. White privilege is not “the assumption that everything a white person has accomplished is unearned” (Collins).',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.purpleAccent,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("What is White Privilege?  ",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
                   ),
-
-
                 ),
               ),
 
 
 
-              Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("What is White Privilege?  ",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),),
-              ),
               SizedBox(height: 20,),
 
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
+                child: ExpandableText(
                '\t1. White Privilege – “is having greater access to power and resources than people of color [in the same situation] do” \n\n\t2. A different race based on the belief that one’s own race is superior.”  When someone believes that their race—which remember is a social construct that has no grounds in biology—is better than someone else’s, that person will always view themselves as more powerful, no matter what the situation is. ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
-
-
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
               Row(
@@ -164,77 +225,95 @@ class _Unit4MainState extends State<Unit4Main> {
               ),
               SizedBox(height: 20,),
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Container(
-                  width: 200,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.pink,
-                    borderRadius: BorderRadius.circular(40),
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.purpleAccent,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Power of Normal",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
                   ),
-                  child: Center(child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Power of Normal",style: TextStyle(color: Colors.white,fontSize: 20),),
-                  ),),
                 ),
               ),
+              //d
+
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-
-                  ExpandableText(
-                      '\t1. “Power of Normal” – is addressing smaller, more trivial issues surrounding White privilege such as Band-aid colours,Hair products for all hair types and Lack of foods from other cultures in grocery stores    \n'
-                          '\n \t2. These are issues that tend to get more attention than larger issues that have a greater effect on people from that race.  Visit the '
-                          '“White Privilege” topics page for a deeper look into these examples. ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
+                child: ExpandableText(
+                    '\t1. “Power of Normal” – is addressing smaller, more trivial issues surrounding White privilege such as Band-aid colours,Hair products for all hair types and Lack of foods from other cultures in grocery stores    \n'
+                        '\n \t2. These are issues that tend to get more attention than larger issues that have a greater effect on people from that race.  Visit the '
+                        '“White Privilege” topics page for a deeper look into these examples. ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.purpleAccent,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("So, what’s the problem? ",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
                   ),
-
-
                 ),
               ),
 
-              Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("So, what’s the problem?  ",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
-              ),
 SizedBox(height: 10,),
 
 
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child: RichText(
-                    text:  TextSpan(
-                      children: [
-                        TextSpan(text: 'The problem is “if public spaces and goods seem catered to one race” it sends the message that those things are normal and anything different is not. ', style: TextStyle(color: Colors.black,fontSize: 16)),
+                child: RichText(
+                  text:  TextSpan(
+                    children: [
+                      TextSpan(text: 'The problem is “if public spaces and goods seem catered to one race” it sends the message that those things are normal and anything different is not. ', style: TextStyle(color: Colors.black,fontSize: 16)),
 
-                      ],
+                    ],
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.purpleAccent,
+                      borderRadius: BorderRadius.circular(40),
                     ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Power of the Benefit of the Doubt ",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
                   ),
                 ),
               ),
 
 
-              Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child: Text("“Power of the Benefit of the Doubt” ",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
-              ),
-
               Container(
                 padding: EdgeInsets.all(12.0),
-                child: Card(
-                  child:
-                  ExpandableText(
-                      '“Power of the Benefit of the Doubt” – relates to the fact that white people are more likely to be viewed in a positive light than non-white people. \nWhite people tend to be “treated as individuals, rather than as representatives of (or exceptions to) a stereotyped racial identity”.\n\n'
-                          'Example - “White people are less likely to be followed, interrogated or search by law enforcement because they look ‘suspicious’” (Collins).  ',
-                      expandText: 'show more',
-                      collapseText: 'show less',
-                      style: TextStyle(color: Colors.black,fontSize: 16)
-                  ),
-
+                child: ExpandableText(
+                    '“Power of the Benefit of the Doubt” – relates to the fact that white people are more likely to be viewed in a positive light than non-white people. \nWhite people tend to be “treated as individuals, rather than as representatives of (or exceptions to) a stereotyped racial identity”.\n\n'
+                        'Example - “White people are less likely to be followed, interrogated or search by law enforcement because they look ‘suspicious’” (Collins).  ',
+                    expandText: 'show more',
+                    collapseText: 'show less',
+                    style: TextStyle(color: Colors.black,fontSize: 16)
                 ),
               ),
 
@@ -256,7 +335,24 @@ SizedBox(height: 10,),
 
 
               SizedBox(height: 20,),
-              AssetPlayerWidget(asset: 'assets/u4_sec2_power_of_accumulated_power.mp3', description: 'Power of The Accumulated Power'),
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Center(
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.purpleAccent,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Center(child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Power of The Accumulated Power",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),
+                    ),),
+                  ),
+                ),
+              ),
+              AssetPlayerWidget(asset: 'assets/u4_sec2_power_of_accumulated_power.mp3', description: ''),
               // SizedBox(height:700, width:double.infinity,child: PowerOfAccum()),
 
               // Center(
