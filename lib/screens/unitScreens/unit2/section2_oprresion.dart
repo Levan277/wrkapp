@@ -41,7 +41,7 @@ class _Section2OppresionState extends State<Section2Oppresion> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u2s2op.mp4'));
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u2s2op.mp4'),autoPlay: false);
   }
 
   @override
@@ -179,8 +179,6 @@ class _Section2OppresionState extends State<Section2Oppresion> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-
 
               Row(
 

@@ -28,7 +28,7 @@ class _Unit3HomeState extends State<Unit3Home> {
   @override
   void initState() {
     super.initState();
-    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u3_intro.mp4'));
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u3_intro.mp4'),autoPlay: false);
   }
 
   @override

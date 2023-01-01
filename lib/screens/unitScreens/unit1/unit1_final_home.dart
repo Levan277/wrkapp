@@ -30,10 +30,9 @@ class _Unit1HomeState extends State<Unit1Home> {
   @override
   void initState() {
     super.initState();
-
-    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u1_intro.mp4'));
-
-  }
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u1_intro.mp4'),autoPlay: false);
+    flickManager.flickControlManager?.pause();
+ }
 
   @override
   void dispose() {

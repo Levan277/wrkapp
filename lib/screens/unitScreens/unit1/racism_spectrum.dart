@@ -38,7 +38,7 @@ class _RacismSpectrumState extends State<RacismSpectrum> with SingleTickerProvid
     animationController = AnimationController(vsync: this,
     duration: Duration(milliseconds: 200),
     )..addListener(() =>controller.value = animation!.value);
-    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u1_s2.mp4'));
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u1_s2.mp4'),autoPlay: false);
   }
 
   @override

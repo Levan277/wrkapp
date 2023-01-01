@@ -32,7 +32,7 @@ class _Unit5HomeState extends State<Unit5Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u5_intro.mp4'));
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u5_intro.mp4'),autoPlay: false);
 
   }
 

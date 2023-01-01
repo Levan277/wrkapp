@@ -29,7 +29,7 @@ class _Unit2HomeState extends State<Unit2Home> {
 
     super.initState();
 
-      flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u2_intro.mp4'));
+      flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u2_intro.mp4'),autoPlay: false);
   }
   @override
   void dispose() {

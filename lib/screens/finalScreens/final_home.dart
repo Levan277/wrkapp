@@ -2,6 +2,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:lottie/lottie.dart';
@@ -99,7 +100,9 @@ class _FinalHomeState extends State<FinalHome> {
 SizedBox(width: 15,),
                          // card 1
                           InkWell(
-                            onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit1Home()));},
+                            onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit1Home()));
+
+                              },
                             child: Container(
                               decoration:BoxDecoration(
 

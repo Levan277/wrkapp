@@ -73,7 +73,7 @@ class _Unit5MainState extends State<Unit5Main> {
         backgroundColor:  Color(0xffFF8201),
         centerTitle: true,
         title: Text("Unit 5"),
-        actions: [Icon(Icons.support_agent_rounded)],
+
       ),
       body: ListView(
         children: [
@@ -208,7 +208,10 @@ class _Unit5MainState extends State<Unit5Main> {
               ),
            
 
-              Text("Explore the topics that you are most passionate about & want to explore. ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text("Explore the topics that you are most passionate about & want to explore. ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+              ),
 
            ExpansionPanelList.radio(
 

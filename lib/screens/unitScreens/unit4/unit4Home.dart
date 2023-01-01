@@ -29,7 +29,7 @@ class _Unit4HomeState extends State<Unit4Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u4_intro.mp4'));
+    flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/videos/u4_intro.mp4'),autoPlay: false);
   }
 
   @override
