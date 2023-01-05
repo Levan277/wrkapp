@@ -97,7 +97,7 @@ class _FinalHomeState extends State<FinalHome> {
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         children: [
-SizedBox(width: 15,),
+                    SizedBox(width: 15,),
                          // card 1
                           InkWell(
                             onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Unit1Home()));

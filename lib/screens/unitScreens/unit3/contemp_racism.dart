@@ -86,13 +86,15 @@ class _ContempRacismState extends State<ContempRacism> {
           ],
         ),
       ),
-      appBar: AppBar(
+      appBar:
 
+      AppBar(
         backgroundColor: Colors.yellow,
-        title: Expanded(child: Text('Unit 3 | Racism in Canada',style: TextStyle(color: Colors.black),)),
+        title: Text('Unit 3 | Racism in Canada',style: TextStyle(color: Colors.black),),
         centerTitle: true,
-   
+
       ),
+
       body: ListView(
         children: [
           Column(
